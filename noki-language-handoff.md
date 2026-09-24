@@ -1,6 +1,6 @@
 # Noki Language — Model Handoff Specification
 
-**Version 2.11 — 2026-09-24.** See the changelog at the end for what changed.
+**Version 2.12 — 2026-09-24.** See the changelog at the end for what changed.
 
 ## 1. Project Goal
 
@@ -874,8 +874,6 @@ The following areas are intentionally **not yet finalized**:
 - describing words beyond the current ones (e.g. big/small);
 - comparisons such as bigger/smaller;
 - "have";
-- conditional constructions such as if;
-- exact chronological connector such as then;
 - whether noun/verb dual-use such as `foma`, `vimo`, `mufo`, `fipo` ever becomes too ambiguous;
 - whether **lo** also covers animals and pets, or only people (parked in the first find-gaps pass).
 
@@ -1051,6 +1049,27 @@ Known wrinkle: after an f-word it doubles up — **foma fa?** ("why eat?").
 
 ---
 
+# 30. If and Then
+
+Noki has no word for *if*. **Say the condition as a question, then the answer.** **lati** (later) can stand for *then*.
+
+| Noki | Literally | Meaning |
+|---|---|---|
+| **si foma? lati fipo!** | You eat? Later play! | If you eat, then you can play. |
+| **vesa? ka dafu.** | Problem? I help. | If there's a problem, I'll help. |
+| **si vek foma? vek fipo.** | You don't eat? No play. | If you don't eat, no playing. |
+| **ka tisi? ka lefu tuka.** | I'm cold? I go home. | If I get cold, I'll go home. |
+
+The only rule: **the condition comes first.** There is no way to put it at the end ("I'll help if…").
+
+English and Spanish already talk like this ("Finished your homework? Then you can play"), so there is nothing new to learn.
+
+*Then* on its own needs nothing new either: **ka foma e lati fipo.** — I eat and then play (Section 15).
+
+Known ambiguity: the first half can sound like a real question. What follows, and the tone, tell which. Not fixed until it causes a real mix-up (Section 22).
+
+---
+
 # 29. Groups of People: We, You All, They
 
 Noki has no word for *we*, *you all* or *they*. **Put pronouns next to each other instead.**
@@ -1114,6 +1133,14 @@ When continuing development:
 ---
 
 ## Changelog
+
+### Version 2.12 — 2026-09-24
+
+**If and then, with no new word (Section 30).** The condition is said as a question, then comes the answer; **lati** stands for *then*. Removed from the open questions.
+
+- Rejected: reusing **kui** ("when") as *if/when* — **si kui foma, lati fipo**. It also saves a word, but **kui** is Noki's only question word and giving it a non-question job muddies it.
+- Rejected: a new word for *if*. Clearest, and it works anywhere in a sentence, but it costs word 49 and an unused first syllable, and *if* has not yet been missed in real use (Section 25).
+- Accepted limits: the condition must come first, and it can sound like a real question.
 
 ### Version 2.11 — 2026-09-24
 

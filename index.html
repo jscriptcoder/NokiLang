@@ -777,7 +777,7 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       <div class="lesson-head">
         <p class="eyebrow" data-es="Lección 7 de 8">Lesson 7 of 8</p>
         <h2 data-es="Dónde, y preguntas">Where, and questions</h2>
-        <p class="goal" data-es="Aquí, allí, y las dos palabras de pregunta.">Here, there, and the two question words.</p>
+        <p class="goal" data-es="Aquí, allí, las dos palabras de pregunta, y “si…”.">Here, there, the two question words, and “if”.</p>
       </div>
       <div class="cards" data-words="meni,lopa,kui,fa"></div>
       <div class="rule" data-es="&lt;p&gt;&lt;b&gt;Los lugares van al final:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si ka lefu lopa&lt;/span&gt; = vamos allí.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Preguntas de sí o no:&lt;/b&gt; solo dilo como pregunta. &lt;span class=&quot;nk&quot;&gt;si naki?&lt;/span&gt; = ¿entiendes?&lt;/p&gt;&lt;p&gt;&lt;b&gt;Una pregunta sin palabra de tiempo también significa “¿vamos?” o “¿podemos?”:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si ka lefu?&lt;/span&gt; = ¿vamos? · &lt;span class=&quot;nk&quot;&gt;si ka kifi deli?&lt;/span&gt; = ¿nos vamos ya? Por eso Noki no necesita palabra para “poder”.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Todas las demás preguntas usan &lt;span class=&quot;nk&quot;&gt;kui&lt;/span&gt;.&lt;/b&gt; Pon &lt;span class=&quot;nk&quot;&gt;kui&lt;/span&gt; donde iría la respuesta. La respuesta va en el mismo sitio.&lt;/p&gt;">
@@ -813,6 +813,15 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
         <div class="ex" data-s="ka vek foma:do fa ka mufo:desc." data-en="I'm not eating because I'm tired." data-es="No como porque estoy cansado."></div>
         <div class="ex" data-s="fa ka mufo:desc." data-en="Because I'm tired." data-es="Porque estoy cansado."></div>
       </div>
+      <h3 data-es="Si…, entonces…">If…, then…</h3>
+      <p data-es="Noki no tiene palabra para “si”. &lt;b&gt;Di primero la condición como una pregunta, y luego lo que pasa.&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;lati&lt;/span&gt; (luego) hace de “entonces”. Ya hablamos así: “¿Has hecho los deberes? Pues a jugar.”">Noki has no word for “if”. <b>Say the “if” part first, like a question, then what happens.</b> <span class="nk">lati</span> (later) works as “then”. We already talk like this: “Finished your homework? Then you can play.”</p>
+      <div class="examples">
+        <div class="ex" data-s="si foma:do? lati fipo:do!" data-en="If you eat, then you can play!" data-es="¡Si comes, luego juegas!"></div>
+        <div class="ex" data-s="vesa? ka dafu." data-en="If there's a problem, I'll help." data-es="Si hay un problema, te ayudo."></div>
+        <div class="ex" data-s="si vek foma:do? vek fipo:do." data-en="If you don't eat, no playing." data-es="Si no comes, no hay juego."></div>
+        <div class="ex" data-s="ka tisi? ka lefu tuka." data-en="If I get cold, I'll go home." data-es="Si tengo frío, me voy a casa." data-note="tisi (cold) comes in Lesson 8." data-note-es="tisi (frío) llega en la lección 8."></div>
+      </div>
+      <p class="fact" data-es="&lt;b&gt;El “si” siempre va primero.&lt;/b&gt; Si suena a pregunta de verdad, lo que dices después lo aclara."><b>The “if” part always comes first.</b> If it sounds like a real question, what you say next makes it clear.</p>
       <div class="quiz" data-quiz="l7"></div>
     </section>
 
@@ -1531,6 +1540,9 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       { q: { en: "How do you ask “Why?”", es: "¿Cómo se pregunta “¿Por qué?”" }, o: [nk("kui?"), nk("vek?"), nk("fa?")], a: 2 },
       { b: "dusa meni!", d: "milu" },
       { b: "si vek foma:do fa?", d: "ka" },
+      { q: { en: `${nk("vesa? ka dafu.")} means…`, es: `${nk("vesa? ka dafu.")} significa…` },
+        o: [{ en: "Is it bad? I don't know.", es: "¿Está mal? No lo sé." }, { en: "If there's a problem, I'll help.", es: "Si hay un problema, te ayudo." }, { en: "Help! There's a problem!", es: "¡Ayuda! ¡Hay un problema!" }], a: 1 },
+      { b: "si foma:do? lati fipo:do!", d: "fa" },
     ],
     l8: [
       { q: { en: `${nk("suno suno suno")} means…`, es: `${nk("suno suno suno")} significa…` },
