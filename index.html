@@ -849,6 +849,7 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
         <div class="ex" data-s="ke foma pufa." data-en="The food is hot." data-es="La comida quema."></div>
         <div class="ex" data-s="neku kui?" data-en="Where does it hurt?" data-es="¿Dónde te duele?"></div>
         <div class="ex" data-s="lo pemo." data-en="He's sad." data-es="Está triste." data-note="or: She's sad." data-note-es="Vale para él o para ella."></div>
+        <div class="ex" data-s="ka pemo." data-en="I'm sad." data-es="Estoy triste."></div>
         <div class="ex" data-s="ka dipu." data-en="I'm angry." data-es="Estoy enfadado."></div>
         <div class="ex" data-s="ka sedu." data-en="I'm scared." data-es="Tengo miedo."></div>
         <div class="ex" data-s="ke koti?" data-en="Is that true?" data-es="¿Es verdad?"></div>
@@ -2098,6 +2099,9 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
     { id: "m13", l: "l8", s: ["suno tolu?", "tolu suno!", "tesu!"],
       t: { en: "Count and thank", es: "Cuenta y da las gracias" },
       d: { en: "In a queue at a shop or café, ask how many people are ahead, count them together, then say tesu! to whoever serves you.", es: "En la cola de una tienda o cafetería, pregunta cuántas personas hay delante, contadlas juntos y luego di tesu! a quien os atienda." } },
+    { id: "m14", l: "l8", s: ["si pomi?", "ka pemo.", "ka dipu.", "ka sedu."],
+      t: { en: "How do you feel?", es: "¿Cómo estás?" },
+      d: { en: "After school or at bedtime, ask each other si pomi? and answer with how you really feel. Then say why with fa.", es: "Al salir del cole o antes de dormir, preguntaos si pomi? y contestad cómo os sentís de verdad. Luego decid por qué con fa." } },
   ];
   const missionStore = {
     read() { try { return JSON.parse(localStorage.getItem("noki.missions") || "{}"); } catch { return {}; } },
