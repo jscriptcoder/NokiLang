@@ -784,6 +784,7 @@ These **meanings** were proposed but deliberately **not** added to the official 
 |---|---|---|
 | **dema** | have / own | ready candidate — until then, say **panu nisu** (Section 12). Promote it when "I had…" or the length of **panu nisu** gets in the way in real use. Mild risk: same first syllable as **deli**, and both are actions |
 | ~~kepu~~ | have / own | spelling retired in version 2.15 in favour of **dema** (the user's preference) |
+| **na** | if / when (like German *wenn*) | parked idea — until then, say the condition as a question (Section 30). Revisit if a whispered condition gets misheard, or the condition is wanted at the end. Soft risks: sounds like English *nah* / Spanish *na'* ("nothing"), and starts like **da** (yes) |
 | **dino** | child | deferred — note most kids hear "dino" as *dinosaur* |
 | ~~dova~~ | big / much | meaning deferred; spelling retired (fails the whisper rule against **lopa**) |
 | ~~dapi~~ | small / little | meaning deferred; spelling retired (fails the whisper rule against **tavo**) |
@@ -891,6 +892,7 @@ The following areas are intentionally **not yet finalized**:
 - comparisons such as bigger/smaller;
 - "had" (possession in the past): **panu nisu** covers *have* (Section 12), but "I had a dog" cannot be said; the ready candidate is **dema** (Section 19);
 - "would" (things that didn't happen): for now, say what really happened with **vek** and **fa** (Section 30);
+- a word for "if / when": the question trick works (Section 30), but whispered the tone may be lost; **na** is parked (Section 19);
 - whether noun/verb dual-use such as `foma`, `vimo`, `mufo`, `fipo` ever becomes too ambiguous;
 - whether **lo** also covers animals and pets, or only people (parked in the first find-gaps pass).
 
@@ -1101,6 +1103,8 @@ Noki has no *would*. "If I had known, I would have played with you" cannot use t
 
 Known ambiguity: the first half can sound like a real question. What follows, and the tone, tell which. Not fixed until it causes a real mix-up (Section 22).
 
+Known risk: whispering flattens the tone that marks the condition. If that causes a mix-up, the parked idea is an *if/when* word, **na** (Section 19).
+
 ---
 
 # 29. Groups of People: We, You All, They
@@ -1166,6 +1170,16 @@ When continuing development:
 ---
 
 ## Changelog
+
+### Version 2.16 — 2026-09-24
+
+**na parked as an idea for *if / when* (Section 19), inspired by German *wenn*, which means both.** Not official; the condition-as-question trick (Section 30) stays, because it works well with intonation in real use.
+
+- Why it came up: whispering flattens the question tone that marks the condition (priority 3), which the version 2.12 decision did not consider. A word would also let the condition come at the end (**ka dafu na si duni** — I'll help if you need it) and cover *when* (**na ka tuka, ka foma** — when I'm home, I'll eat). It would not solve imaginary sentences ("if I were a cat"); German needs a separate verb form for those too.
+- Why **na**: the only free first sound for a one-syllable word is n; easy for a child; hook: Japanese *nara* = if. Its only audit hit is the retired **nau**. Soft risks: English *nah* / Spanish *na'* sound like "no / nothing" next to **vek**, and whispered it starts like **da** (yes).
+- Lost: **ven** (the user's first idea, from *wenn*: one sound from **vek**, which also starts sentences; Spanish *¡ven!* "come here"; sounds like English *when*), **mo** and **pe** (pass the audit; the user did not like them), **moi**, **pei**, **pou**, **mep** (pass the audit; not chosen), **pok** (whispered, p/v makes it sound like **vek**), **mai** (*my*), **pai** (*pie*), **nop** (*nope*), **pi** (*pee*), **mu** (a cow's moo), **pu** (*poo*); **mau**, **mei**, **nai**, **noi**, **neu**, **nou**, **miu**, **peu**, **poi**, **pau**, **mok** (one sound from an existing or retired word).
+- Discussed, not adopted: always starting the answer with **lati** or **ke** so a whispered condition still has a marker; and **fipo:** as "pretend…" for imaginary sentences (Spanish *jugamos a que…*), which risks clashing with **fipo?** ("if we play…").
+- New sound-alikes in the audit blocklist: **ven**, **mai**, **pai**, **nop**, **pi**, **mu**, **pu**.
 
 ### Version 2.15 — 2026-09-24
 

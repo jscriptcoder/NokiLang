@@ -51,7 +51,7 @@ CURRENT = {
     "tolu": "number, count", "tesu": "please, thank you, you're welcome",
 }
 # Meanings still waiting for a word (Section 19).
-DEFERRED = ["dema", "dino"]
+DEFERRED = ["dema", "dino", "na"]
 # Replaced or retired words, respelled in Noki letters (b -> v, z -> s) so old
 # sounds still count as taken. Section 20.
 SUPERSEDED = ["mi", "tu", "si", "vimo", "nuvo", "vesa", "piki", "sumi", "dumi",
@@ -81,6 +81,7 @@ soni muvi fotu miso sake pasta diva mafi lasi nasi mosa fumi lemo tuki tesi nosa
 kolu pina tipu nida sopu sosu samu kono kona komu pilo sapu vami saku safi felo
 senu fetu kodu kolo pudu putu vudu sadu fuma paku lolo sika
 kepo puso tene pose
+ven mai pai nop pi mu pu
 """.split())
 
 WHISPER = str.maketrans({"d": "t", "v": "f"})
