@@ -1,6 +1,6 @@
 # Noki Language — Model Handoff Specification
 
-**Version 2.9 — 2026-09-24.** See the changelog at the end for what changed.
+**Version 2.10 — 2026-09-24.** See the changelog at the end for what changed.
 
 ## 1. Project Goal
 
@@ -117,7 +117,7 @@ Existing sound-alikes deliberately kept, because they are tiny grammar words or 
 
 # 3. Current Official Core Vocabulary
 
-There are currently **38 core words**.
+There are currently **46 core words**.
 
 ## Pronouns
 
@@ -162,6 +162,7 @@ See Section 29.
 | **dafu** | help |
 | **doki** | say / speak / tell |
 | **mela** | love / like / enjoy |
+| **lidu** | listen / hear |
 
 ---
 
@@ -223,6 +224,34 @@ These words also form Noki's tense-like system.
 | **vesa** | bad / problem / danger |
 | **e** | and |
 | **fa** | why / because |
+
+---
+
+## How it feels, and is it true
+
+| Noki | Meaning |
+|---|---|
+| **pufa** | hot |
+| **tisi** | cold |
+| **neku** | hurt / pain |
+| **pemo** | sad |
+| **dipu** | angry |
+| **sedu** | scared |
+| **koti** | true |
+
+They work like **pomi** and **vesa**: no word for "is" (Section 10).
+
+**ka tisi.** — I'm cold. · **ke foma pufa.** — The food is hot.
+
+**ka neku.** — I'm hurt. · **neku kui?** — Where does it hurt? Borrow the body part, owner first as usual (Section 12): **ka tummy neku.** — My tummy hurts.
+
+**lo pemo.** — He/she is sad. · **ka dipu.** — I'm angry. · **ka sedu.** — I'm scared.
+
+**ke koti?** — Is that true? · **ke vek koti.** — That's not true (a lie).
+
+Happy needs no word of its own: **ka pomi.** — I'm good / I'm happy. Say it twice for more: **ka pemo pemo** — I'm very sad.
+
+**lidu** is an action: **lidu!** — Listen! · **ka vek lidu.** — I can't hear.
 
 ---
 
@@ -823,7 +852,7 @@ The following areas are intentionally **not yet finalized**:
 - a word or structure for "all";
 - explicit "this" versus "that";
 - possession involving complex noun phrases;
-- adjectives beyond `pomi` and `vesa` (e.g. big/small);
+- describing words beyond the current ones (e.g. big/small);
 - comparisons such as bigger/smaller;
 - "have";
 - conditional constructions such as if;
@@ -1067,6 +1096,26 @@ When continuing development:
 ---
 
 ## Changelog
+
+### Version 2.10 — 2026-09-24
+
+**Eight new words, 38 → 46.** The user judged these basic to any conversation, so they skip the wishlist.
+
+| Word | Meaning | Alternatives that lost |
+|---|---|---|
+| **pufa** | hot | vatu |
+| **tisi** | cold | vuna, koda (one sound from koti whispered) |
+| **neku** | hurt / pain | dimu (one sound from dipu) |
+| **lidu** | listen / hear | lipa (one sound from lopa) |
+| **pemo** | sad | vodi (one sound from koti) |
+| **dipu** | angry | kopo (same first syllable as koti) |
+| **sedu** | scared | tida (same first syllable as tisi, and "I'm cold" / "I'm scared" sit in the same slot), nefo (one sound from the retired nuvo) |
+| **koti** | true | lito (one sound from lidu), pedu (one sound from the retired penu) |
+
+- Every new word starts with a syllable no other word uses, and all eight pass the whisper rule against the vocabulary, retired words, and each other.
+- Seven are describing words that work like **pomi**; **lidu** is an action. Happy stays **ka pomi**; "a lie" is **vek koti**.
+- Rejected as sound-alikes (now in the audit blocklist): **kolu** (*culo*), **pina** (*piña*), **tipu** (*tipo*), **nida** (*nada*), **sopu** (*sopa*), **sosu** (*soso*), **samu** (Samu, a name), **kono** / **kona** (*coño*), **komu** (*como*).
+- Not done yet: **how many / how much**. It needs a way to count first (Section 23), so it is its own design question.
 
 ### Version 2.9 — 2026-09-24
 
