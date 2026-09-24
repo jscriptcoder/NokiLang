@@ -2,7 +2,7 @@
 
 A tiny secret spoken language for a parent and their 9-year-old son, who both speak Spanish and English.
 
-**Current state: 15 letters, 48 words, spec version 2.13 (2026-09-24).**
+**Current state: 15 letters, 48 words, spec version 2.14 (2026-09-24).**
 
 ## Files
 
@@ -37,7 +37,7 @@ The full working rules, and the story behind the project, are in `CLAUDE.md`.
 
 - Use Noki with the child for about a week. Keep the wishlist of words you had to borrow, and note where either of you got stuck.
 - Then run a second `find-gaps` pass on the guide, driven by what really happened rather than by guesses.
-- Open questions are listed in spec Section 23: numbers past two, "all", this vs that, bigger/smaller, "have", if, then, please/thank you, and whether `lo` covers pets.
+- Open questions are listed in spec Section 23: numbers past two, "all", this vs that, bigger/smaller, "had" (past possession), please/thank you, and whether `lo` covers pets.
 
 ## History so far
 
@@ -51,3 +51,4 @@ The full working rules, and the story behind the project, are in `CLAUDE.md`.
 - Then `tolu` (number / count: `suno tolu?` = how many people?) and `tesu` (please / thank you / you're welcome). 48 words; exact numbers are borrowed for now.
 - If and then need no word: say the condition as a question, then the answer (`si foma? lati fipo!` = if you eat, then you can play). Version 2.12.
 - If works with past and future time words; there is no "would" — say what really happened with `vek` and `fa`. Version 2.13.
+- Have needs no word: say "got earlier", `panu nisu` (`ka panu nisu perro` = I have a dog), like English *I've got*. `kepu` is parked for when "I had…" is needed. Version 2.14.

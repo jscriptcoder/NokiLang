@@ -1,6 +1,6 @@
 # Noki Language — Model Handoff Specification
 
-**Version 2.13 — 2026-09-24.** See the changelog at the end for what changed.
+**Version 2.14 — 2026-09-24.** See the changelog at the end for what changed.
 
 ## 1. Project Goal
 
@@ -567,6 +567,21 @@ Context normally decides. To make it clearly an **action**, add a time word — 
 
 I'm eating now.
 
+## Have: `panu nisu`
+
+Noki has no word for *have*. **Say "got earlier" instead: panu nisu** — the same trick as English *I've got*.
+
+| Noki | Meaning |
+|---|---|
+| **ka panu nisu perro.** | I have a dog. (I've got a dog.) |
+| **si panu nisu vimo?** | Do you have water? |
+| **ka panu vek nisu foma.** | I don't have food. |
+| **lo panu nisu sister.** | He/she has a sister. |
+
+It also keeps its plain meaning, "I got it earlier"; in practice that means the same thing. Future needs nothing new: **ka lati nisu perro** — I'll get (have) a dog.
+
+Known gap: **"I had"** (possession in the past, "I had a dog when I was little") cannot be said, because **panu** is already used up. Borrow the word for now. If this, or the length of **panu nisu**, becomes a real problem, the ready candidate is **kepu** (Section 19).
+
 ---
 
 # 13. Time System
@@ -767,7 +782,8 @@ These **meanings** were proposed but deliberately **not** added to the official 
 
 | Candidate | Proposed meaning | Status |
 |---|---|---|
-| **dema** | have / possess | deferred |
+| **kepu** | have / own | ready candidate — until then, say **panu nisu** (Section 12). Hook: *keep*. Promote it when "I had…" or the length of **panu nisu** gets in the way in real use |
+| ~~dema~~ | have / possess | spelling retired in version 2.14 in favour of **kepu** (same first syllable as **deli**, and both are actions) |
 | **dino** | child | deferred — note most kids hear "dino" as *dinosaur* |
 | ~~dova~~ | big / much | meaning deferred; spelling retired (fails the whisper rule against **lopa**) |
 | ~~dapi~~ | small / little | meaning deferred; spelling retired (fails the whisper rule against **tavo**) |
@@ -873,7 +889,7 @@ The following areas are intentionally **not yet finalized**:
 - possession involving complex noun phrases;
 - describing words beyond the current ones (e.g. big/small);
 - comparisons such as bigger/smaller;
-- "have";
+- "had" (possession in the past): **panu nisu** covers *have* (Section 12), but "I had a dog" cannot be said; the ready candidate is **kepu** (Section 19);
 - "would" (things that didn't happen): for now, say what really happened with **vek** and **fa** (Section 30);
 - whether noun/verb dual-use such as `foma`, `vimo`, `mufo`, `fipo` ever becomes too ambiguous;
 - whether **lo** also covers animals and pets, or only people (parked in the first find-gaps pass).
@@ -1150,6 +1166,15 @@ When continuing development:
 ---
 
 ## Changelog
+
+### Version 2.14 — 2026-09-24
+
+**Have, with no new word (Section 12): panu nisu** ("got earlier"), like English *I've got*. **ka panu nisu perro** = I have a dog; **ka panu vek nisu foma** = I don't have food.
+
+- Why it was needed: owner + thing (**ka vimo**) cannot say *have* with a time word or with **vek** — **ka panu vimo** can only be "I drank" — and for noun-action words it is also "I drink". **ka tuka.** already means "I'm at home" (Section 27).
+- Rejected for now: a new word for *have*. It fixes everything, including "I had", but **panu nisu** covers everyday use with existing words (Section 22). **kepu** is parked as the ready candidate (Section 19); "have" narrowed to "had" in the open questions.
+- Spellings considered for the word: **kepu** (chosen as candidate: no other content word starts with `ke-`, hook *keep*; mild risk: Spanish *quepo*), **dema** (retired: same first syllable as **deli**, both actions in the same slot), **mipa** (same first syllable as **milu**), **posu** (same first syllable as **pomi**; sounds like *pose* / *puso*), **tene** (Spanish *tené*), **mino** (one sound from **dino**), **tenu**, **tevo**, **mifo** (each one sound from an existing word), **nomu** (**ka nomu** sounds like Spanish "no…").
+- New sound-alikes in the audit blocklist: **kepo** (*quepo*), **puso** (*puso*), **tene** (*tené*), **pose** (*pose*).
 
 ### Version 2.13 — 2026-09-24
 

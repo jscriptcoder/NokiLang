@@ -49,13 +49,13 @@ CURRENT = {
     "tolu": "number, count", "tesu": "please, thank you, you're welcome",
 }
 # Meanings still waiting for a word (Section 19).
-DEFERRED = ["dema", "dino"]
+DEFERRED = ["kepu", "dino"]
 # Replaced or retired words, respelled in Noki letters (b -> v, z -> s) so old
 # sounds still count as taken. Section 20.
 SUPERSEDED = ["mi", "tu", "si", "vimo", "nuvo", "vesa", "piki", "sumi", "dumi",
               "kesa", "keto", "nau", "kivu", "wawa", "ra", "rali", "ruma",
               "aki", "teki", "feni", "ya", "pako", "penu", "dalo", "dova", "dapi",
-              "nu", "ma"]
+              "nu", "ma", "dema"]
 OTHER = ["noki"]  # the language's own name, also the greeting
 
 # Spanish / English sound-alikes (Noki spelling), kid-talk, rude words, common names.
@@ -78,6 +78,7 @@ mimi mili lili nuri sami moni kati nela pau duna lulu lala kiki fifi tiki dodo t
 soni muvi fotu miso sake pasta diva mafi lasi nasi mosa fumi lemo tuki tesi nosa sona fosi kuso sana
 kolu pina tipu nida sopu sosu samu kono kona komu pilo sapu vami saku safi felo
 senu fetu kodu kolo pudu putu vudu sadu fuma paku lolo sika
+kepo puso tene pose
 """.split())
 
 WHISPER = str.maketrans({"d": "t", "v": "f"})
