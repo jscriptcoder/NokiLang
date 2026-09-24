@@ -2,7 +2,7 @@
 
 A tiny secret spoken language for a parent and their 9-year-old son, who both speak Spanish and English.
 
-**Current state: 15 letters, 38 words, spec version 2.8 (2026-09-23).**
+**Current state: 15 letters, 38 words, spec version 2.9 (2026-09-24).**
 
 ## Files
 
@@ -46,3 +46,4 @@ The full working rules, and the story behind the project, are in `CLAUDE.md`.
 - A `find-gaps` pass added the rules for borrowed words, word jobs, and greetings.
 - Later rounds replaced `pako` and `penu`, added "there is / was / will be", simplified several rules, and made `fa` (why / because) word 40.
 - `nu` (we) and `ma` (they) were then removed: pronouns are combined instead — `si ka` (you and me), `si si` (you all), `lo lo` (they). That closed the missing plural "you" and brought the vocabulary to 38.
+- `v` is now said like English v (version 2.9). Noki has no b sound at all, since b was too easy to mistake for p. Whispered, v now sounds like f; the two pairs that brings close (`dafu`/`tavo`, `fipo`/`vimo`) were tested whispered and kept.

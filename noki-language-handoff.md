@@ -1,6 +1,6 @@
 # Noki Language — Model Handoff Specification
 
-**Version 2.6 — 2026-09-22.** See the changelog at the end for what changed.
+**Version 2.9 — 2026-09-24.** See the changelog at the end for what changed.
 
 ## 1. Project Goal
 
@@ -47,7 +47,7 @@ The following were intentionally removed:
 Important historical decisions:
 
 - `z` was merged into `s`.
-- `b` was merged into `v` (and `v` is *pronounced* like Spanish b/v — see below).
+- `b` was merged into `v`. Since version 2.9 `v` is said like English v, so Noki has no b sound at all — b was too easy to mistake for p.
 - `r` was removed because it may be difficult for some children.
 - `g` remains excluded.
 - `d` was originally removed but was deliberately reintroduced because it is easy enough to distinguish and expands vocabulary options.
@@ -71,7 +71,7 @@ Noki spelling is phonemic: every letter is always said the same way, and there a
 | k | always hard, as in *kilo* | /k/ |
 | l, m, n, p, t | as in Spanish | /l m n p t/ |
 | s | always s as in *sol*, never a z sound | /s/ |
-| v | like Spanish b/v (*vaca*), **not** English v | /b/ ([β] between vowels) |
+| v | like English v (*very*): soft, lips on teeth — **not** like a b | /v/ |
 
 Additional rules:
 
@@ -89,13 +89,14 @@ Additional rules:
 
 A new word should differ noticeably from existing words **as spoken**, not merely as spelled.
 
-**The whisper rule.** Whispering removes the voice, so d sounds like t, and v (pronounced b) sounds like p. When comparing words, treat **d = t** and **v = p**. After that, two content words must still differ in **at least two sounds**.
+**The whisper rule.** Whispering removes the voice, so d sounds like t, and v sounds like f. When comparing words, treat **d = t** and **v = f**. After that, two content words must still differ in **at least two sounds**.
 
 Example: whispered, **doki** and the old word **teki** became "toki"/"teki" — only one sound apart — so **teki** was replaced.
 
 **Accepted exceptions:**
 
 - **dusa** (wait/stay) and **tuka** (home) are one sound apart when whispered (s vs k). They are kept because s and k are very different sounds and the two words appear in different places in a sentence.
+- **dafu** (help) ~ **tavo** (do/make), and **fipo** (play) ~ **vimo** (water), are one sound apart when whispered, because whispered v sounds like f. They are kept because the two speakers tested them whispered and could tell them apart (version 2.9).
 - **noki** — the language's own name, which is also the greeting (Section 26) — is one sound from **naki** (know/understand) and from **doki** (say/tell), whispered and unwhispered. It is kept because a greeting is only ever said on its own at the start of a conversation, while **naki** and **doki** appear inside sentences with a subject. Do not replace **naki** or **doki** over this.
 
 **Watch in real use:** **duni** (need) and **dusa** (wait/stay) share their first syllable, sit in the same sentence slot, and are only two sounds apart whispered. They pass the rule, and no confusion has actually happened yet, so nothing is being changed — but this is the first pair to check after the family has used Noki for a while.
@@ -766,7 +767,7 @@ When proposing a new Noki word:
 1. Use only the official Noki alphabet.
 2. Content words have two syllables (consonant–vowel–consonant–vowel); grammar words have one.
 3. Avoid consonant clusters.
-4. Apply the **whisper rule** (Section 2): treat d = t and v = p, then require at least two sounds of difference from every existing word.
+4. Apply the **whisper rule** (Section 2): treat d = t and v = f, then require at least two sounds of difference from every existing word.
 5. Consider spoken confusion, not merely spelling similarity — especially between words used in the same sentence slot, and between opposites (yes/no, give/take, good/bad).
 6. Do not start new words with a pronoun sound (`ka- si- lo- ke-`, or the retired pronouns `nu- ma-`) or with `no-`.
 7. Avoid common Spanish and English words, baby talk, rude words, and common names.
@@ -1066,6 +1067,16 @@ When continuing development:
 ---
 
 ## Changelog
+
+### Version 2.9 — 2026-09-24
+
+**`v` is now said like English v.** No words were changed. This reverses the `v` decision in version 2.8.
+
+- Why: the user hears b and p as easy to confuse, and v and f as clearly different. Dropping the b sound was meant to avoid b/p mix-ups, and a v said like Spanish b brought that sound back.
+- The whisper rule is now **d = t and v = f** (it was v = p). That creates two new one-sound pairs: **dafu** ~ **tavo** and **fipo** ~ **vimo**. The pair tested them whispered and could tell them apart, so they are accepted exceptions (Section 2) instead of being replaced.
+- Rejected: keeping `v` as Spanish b/v and only rewording the guide ("like the v in *vaca*"). It would keep zero whisper clashes, but it keeps the b sound the user wanted out.
+- Known cost: the guide's hear buttons use the device's Spanish voice, which says `v` like a b. The guide tells the learner to say it like English v anyway.
+- `tools/noki_audit.py` now whispers v as f.
 
 ### Version 2.8 — 2026-09-23
 

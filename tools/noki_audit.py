@@ -3,7 +3,7 @@
 The rules it enforces come from noki-language-handoff.md, Sections 2 and 21:
 
   * the whisper rule — whispering removes the voice, so d sounds like t, and v
-    (pronounced like Spanish b) sounds like p. Treat d = t and v = p, then two
+    (said like English v) sounds like f. Treat d = t and v = f, then two
     content words must still differ in at least two sounds;
   * content words are two syllables, consonant-vowel-consonant-vowel;
   * no common Spanish or English words, baby talk, rude words, or names.
@@ -76,7 +76,7 @@ soni muvi fotu miso sake pasta diva mafi lasi nasi mosa fumi lemo tuki tesi nosa
 senu fetu kodu kolo pudu putu vudu sadu fuma paku lolo sika
 """.split())
 
-WHISPER = str.maketrans({"d": "t", "v": "p"})
+WHISPER = str.maketrans({"d": "t", "v": "f"})
 
 
 def whisper(word: str) -> str:
@@ -141,6 +141,8 @@ if __name__ == "__main__":
             print(f"  {a:5} ({label(a)}) ~ {b:5} ({label(b)})  raw={raw} whisper={wh}")
         print("\nAccepted exceptions (spec Section 2):")
         print("  dusa / tuka  - s vs k, and they sit in different places in a sentence.")
+        print("  dafu / tavo, fipo / vimo - whispered v sounds like f; tested whispered")
+        print("  by the two speakers and kept (version 2.9).")
         print("  noki / naki, noki / doki - 'noki' is the greeting, only ever said alone")
         print("  at the start of a conversation. Do not replace naki or doki over this.")
         print("Watch in real use: duni / dusa (same first syllable, same slot).")
