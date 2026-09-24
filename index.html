@@ -409,6 +409,18 @@ main > section { padding-block: 3rem 1rem; border-top: 1px solid var(--line); ma
 .opt.right .mark-i { color: var(--good); }
 .opt.wrong { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 10%, var(--surface)); }
 .opt.wrong .mark-i { color: var(--bad); }
+/* Sentence builder: tap the tiles in order; a wrong tile shakes and stays put. */
+.q-hint { margin: .2rem 0 0; font-size: .9rem; color: var(--soft); }
+.build-row { display: flex; flex-wrap: wrap; gap: .35rem; align-items: center; min-height: 3.2rem; margin-top: .55rem; padding: .45rem; border: 1.5px dashed var(--line); border-radius: .8rem; }
+.build-row .gap { width: 2.6rem; height: 2.2rem; border-radius: .6rem; background: var(--surface-2); }
+.build-row.right { border-style: solid; border-color: var(--good); background: color-mix(in srgb, var(--good) 10%, var(--surface)); }
+.build-row .mark-i { margin-left: auto; font-weight: 700; color: var(--good); }
+.tiles { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .55rem; }
+button.w { cursor: pointer; }
+button.w:disabled { visibility: hidden; }
+.shake { animation: shake .35s ease-in-out; }
+@keyframes shake { 20%, 60% { transform: translateX(-5px); } 40%, 80% { transform: translateX(5px); } }
+@media (prefers-reduced-motion: reduce) { .shake { animation: none; outline: 2px solid var(--bad); } }
 .quiz-end { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; margin-top: 1.1rem; }
 .quiz-end p { margin: 0; font-weight: 700; }
 
@@ -935,6 +947,8 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
     hearIt: { en: "Hear it.", es: "Escúchalo." },
     legendLabel: { en: "Word colors", es: "Colores de las palabras" },
     practice: { en: "Practice", es: "Practica" },
+    buildIt: { en: "Say it in Noki:", es: "Dilo en Noki:" },
+    tapInOrder: { en: "Tap the words in order. One word doesn't belong.", es: "Toca las palabras en orden. Sobra una palabra." },
     tryAgain: { en: "Try again", es: "Otra vez" },
     allRight: { en: "All right! This lesson is done.", es: "¡Todo bien! Lección terminada." },
     surprise: { en: "Surprise me", es: "Sorpréndeme" },
@@ -1358,6 +1372,8 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       { q: { en: "How do you say “my home”?", es: "¿Cómo se dice “mi casa”?" }, o: [nk("tuka ka"), nk("ka tuka"), nk("ke tuka")], a: 1 },
       { q: { en: `${nk("ke suno")} means…`, es: `${nk("ke suno")} significa…` },
         o: [{ en: "that person", es: "esa persona" }, { en: "my person", es: "mi persona" }, { en: "nobody", es: "nadie" }], a: 0 },
+      { b: "si foma", d: "ka" },
+      { b: "ke fipo", d: "suno" },
     ],
     l4: [
       { q: { en: `${nk("ka suli vimo")} means…`, es: `${nk("ka suli vimo")} significa…` },
@@ -1365,6 +1381,8 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       { q: { en: "How do you say “Come home!”?", es: "¿Cómo se dice “¡Ven a casa!”?" }, o: [nk("ka milu tuka"), nk("milu tuka!"), nk("tuka milu!")], a: 1 },
       { q: { en: `${nk("moku ka vimo!")} means…`, es: `${nk("moku ka vimo!")} significa…` },
         o: [{ en: "Give me water!", es: "¡Dame agua!" }, { en: "I give water.", es: "Yo doy agua." }, { en: "Take my water!", es: "¡Coge mi agua!" }], a: 0 },
+      { b: "ka duni fusu.", d: "suli" },
+      { b: "lo mela fipo.", d: "ka" },
     ],
     l5: [
       { q: { en: `${nk("ka vek naki")} means…`, es: `${nk("ka vek naki")} significa…` },
@@ -1373,6 +1391,8 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
         o: [{ en: "At the very end", es: "Al final del todo" }, { en: "Right before the action", es: "Justo delante de la acción" }, { en: "Before the person", es: "Delante de la persona" }], a: 1 },
       { q: { en: `${nk("vek suno")} means…`, es: `${nk("vek suno")} significa…` },
         o: [{ en: "nobody", es: "nadie" }, { en: "a bad person", es: "una persona mala" }, { en: "No, person!", es: "¡No, persona!" }], a: 0 },
+      { b: "ka vek suli foma.", d: "si" },
+      { b: "ka vek mela ke.", d: "lo" },
     ],
     l6: [
       { q: { en: `${nk("ka panu foma:do")} means…`, es: `${nk("ka panu foma:do")} significa…` },
@@ -1381,6 +1401,8 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
         o: [nk("si ka lefu kifi tuka"), nk("si ka kifi lefu tuka"), nk("kifi si ka tuka lefu")], a: 1 },
       { q: { en: `${nk("ka panu foma:do e lati lefu tuka")} means…`, es: `${nk("ka panu foma:do e lati lefu tuka")} significa…` },
         o: [{ en: "I ate, and I'll go home later.", es: "Comí, y luego iré a casa." }, { en: "I ate and went home.", es: "Comí y me fui a casa." }, { en: "I'll eat and go home.", es: "Comeré e iré a casa." }], a: 0 },
+      { b: "lo lati milu.", d: "kifi" },
+      { b: "vimo lati meni.", d: "panu" },
     ],
     l7: [
       { q: { en: `${nk("si suli kui?")} means…`, es: `${nk("si suli kui?")} significa…` },
@@ -1390,6 +1412,8 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       { q: { en: `${nk("kui milu?")} means…`, es: `${nk("kui milu?")} significa…` },
         o: [{ en: "Are you coming?", es: "¿Vienes?" }, { en: "Who is coming?", es: "¿Quién viene?" }, { en: "Where do you come from?", es: "¿De dónde vienes?" }], a: 1 },
       { q: { en: "How do you ask “Why?”", es: "¿Cómo se pregunta “¿Por qué?”" }, o: [nk("kui?"), nk("vek?"), nk("fa?")], a: 2 },
+      { b: "dusa meni!", d: "milu" },
+      { b: "si vek foma:do fa?", d: "ka" },
     ],
     l8: [
       { q: { en: `${nk("suno suno suno")} means…`, es: `${nk("suno suno suno")} significa…` },
@@ -1398,9 +1422,120 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
         o: [{ en: "Great!", es: "¡Genial!" }, { en: "Two good things", es: "Dos cosas buenas" }, { en: "Is it okay?", es: "¿Está bien?" }], a: 0 },
       { q: { en: "How do you say “That person is safe”?", es: "¿Cómo se dice “Esa persona es de fiar”?" },
         o: [nk("ke suno vesa."), nk("suno ke siko."), nk("ke suno pomi.")], a: 2 },
+      { b: "ke foma vesa.", d: "pomi" },
     ],
   };
   const CHEERS = ["pomi pomi!", "pomi!", "da!"];
+
+  const choiceQuestion = (item, qid, num, cheer, done) => {
+    const q = document.createElement("div");
+    q.className = "q";
+    const text = document.createElement("p");
+    text.className = "q-text";
+    text.id = qid;
+    text.innerHTML = `${num}${t(item.q)}`;
+    const opts = document.createElement("div");
+    opts.className = "opts";
+    opts.setAttribute("role", "group");
+    opts.setAttribute("aria-labelledby", text.id);
+    const buttons = item.o.map((label, oi) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "opt";
+      b.innerHTML = `<span>${t(label)}</span><span class="mark-i" aria-hidden="true"></span>`;
+      b.addEventListener("click", () => {
+        buttons.forEach((x) => { x.disabled = true; });
+        const ok = oi === item.a;
+        buttons[item.a].classList.add("right");
+        buttons[item.a].querySelector(".mark-i").textContent = ok ? cheer : "✓";
+        if (!ok) {
+          b.classList.add("wrong");
+          b.querySelector(".mark-i").textContent = "✗";
+        }
+        done(ok);
+      });
+      return b;
+    });
+    opts.append(...buttons);
+    q.append(text, opts);
+    return q;
+  };
+
+  // The meaning comes from the guide's own example, so the builder never needs its own translations.
+  const meaningOf = (s) => {
+    const ex = [...document.querySelectorAll(".ex[data-s]")].find((el) => el.dataset.s === s);
+    return ex ? ((lang === "es" && ex.dataset.es) || ex.dataset.en) : "";
+  };
+  const shuffled = (list) => {
+    const out = [...list];
+    for (let i = out.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [out[i], out[j]] = [out[j], out[i]];
+    }
+    return out;
+  };
+  // Tiles carry their block colour. A wrong tile shakes and stays; there is no penalty,
+  // so a finished sentence always counts as right.
+  const buildQuestion = (item, qid, num, cheer, done) => {
+    const answer = item.b.split(/\s+/).map(parse);
+    const pool = [...answer, parse(item.d)].map((tok, i) => ({ ...tok, i }));
+    let order = shuffled(pool);
+    while (order.slice(0, answer.length).every((tok, k) => tok.i === k)) order = shuffled(pool);
+    const q = document.createElement("div");
+    q.className = "q";
+    const text = document.createElement("p");
+    text.className = "q-text";
+    text.id = qid;
+    text.textContent = `${num}${t(UI.buildIt)} “${meaningOf(item.b)}”`;
+    const hint = document.createElement("p");
+    hint.className = "q-hint";
+    hint.textContent = t(UI.tapInOrder);
+    const row = document.createElement("div");
+    row.className = "build-row";
+    row.setAttribute("aria-labelledby", text.id);
+    const gaps = answer.map(() => {
+      const g = document.createElement("span");
+      g.className = "gap";
+      return g;
+    });
+    row.append(...gaps);
+    const tiles = document.createElement("div");
+    tiles.className = "tiles";
+    tiles.setAttribute("role", "group");
+    tiles.setAttribute("aria-labelledby", text.id);
+    let placed = 0;
+    order.forEach((tok) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "w";
+      b.dataset.r = tok.r;
+      b.textContent = tok.w;
+      b.addEventListener("click", () => {
+        if (tok.w !== answer[placed].w) {
+          b.classList.remove("shake");
+          void b.offsetWidth; // restart the animation on repeated wrong taps
+          b.classList.add("shake");
+          return;
+        }
+        b.disabled = true;
+        gaps[placed].replaceWith(chip(answer[placed], false));
+        placed += 1;
+        if (placed < answer.length) return;
+        tiles.querySelectorAll("button").forEach((x) => { x.disabled = true; });
+        tiles.hidden = true;
+        hint.hidden = true;
+        row.classList.add("right");
+        const mark = document.createElement("span");
+        mark.className = "mark-i";
+        mark.textContent = cheer;
+        row.append(hearButton(item.b), mark);
+        done(true);
+      });
+      tiles.append(b);
+    });
+    q.append(text, hint, row, tiles);
+    return q;
+  };
 
   const renderQuiz = (box) => {
     const id = box.dataset.quiz;
@@ -1437,40 +1572,14 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       }
     };
     questions.forEach((item, qi) => {
-      const q = document.createElement("div");
-      q.className = "q";
-      const text = document.createElement("p");
-      text.className = "q-text";
-      text.id = `${id}-q${qi}`;
-      text.innerHTML = `${qi + 1}. ${t(item.q)}`;
-      const opts = document.createElement("div");
-      opts.className = "opts";
-      opts.setAttribute("role", "group");
-      opts.setAttribute("aria-labelledby", text.id);
-      const buttons = item.o.map((label, oi) => {
-        const b = document.createElement("button");
-        b.type = "button";
-        b.className = "opt";
-        b.innerHTML = `<span>${t(label)}</span><span class="mark-i" aria-hidden="true"></span>`;
-        b.addEventListener("click", () => {
-          buttons.forEach((x) => { x.disabled = true; });
-          const ok = oi === item.a;
-          buttons[item.a].classList.add("right");
-          buttons[item.a].querySelector(".mark-i").textContent = ok ? CHEERS[qi % CHEERS.length] : "✓";
-          if (!ok) {
-            b.classList.add("wrong");
-            b.querySelector(".mark-i").textContent = "✗";
-          }
-          answered += 1;
-          if (ok) right += 1;
-          update();
-          if (answered === questions.length) finish();
-        });
-        return b;
-      });
-      opts.append(...buttons);
-      q.append(text, opts);
-      box.append(q);
+      const done = (ok) => {
+        answered += 1;
+        if (ok) right += 1;
+        update();
+        if (answered === questions.length) finish();
+      };
+      const make = item.b ? buildQuestion : choiceQuestion;
+      box.append(make(item, `${id}-q${qi}`, `${qi + 1}. `, CHEERS[qi % CHEERS.length], done));
     });
     colorInline(box);
   };
