@@ -417,6 +417,41 @@ main > section { padding-block: 3rem 1rem; border-top: 1px solid var(--line); ma
 .build-row .mark-i { margin-left: auto; font-weight: 700; color: var(--good); }
 .tiles { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .55rem; }
 button.w { cursor: pointer; }
+/* ——— Practice ——— */
+.chips-label { margin-top: 1.1rem; font: 700 .72rem/1 var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--soft); }
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .5rem; }
+.chips button, .tabs button, .switch button {
+  border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--soft);
+  padding: .35rem .75rem; font-size: .9rem; cursor: pointer;
+}
+.chips button b { font-variant-numeric: tabular-nums; color: var(--ink); margin-right: .25rem; }
+.chips button[aria-pressed="true"], .switch button[aria-pressed="true"] { background: var(--btn); color: var(--btn-ink); border-color: var(--btn); }
+.chips button[aria-pressed="true"] b { color: var(--btn-ink); }
+.tabs { display: flex; gap: .4rem; margin-top: 1.2rem; }
+.tabs button { flex: 1; font-weight: 700; font-size: 1rem; padding: .55rem .75rem; }
+.tabs button[aria-selected="true"] { background: var(--btn); color: var(--btn-ink); border-color: var(--btn); }
+.tabs + .quiz, .tabs + .quiz + .quiz { margin-top: .8rem; }
+.pr-next { margin-top: 1rem; display: flex; justify-content: flex-end; }
+.switch { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .8rem; }
+.switch button { font-size: .82rem; padding: .3rem .65rem; }
+.flash {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .5rem;
+  width: 100%; min-height: 11rem; margin-top: .9rem; padding: 1.2rem 1rem;
+  border-radius: 1rem;
+  border: 1.5px solid color-mix(in srgb, var(--c) 50%, transparent);
+  border-bottom-width: 5px;
+  background: color-mix(in srgb, var(--c) 12%, var(--surface));
+  cursor: pointer; text-align: center;
+}
+.flash .fw { font: 600 2.4rem/1.1 var(--font-noki); color: var(--ci); }
+.flash .fm { font-size: 1.25rem; font-weight: 700; color: var(--ink); }
+.flash .fs { font-size: .85rem; color: var(--soft); }
+.flash .fx { font-size: .95rem; color: var(--soft); margin: .3rem 0 0; max-width: none; }
+.flash[data-r="not"] { background: var(--not-fill); border-color: var(--not-fill); }
+.flash[data-r="not"] .fm, .flash[data-r="not"] .fs, .flash[data-r="not"] .fx { color: var(--not-ink); }
+.flash[data-r="not"] .nk [data-r] { color: var(--not-ink); }
+.flash-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-top: .8rem; }
+.flash-actions .btn:first-of-type { margin-left: auto; }
 button.w:disabled { visibility: hidden; }
 .shake { animation: shake .35s ease-in-out; }
 @keyframes shake { 20%, 60% { transform: translateX(-5px); } 40%, 80% { transform: translateX(5px); } }
@@ -515,6 +550,7 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       <a href="#l7" data-lesson="l7" data-es="&lt;b&gt;7&lt;/b&gt;Preguntas"><b>7</b>Questions</a>
       <a href="#l8" data-lesson="l8" data-es="&lt;b&gt;8&lt;/b&gt;Más"><b>8</b>More</a>
       <hr>
+      <a href="#practice" data-es="Practica">Practice</a>
       <a href="#phrases" data-es="Frases secretas">Secret phrases</a>
       <a href="#build" data-es="Máquina">Build</a>
       <a href="#words" data-es="Palabras">All words</a>
@@ -789,6 +825,23 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       <div class="quiz" data-quiz="l8"></div>
     </section>
 
+    <!-- ——— Practice ——— -->
+    <section id="practice">
+      <div class="lesson-head">
+        <p class="eyebrow" data-es="Repasa">Keep it fresh</p>
+        <h2 data-es="Practica">Practice</h2>
+        <p class="goal" data-es="Elige las lecciones y juega. Un poquito cada día.">Pick your lessons, then play. A little bit every day.</p>
+      </div>
+      <p class="chips-label" id="chips-label" data-es="Lecciones">Lessons</p>
+      <div class="chips" id="practice-chips" role="group" aria-labelledby="chips-label"></div>
+      <div class="tabs" role="tablist" id="practice-tabs">
+        <button type="button" role="tab" id="tab-build" aria-controls="panel-build" aria-selected="true" data-es="Construye">Builder</button>
+        <button type="button" role="tab" id="tab-cards" aria-controls="panel-cards" aria-selected="false" data-es="Tarjetas">Flashcards</button>
+      </div>
+      <div class="quiz" id="panel-build" role="tabpanel" aria-labelledby="tab-build"></div>
+      <div class="quiz" id="panel-cards" role="tabpanel" aria-labelledby="tab-cards" hidden></div>
+    </section>
+
     <!-- ——— Phrasebook ——— -->
     <section id="phrases">
       <div class="lesson-head">
@@ -949,6 +1002,20 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
     practice: { en: "Practice", es: "Practica" },
     buildIt: { en: "Say it in Noki:", es: "Dilo en Noki:" },
     tapInOrder: { en: "Tap the words in order. One word doesn't belong.", es: "Toca las palabras en orden. Sobra una palabra." },
+    tapInOrderSome: { en: "Tap the words in order. Some words don't belong.", es: "Toca las palabras en orden. Sobran palabras." },
+    built: (n) => (lang === "es" ? `${n} ${n === 1 ? "construida" : "construidas"}` : `${n} built`),
+    nextSentence: { en: "Next sentence →", es: "Otra frase →" },
+    noSentences: { en: "These lessons have no sentences to build. Pick another lesson.", es: "Estas lecciones no tienen frases para construir. Elige otra lección." },
+    toMeaning: { en: "Noki → meaning", es: "Noki → significado" },
+    toNoki: { en: "Meaning → Noki", es: "Significado → Noki" },
+    tapToTurn: { en: "Tap to turn it over", es: "Toca para darle la vuelta" },
+    gotIt: { en: "Got it", es: "¡Lo sé!" },
+    notYet: { en: "Not yet", es: "Todavía no" },
+    left: (n) => (lang === "es" ? `quedan ${n}` : `${n} left`),
+    roundDone: (n, first, retry) => (lang === "es"
+      ? `${n} palabras: ${first} a la primera, ${retry} en otro intento.`
+      : `${n} words: ${first} first time, ${retry} on a retry.`),
+    playAgain: { en: "Play again", es: "Otra vez" },
     tryAgain: { en: "Try again", es: "Otra vez" },
     allRight: { en: "All right! This lesson is done.", es: "¡Todo bien! Lección terminada." },
     surprise: { en: "Surprise me", es: "Sorpréndeme" },
@@ -1478,7 +1545,8 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
   // so a finished sentence always counts as right.
   const buildQuestion = (item, qid, num, cheer, done) => {
     const answer = item.b.split(/\s+/).map(parse);
-    const pool = [...answer, parse(item.d)].map((tok, i) => ({ ...tok, i }));
+    const decoys = [item.d].flat();
+    const pool = [...answer, ...decoys.map(parse)].map((tok, i) => ({ ...tok, i }));
     let order = shuffled(pool);
     while (order.slice(0, answer.length).every((tok, k) => tok.i === k)) order = shuffled(pool);
     const q = document.createElement("div");
@@ -1489,7 +1557,7 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
     text.textContent = `${num}${t(UI.buildIt)} “${meaningOf(item.b)}”`;
     const hint = document.createElement("p");
     hint.className = "q-hint";
-    hint.textContent = t(UI.tapInOrder);
+    hint.textContent = t(decoys.length > 1 ? UI.tapInOrderSome : UI.tapInOrder);
     const row = document.createElement("div");
     row.className = "build-row";
     row.setAttribute("aria-labelledby", text.id);
@@ -1508,7 +1576,7 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       const b = document.createElement("button");
       b.type = "button";
       b.className = "w";
-      b.dataset.r = tok.r;
+      b.dataset.r = item.plain ? "link" : tok.r;
       b.textContent = tok.w;
       b.addEventListener("click", () => {
         if (tok.w !== answer[placed].w) {
@@ -1758,6 +1826,217 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
     try { window.print(); } catch { /* printing blocked; use the browser menu */ }
   });
 
+  // ——— Practice: builder and flashcards over the lessons you pick ———
+  // Lesson 1 only teaches sounds, so practice starts at lesson 2.
+  const LESSONS = ["l2", "l3", "l4", "l5", "l6", "l7", "l8"];
+  const wordsIn = (id) => [...document.querySelectorAll(`#${id} .cards[data-words]`)]
+    .flatMap((c) => c.dataset.words.split(",").map((w) => w.trim()));
+  // A sentence is buildable when every word is Noki, it has two different words at least,
+  // and it has no pronoun pair: "si ka" and "ka si" mean the same, so the order can't be marked.
+  const buildable = (s) => {
+    const words = s.split(/\s+/).map((tok) => parse(tok).w);
+    return words.every((w) => W[w])
+      && new Set(words).size >= 2
+      && !words.some((w, i) => i > 0 && w !== words[i - 1] && PEOPLE.includes(w) && PEOPLE.includes(words[i - 1]));
+  };
+  const sentencesIn = (id) => [...document.querySelectorAll(`#${id} .ex[data-s]`)].map((el) => el.dataset.s).filter(buildable);
+  const unique = (list) => [...new Set(list)];
+
+  const chipsBox = document.getElementById("practice-chips");
+  const tabs = [...document.querySelectorAll("#practice-tabs [role=tab]")];
+  const buildPanel = document.getElementById("panel-build");
+  const cardsPanel = document.getElementById("panel-cards");
+  let chosen = null;
+  const chooseDefault = () => {
+    const progress = store.read();
+    const done = LESSONS.filter((id) => progress[id]);
+    return done.length ? done : [...LESSONS];
+  };
+  const chosenWords = () => unique(chosen.flatMap(wordsIn));
+  const chosenSentences = () => unique(chosen.flatMap(sentencesIn));
+  const panelHead = (title) => {
+    const head = document.createElement("div");
+    head.className = "quiz-title";
+    head.innerHTML = `<h3></h3><span aria-live="polite"></span>`;
+    head.querySelector("h3").textContent = title;
+    return [head, head.querySelector("span")];
+  };
+
+  // Builder: one sentence at a time, uncoloured tiles, one or two decoys from the chosen lessons.
+  let buildQueue = [];
+  let builtCount = 0;
+  const nextBuild = () => {
+    buildPanel.textContent = "";
+    const [head, counter] = panelHead(t({ en: "Builder", es: "Construye" }));
+    counter.textContent = UI.built(builtCount);
+    buildPanel.append(head);
+    const sentences = chosenSentences();
+    if (!sentences.length) {
+      const p = document.createElement("p");
+      p.textContent = t(UI.noSentences);
+      buildPanel.append(p);
+      return;
+    }
+    if (!buildQueue.length) buildQueue = shuffled(sentences);
+    const s = buildQueue.pop();
+    const inSentence = s.split(/\s+/).map((tok) => parse(tok).w);
+    const decoys = shuffled(chosenWords().filter((w) => !inSentence.includes(w))).slice(0, Math.random() < 0.5 ? 1 : 2);
+    const q = buildQuestion({ b: s, d: decoys, plain: true }, "practice-q", "", CHEERS[builtCount % CHEERS.length], () => {
+      builtCount += 1;
+      counter.textContent = UI.built(builtCount);
+      const wrap = document.createElement("p");
+      wrap.className = "pr-next";
+      const next = document.createElement("button");
+      next.type = "button";
+      next.className = "btn";
+      next.textContent = t(UI.nextSentence);
+      next.addEventListener("click", nextBuild);
+      wrap.append(next);
+      buildPanel.append(wrap);
+      next.focus({ preventScroll: true });
+    });
+    buildPanel.append(q);
+  };
+  const startBuild = () => {
+    buildQueue = [];
+    builtCount = 0;
+    nextBuild();
+  };
+
+  // Flashcards: "Not yet" sends the card to the back of the round; nothing is kept between rounds.
+  const exampleFor = (w) => [...document.querySelectorAll(".ex[data-s]")]
+    .find((el) => el.dataset.s.split(/\s+/).some((tok) => parse(tok).w === w));
+  let toNoki = false;
+  let round = null;
+  const showCard = () => {
+    cardsPanel.textContent = "";
+    const [head, counter] = panelHead(t({ en: "Flashcards", es: "Tarjetas" }));
+    cardsPanel.append(head);
+    const sw = document.createElement("div");
+    sw.className = "switch";
+    [[false, UI.toMeaning], [true, UI.toNoki]].forEach(([dir, label]) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = t(label);
+      b.setAttribute("aria-pressed", String(toNoki === dir));
+      b.addEventListener("click", () => { if (toNoki !== dir) { toNoki = dir; startCards(); } });
+      sw.append(b);
+    });
+    cardsPanel.append(sw);
+
+    if (!round.queue.length) {
+      const n = round.total;
+      const end = document.createElement("div");
+      end.className = "quiz-end";
+      const msg = document.createElement("p");
+      msg.textContent = UI.roundDone(n, n - round.missed.size, round.missed.size);
+      const again = document.createElement("button");
+      again.type = "button";
+      again.className = "btn ghost";
+      again.textContent = t(UI.playAgain);
+      again.addEventListener("click", startCards);
+      end.append(msg, again);
+      cardsPanel.append(end);
+      counter.textContent = UI.left(0);
+      return;
+    }
+
+    counter.textContent = UI.left(round.queue.length);
+    const w = round.queue[0];
+    const e = W[w];
+    const card = document.createElement("button");
+    card.type = "button";
+    card.className = "flash";
+    card.dataset.r = e.r;
+    const noki = `<span class="fw"></span>`;
+    const meaning = `<span class="fm"></span>`;
+    card.innerHTML = `${toNoki ? meaning : noki}<span class="fs"></span>`;
+    const fill = () => {
+      card.querySelectorAll(".fw").forEach((el) => { el.textContent = w; });
+      card.querySelectorAll(".fm").forEach((el) => { el.textContent = t(e.m); });
+    };
+    fill();
+    card.querySelector(".fs").textContent = t(UI.tapToTurn);
+    const actions = document.createElement("div");
+    actions.className = "flash-actions";
+    if (!toNoki) actions.append(hearButton(w));
+    cardsPanel.append(card, actions);
+
+    let turned = false;
+    card.addEventListener("click", () => {
+      if (turned) return;
+      turned = true;
+      card.innerHTML = `${noki}${meaning}`;
+      fill();
+      const ex = exampleFor(w);
+      if (ex) {
+        const p = document.createElement("p");
+        p.className = "fx";
+        p.innerHTML = `<span class="nk"></span> = `;
+        p.querySelector(".nk").textContent = spoken(ex.dataset.s);
+        p.append((lang === "es" && ex.dataset.es) || ex.dataset.en);
+        card.append(p);
+        colorInline(card);
+      }
+      if (toNoki) actions.append(hearButton(w));
+      const choice = (label, knew) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = knew ? "btn" : "btn ghost";
+        b.textContent = t(label);
+        b.addEventListener("click", () => {
+          const [first, ...rest] = round.queue;
+          if (knew) round.queue = rest;
+          else { round.missed.add(first); round.queue = [...rest, first]; }
+          showCard();
+        });
+        return b;
+      };
+      actions.append(choice(UI.notYet, false), choice(UI.gotIt, true));
+      actions.querySelector(".btn:last-child").focus({ preventScroll: true });
+    });
+  };
+  const startCards = () => {
+    const words = shuffled(chosenWords());
+    round = { queue: words, total: words.length, missed: new Set() };
+    showCard();
+  };
+
+  const activeTab = () => tabs.find((b) => b.getAttribute("aria-selected") === "true");
+  const startActive = () => (activeTab().id === "tab-cards" ? startCards() : startBuild());
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((b) => {
+        const on = b === tab;
+        b.setAttribute("aria-selected", String(on));
+        document.getElementById(b.getAttribute("aria-controls")).hidden = !on;
+      });
+      startActive();
+    });
+  });
+  const renderChips = () => {
+    chipsBox.textContent = "";
+    LESSONS.forEach((id) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.innerHTML = menu.querySelector(`a[href="#${id}"]`).innerHTML;
+      b.setAttribute("aria-pressed", String(chosen.includes(id)));
+      b.addEventListener("click", () => {
+        const on = chosen.includes(id);
+        if (on && chosen.length === 1) return; // always keep one lesson
+        chosen = on ? chosen.filter((x) => x !== id) : LESSONS.filter((x) => x === id || chosen.includes(x));
+        b.setAttribute("aria-pressed", String(!on));
+        startActive();
+      });
+      chipsBox.append(b);
+    });
+  };
+  const renderPractice = () => {
+    if (!chosen) chosen = chooseDefault();
+    renderChips();
+    startActive();
+  };
+
   // ——— Prose written in both languages ———
   const applyProse = () => {
     document.querySelectorAll("[data-es]").forEach((el) => {
@@ -1796,6 +2075,7 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
     colorInline();
     markNav();
     renderNext();
+    renderPractice();
     showHere();
     findCurrent();
   };
