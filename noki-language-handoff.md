@@ -1,6 +1,6 @@
 # Noki Language — Model Handoff Specification
 
-**Version 2.14 — 2026-09-24.** See the changelog at the end for what changed.
+**Version 2.15 — 2026-09-24.** See the changelog at the end for what changed.
 
 ## 1. Project Goal
 
@@ -580,7 +580,7 @@ Noki has no word for *have*. **Say "got earlier" instead: panu nisu** — the sa
 
 It also keeps its plain meaning, "I got it earlier"; in practice that means the same thing. Future needs nothing new: **ka lati nisu perro** — I'll get (have) a dog.
 
-Known gap: **"I had"** (possession in the past, "I had a dog when I was little") cannot be said, because **panu** is already used up. Borrow the word for now. If this, or the length of **panu nisu**, becomes a real problem, the ready candidate is **kepu** (Section 19).
+Known gap: **"I had"** (possession in the past, "I had a dog when I was little") cannot be said, because **panu** is already used up. Borrow the word for now. If this, or the length of **panu nisu**, becomes a real problem, the ready candidate is **dema** (Section 19).
 
 ---
 
@@ -782,8 +782,8 @@ These **meanings** were proposed but deliberately **not** added to the official 
 
 | Candidate | Proposed meaning | Status |
 |---|---|---|
-| **kepu** | have / own | ready candidate — until then, say **panu nisu** (Section 12). Hook: *keep*. Promote it when "I had…" or the length of **panu nisu** gets in the way in real use |
-| ~~dema~~ | have / possess | spelling retired in version 2.14 in favour of **kepu** (same first syllable as **deli**, and both are actions) |
+| **dema** | have / own | ready candidate — until then, say **panu nisu** (Section 12). Promote it when "I had…" or the length of **panu nisu** gets in the way in real use. Mild risk: same first syllable as **deli**, and both are actions |
+| ~~kepu~~ | have / own | spelling retired in version 2.15 in favour of **dema** (the user's preference) |
 | **dino** | child | deferred — note most kids hear "dino" as *dinosaur* |
 | ~~dova~~ | big / much | meaning deferred; spelling retired (fails the whisper rule against **lopa**) |
 | ~~dapi~~ | small / little | meaning deferred; spelling retired (fails the whisper rule against **tavo**) |
@@ -889,7 +889,7 @@ The following areas are intentionally **not yet finalized**:
 - possession involving complex noun phrases;
 - describing words beyond the current ones (e.g. big/small);
 - comparisons such as bigger/smaller;
-- "had" (possession in the past): **panu nisu** covers *have* (Section 12), but "I had a dog" cannot be said; the ready candidate is **kepu** (Section 19);
+- "had" (possession in the past): **panu nisu** covers *have* (Section 12), but "I had a dog" cannot be said; the ready candidate is **dema** (Section 19);
 - "would" (things that didn't happen): for now, say what really happened with **vek** and **fa** (Section 30);
 - whether noun/verb dual-use such as `foma`, `vimo`, `mufo`, `fipo` ever becomes too ambiguous;
 - whether **lo** also covers animals and pets, or only people (parked in the first find-gaps pass).
@@ -1166,6 +1166,14 @@ When continuing development:
 ---
 
 ## Changelog
+
+### Version 2.15 — 2026-09-24
+
+**dema back as the ready candidate for *have*, instead of kepu (Section 19).** Still parked, not official; **panu nisu** stays the way to say *have*. The user simply prefers **dema**.
+
+- Accepted risk: **dema** starts like **deli** (leave / put down), and both are actions in the same slot, so **ka dema…** and **ka deli…** begin the same way when said fast. That was why it was retired in version 2.14. It is a soft risk, not a rule failure: **dema** passes the audit.
+- Lost: **kepu** (no other content word starts with `ke-`, hook *keep*; mild risk: Spanish *quepo*). Retired as a spelling.
+- Also discussed, for "I had": **panu panu nisu** ("got long ago"). It uses existing words and works when context is clear (**ka panu child. ka panu panu nisu three cat.**), but it cannot tell "I had a dog" (gone now) from "I've had a dog for ages" (still have it), because "got long ago", like "got earlier", implies you still have it. Not made a rule; the gap stays open until real use decides (Section 22).
 
 ### Version 2.14 — 2026-09-24
 

@@ -51,13 +51,13 @@ CURRENT = {
     "tolu": "number, count", "tesu": "please, thank you, you're welcome",
 }
 # Meanings still waiting for a word (Section 19).
-DEFERRED = ["kepu", "dino"]
+DEFERRED = ["dema", "dino"]
 # Replaced or retired words, respelled in Noki letters (b -> v, z -> s) so old
 # sounds still count as taken. Section 20.
 SUPERSEDED = ["mi", "tu", "si", "vimo", "nuvo", "vesa", "piki", "sumi", "dumi",
               "kesa", "keto", "nau", "kivu", "wawa", "ra", "rali", "ruma",
               "aki", "teki", "feni", "ya", "pako", "penu", "dalo", "dova", "dapi",
-              "nu", "ma", "dema"]
+              "nu", "ma", "kepu"]
 OTHER = ["noki"]  # the language's own name, also the greeting
 
 # Spanish / English sound-alikes (Noki spelling), kid-talk, rude words, common names.
