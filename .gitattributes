@@ -1,0 +1,3 @@
+# Keep LF everywhere. The spec and the guide are edited by scripts that write LF,
+# so letting Windows convert them to CRLF would show whole files as changed.
+* text=auto eol=lf

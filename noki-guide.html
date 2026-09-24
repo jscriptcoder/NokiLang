@@ -1,0 +1,1590 @@
+<title>Noki Codebook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Fredoka:wght@500;600&display=swap">
+<style>
+:root {
+  --ground: #F1F4F9;
+  --surface: #FFFFFF;
+  --surface-2: #E7ECF4;
+  --ink: #151B28;
+  --soft: #4D586C;
+  --line: #D6DDE8;
+  --btn: #151B28;
+  --btn-ink: #FFFFFF;
+  --who: #E5533D;   --who-ink: #B3311D;
+  --when: #E3A008;  --when-ink: #855600;
+  --do: #2F6BE0;    --do-ink: #1D4DB3;
+  --what: #1F9D5C;  --what-ink: #136B40;
+  --where: #7E57D6; --where-ink: #5C36B3;
+  --desc: #CC3F8E;  --desc-ink: #9E2468;
+  --link: #64748B;  --link-ink: #46546A;
+  --not-fill: #151B28; --not-ink: #FFFFFF;
+  --good: #136B40;
+  --bad: #B3311D;
+  --shadow: 0 1px 0 rgba(21, 27, 40, .05), 0 10px 28px -16px rgba(21, 27, 40, .28);
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-noki: "Fredoka", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", Verdana, "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0E121A;
+    --surface: #161B25;
+    --surface-2: #1F2633;
+    --ink: #E8ECF3;
+    --soft: #A2ADC0;
+    --line: #2B3343;
+    --btn: #E8ECF3;
+    --btn-ink: #10141C;
+    --who: #F0664F;   --who-ink: #FF9C88;
+    --when: #E9AE2A;  --when-ink: #F6C85C;
+    --do: #4F83F0;    --do-ink: #98B9FF;
+    --what: #2DB36D;  --what-ink: #6FDCA2;
+    --where: #9570E6; --where-ink: #C2AAFF;
+    --desc: #DB5A9F;  --desc-ink: #F59ACB;
+    --link: #8391A7;  --link-ink: #B6C1D2;
+    --not-fill: #E8ECF3; --not-ink: #10141C;
+    --good: #6FDCA2;
+    --bad: #FF9C88;
+    --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 12px 30px -16px rgba(0, 0, 0, .7);
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0E121A;
+  --surface: #161B25;
+  --surface-2: #1F2633;
+  --ink: #E8ECF3;
+  --soft: #A2ADC0;
+  --line: #2B3343;
+  --btn: #E8ECF3;
+  --btn-ink: #10141C;
+  --who: #F0664F;   --who-ink: #FF9C88;
+  --when: #E9AE2A;  --when-ink: #F6C85C;
+  --do: #4F83F0;    --do-ink: #98B9FF;
+  --what: #2DB36D;  --what-ink: #6FDCA2;
+  --where: #9570E6; --where-ink: #C2AAFF;
+  --desc: #DB5A9F;  --desc-ink: #F59ACB;
+  --link: #8391A7;  --link-ink: #B6C1D2;
+  --not-fill: #E8ECF3; --not-ink: #10141C;
+  --good: #6FDCA2;
+  --bad: #FF9C88;
+  --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 12px 30px -16px rgba(0, 0, 0, .7);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font: 400 1.0625rem/1.6 var(--font-body);
+  padding-inline: 16px;
+}
+.col { max-width: 46rem; margin-inline: auto; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+h2 { font-weight: 800; font-size: clamp(1.9rem, 5vw, 2.5rem); line-height: 1.05; letter-spacing: -.02em; }
+h3 { font-weight: 600; font-size: 1.2rem; line-height: 1.25; margin-top: 1.75rem; }
+p { margin: .6rem 0 0; max-width: 65ch; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--do); outline-offset: 2px; border-radius: .4rem; }
+
+/* ——— Top bar ——— */
+.bar {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  margin-inline: -16px;
+  padding-inline: 16px;
+  background: color-mix(in srgb, var(--ground) 90%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.bar .col { display: flex; align-items: center; gap: .75rem; padding-block: .55rem; }
+.mark { font: 600 1.35rem/1 var(--font-noki); text-decoration: none; flex: none; }
+.mark span:nth-child(1) { color: var(--who-ink); }
+.mark span:nth-child(2) { color: var(--do-ink); }
+.nav { display: flex; gap: .35rem; overflow-x: auto; scrollbar-width: none; padding-block: .15rem; }
+.nav::-webkit-scrollbar { display: none; }
+.nav a {
+  flex: none;
+  text-decoration: none;
+  font-size: .85rem;
+  padding: .3rem .65rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--soft);
+  white-space: nowrap;
+}
+.nav a:hover { color: var(--ink); border-color: var(--soft); }
+.nav a b { font-variant-numeric: tabular-nums; color: var(--ink); margin-right: .2rem; }
+.nav a.done { color: var(--good); border-color: color-mix(in srgb, var(--good) 55%, transparent); }
+.nav a.done::after { content: " ✓"; }
+.lang { display: flex; flex: none; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--surface); }
+.lang button {
+  border: 0;
+  background: transparent;
+  color: var(--soft);
+  font: 700 .78rem/1 var(--font-body);
+  letter-spacing: .04em;
+  padding: .4rem .55rem;
+  cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--btn); color: var(--btn-ink); }
+
+/* ——— Word blocks ——— */
+.w {
+  --c: var(--link); --ci: var(--link-ink);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .12rem;
+  font: 600 1.25rem/1.1 var(--font-noki);
+  color: var(--ci);
+  background: var(--surface);
+  background: color-mix(in srgb, var(--c) 14%, var(--surface));
+  border: 1.5px solid color-mix(in srgb, var(--c) 50%, transparent);
+  border-bottom-width: 4px;
+  border-radius: .6rem;
+  padding: .3rem .6rem .25rem;
+  min-width: 2.6rem;
+}
+.w small { font: 400 .72rem/1.2 var(--font-body); color: var(--soft); text-align: center; }
+[data-r="who"]   { --c: var(--who);   --ci: var(--who-ink); }
+[data-r="when"]  { --c: var(--when);  --ci: var(--when-ink); }
+[data-r="do"]    { --c: var(--do);    --ci: var(--do-ink); }
+[data-r="what"]  { --c: var(--what);  --ci: var(--what-ink); }
+[data-r="where"] { --c: var(--where); --ci: var(--where-ink); }
+[data-r="desc"]  { --c: var(--desc);  --ci: var(--desc-ink); }
+[data-r="link"]  { --c: var(--link);  --ci: var(--link-ink); }
+[data-r="not"]   { --c: var(--not-fill); --ci: var(--not-ink); }
+[data-r="borrow"] { --c: var(--soft); --ci: var(--soft); }
+.w[data-r="not"] { background: var(--not-fill); color: var(--not-ink); border-color: var(--not-fill); }
+.w[data-r="not"] small { color: var(--not-ink); opacity: .75; }
+/* Borrowed (non-Noki) words: dashed, plain type, so they never look official. */
+.w[data-r="borrow"] { background: transparent; border-style: dashed; border-bottom-width: 1.5px; }
+.w[data-r="borrow"] b { font-family: var(--font-body); font-weight: 700; }
+
+/* inline Noki in prose */
+.nk { font-family: var(--font-noki); font-weight: 600; white-space: nowrap; }
+.nk [data-r] { color: var(--ci); }
+.nk [data-r="not"] { color: var(--ink); text-decoration: underline 2px; text-underline-offset: 3px; }
+.nk [data-r="borrow"] { font-family: var(--font-body); font-style: italic; }
+
+/* ——— Hero ——— */
+.hero { padding-block: 2.5rem 1rem; }
+.eyebrow {
+  font: 700 .75rem/1 var(--font-body);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--soft);
+  margin: 0;
+}
+.hero h1 {
+  font: 600 clamp(4.5rem, 18vw, 8.5rem)/.85 var(--font-noki);
+  letter-spacing: -.03em;
+  margin-top: .6rem;
+}
+.hero h1 span:nth-child(1) { color: var(--who-ink); }
+.hero h1 span:nth-child(2) { color: var(--do-ink); }
+.lead { font-size: 1.2rem; line-height: 1.5; margin-top: 1rem; }
+.facts { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin: 1.1rem 0 0; padding: 0; list-style: none; }
+.facts li { display: flex; align-items: baseline; gap: .4rem; color: var(--soft); }
+.facts b { font: 800 1.6rem/1 var(--font-display); color: var(--ink); font-variant-numeric: tabular-nums; }
+
+.machine {
+  margin-top: 1.8rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  padding: 1.1rem;
+  box-shadow: var(--shadow);
+}
+.machine-top { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; flex-wrap: wrap; }
+.machine-top p { margin: 0; color: var(--soft); font-size: .95rem; }
+.strip { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .5rem; margin-top: .9rem; }
+@media (max-width: 560px) { .strip { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.slot { display: flex; flex-direction: column; gap: .35rem; min-width: 0; }
+.slot-name { font: 700 .68rem/1 var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--ci); }
+.slot[data-r="not"] .slot-name { color: var(--ink); }
+.slot-box {
+  min-height: 3.7rem;
+  border-radius: .7rem;
+  border: 1.5px dashed var(--line);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: .2rem;
+}
+.slot-box.filled { border-color: transparent; }
+.slot-box .w { flex: 1; min-width: 0; justify-content: center; }
+.slot-box .empty { align-self: center; color: var(--line); font: 600 1.2rem/1 var(--font-noki); }
+.say-line { display: flex; align-items: center; gap: .75rem; margin-top: 1rem; flex-wrap: wrap; }
+.say-line .en { font: 600 1.25rem/1.3 var(--font-display); flex: 1 1 14rem; margin: 0; }
+.say-line .en small { display: block; font: 400 .9rem/1.4 var(--font-body); color: var(--soft); }
+
+.legend { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; padding: 0; list-style: none; }
+.legend .w { flex-direction: row; gap: .4rem; font-size: 1rem; padding: .2rem .5rem .15rem; }
+.legend .w small { font-size: .8rem; }
+
+/* ——— Buttons ——— */
+.btn {
+  display: inline-flex; align-items: center; gap: .45rem;
+  border: 0;
+  border-radius: 999px;
+  padding: .55rem 1rem;
+  background: var(--btn);
+  color: var(--btn-ink);
+  font-weight: 700;
+  font-size: .95rem;
+  cursor: pointer;
+}
+.btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
+.btn:hover { filter: brightness(1.1); }
+.hear {
+  flex: none;
+  display: inline-grid; place-items: center;
+  width: 2.5rem; height: 2.5rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+}
+.hear:hover { border-color: var(--soft); }
+.hear.playing { background: var(--btn); color: var(--btn-ink); border-color: var(--btn); }
+.nospeech .hear, .nospeech .card .ci { display: none; }
+.voice-note { font-size: .9rem; color: var(--soft); margin-top: .75rem; }
+
+/* ——— Lessons ——— */
+main > section { padding-block: 3rem 1rem; border-top: 1px solid var(--line); margin-top: 2rem; }
+.lesson-head .eyebrow { margin-bottom: .5rem; }
+.goal { color: var(--soft); font-size: 1.1rem; margin-top: .5rem; }
+.rule {
+  margin: 1rem 0 0;
+  padding: .85rem 1rem;
+  background: var(--surface-2);
+  border-radius: .8rem;
+  max-width: 65ch;
+}
+.rule p:first-child { margin-top: 0; }
+.fact {
+  margin: 1rem 0 0;
+  font-size: .95rem;
+  color: var(--soft);
+  max-width: 65ch;
+}
+.fact b { color: var(--ink); }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(8.75rem, 1fr)); gap: .6rem; margin-top: 1.1rem; }
+.card {
+  --c: var(--link); --ci: var(--link-ink);
+  position: relative;
+  display: flex; flex-direction: column; align-items: flex-start; gap: .2rem;
+  text-align: left;
+  padding: .65rem .8rem .7rem;
+  border-radius: .8rem;
+  border: 1.5px solid color-mix(in srgb, var(--c) 45%, transparent);
+  border-bottom-width: 4px;
+  background: var(--surface);
+  background: color-mix(in srgb, var(--c) 10%, var(--surface));
+  cursor: pointer;
+}
+.card:hover { background: color-mix(in srgb, var(--c) 18%, var(--surface)); }
+.card .cw { font: 600 1.55rem/1.1 var(--font-noki); color: var(--ci); }
+.card .cm { font-size: .9rem; line-height: 1.3; color: var(--soft); padding-right: 1.4rem; }
+.card .ci { position: absolute; top: .6rem; right: .6rem; color: var(--ci); opacity: .7; }
+.card[data-r="not"] { background: var(--not-fill); border-color: var(--not-fill); }
+.card[data-r="not"] .cw, .card[data-r="not"] .cm, .card[data-r="not"] .ci { color: var(--not-ink); }
+
+.examples { display: grid; gap: .6rem; margin-top: 1.2rem; }
+.ex {
+  display: flex; align-items: center; gap: .8rem; flex-wrap: wrap;
+  padding: .7rem .8rem;
+  border-radius: .9rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.ex-words { display: flex; flex-wrap: wrap; gap: .35rem; flex: 1 1 auto; }
+.ex-en { flex: 1 1 11rem; color: var(--ink); font-weight: 700; margin: 0; }
+.ex-en small { display: block; font-weight: 400; color: var(--soft); }
+
+.qa { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 1rem; }
+.qa-wrap { overflow-x: auto; }
+.qa th { text-align: left; font: 700 .72rem/1 var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--soft); padding: .5rem .6rem; border-bottom: 1.5px solid var(--line); }
+.qa td { padding: .6rem; border-bottom: 1px solid var(--line); vertical-align: middle; }
+
+.letters { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
+.letter {
+  width: 3.4rem; min-height: 3.6rem;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border-radius: .6rem;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-bottom-width: 4px;
+  font: 600 1.5rem/1 var(--font-noki);
+}
+.letter small { font: 400 .62rem/1.1 var(--font-body); color: var(--soft); margin-top: .2rem; text-align: center; }
+.letter.vowel { border-color: color-mix(in srgb, var(--do) 50%, transparent); color: var(--do-ink); }
+.letter.gone { color: var(--soft); border-style: dashed; text-decoration: line-through; opacity: .75; }
+.letter.inline { display: inline-flex; width: 2rem; min-height: 2rem; font-size: 1rem; vertical-align: middle; }
+
+/* ——— Quiz ——— */
+.quiz {
+  margin-top: 1.6rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  padding: 1.1rem;
+  box-shadow: var(--shadow);
+}
+.quiz-title { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; }
+.quiz-title h3 { margin: 0; }
+.quiz-title span { font-size: .9rem; color: var(--soft); font-variant-numeric: tabular-nums; }
+.q { margin-top: 1.1rem; }
+.q-text { font-weight: 700; margin: 0; }
+.opts { display: grid; gap: .45rem; margin-top: .55rem; }
+.opt {
+  display: flex; align-items: center; gap: .6rem;
+  width: 100%;
+  text-align: left;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  padding: .6rem .8rem;
+  border-radius: .75rem;
+  cursor: pointer;
+}
+.opt:hover:not(:disabled) { border-color: var(--soft); }
+.opt:disabled { cursor: default; }
+.opt .mark-i { margin-left: auto; font-weight: 700; }
+.opt.right { border-color: var(--good); background: color-mix(in srgb, var(--good) 10%, var(--surface)); }
+.opt.right .mark-i { color: var(--good); }
+.opt.wrong { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 10%, var(--surface)); }
+.opt.wrong .mark-i { color: var(--bad); }
+.quiz-end { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; margin-top: 1.1rem; }
+.quiz-end p { margin: 0; font-weight: 700; }
+
+/* ——— Builder ——— */
+.builder select {
+  width: 100%;
+  min-width: 0;
+  font: 600 1.05rem/1.2 var(--font-noki);
+  color: var(--ci);
+  background: var(--surface);
+  background: color-mix(in srgb, var(--c) 12%, var(--surface));
+  border: 1.5px solid color-mix(in srgb, var(--c) 50%, transparent);
+  border-bottom-width: 4px;
+  border-radius: .6rem;
+  padding: .55rem .4rem;
+}
+.slot[data-r="not"] select { color: var(--ink); background: var(--surface); border-color: var(--line); }
+.builder-out { margin-top: 1rem; }
+.hint { color: var(--soft); font-size: .95rem; margin-top: .5rem; min-height: 1.5em; }
+
+/* ——— Dictionary ——— */
+.search {
+  width: 100%;
+  margin-top: 1rem;
+  padding: .7rem .9rem;
+  border-radius: .75rem;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+}
+.dict-group h3 { display: flex; align-items: center; gap: .5rem; }
+.dict-group h3 i { width: .8rem; height: .8rem; border-radius: .2rem; background: var(--c); display: inline-block; }
+.dict-group[data-r="not"] h3 i { background: var(--not-fill); outline: 1px solid var(--line); }
+.empty-note { color: var(--soft); margin-top: 1rem; }
+
+/* ——— Pocket card ——— */
+.pocket {
+  margin-top: 1.2rem;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 1rem;
+  padding: 1.1rem 1.2rem;
+}
+.pocket-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+.pocket-head b { font: 600 1.6rem/1 var(--font-noki); }
+.pocket-head span { color: var(--soft); font-size: .9rem; }
+.pocket-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: .9rem 1.4rem; margin-top: 1rem; }
+.pocket-grid h4 { margin: 0 0 .3rem; font: 700 .7rem/1 var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--ci); }
+.pocket-grid [data-r="not"] h4 { color: var(--ink); }
+.pocket-grid ul { list-style: none; margin: 0; padding: 0; font-size: .92rem; line-height: 1.45; }
+.pocket-grid li .nk { color: var(--ci); display: inline-block; min-width: 2.9rem; }
+.pocket-grid [data-r="not"] li .nk { color: var(--ink); }
+.pocket-rules { margin: 1.1rem 0 0; padding-left: 1.2rem; font-size: .95rem; }
+.pocket-rules li { margin-top: .25rem; }
+
+footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; border-top: 1px solid var(--line); margin-top: 3rem; }
+
+.pop { animation: pop .28s ease-out; }
+@keyframes pop { from { transform: translateY(4px) scale(.96); } to { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .pop { animation: none; } }
+
+@media print {
+  /* Always print the light palette, even when the screen is in dark mode. */
+  :root, :root:not([data-theme="light"]), :root[data-theme="dark"] {
+    --ground: #FFFFFF; --surface: #FFFFFF; --surface-2: #EEF1F6;
+    --ink: #151B28; --soft: #4D586C; --line: #C9D1DD;
+    --who-ink: #B3311D; --when-ink: #855600; --do-ink: #1D4DB3; --what-ink: #136B40;
+    --where-ink: #5C36B3; --desc-ink: #9E2468; --link-ink: #46546A;
+    --not-fill: #151B28; --not-ink: #FFFFFF;
+  }
+  body { background: #fff; color: #000; padding: 0; }
+  .bar, .hero, main > section:not(#card), footer, .no-print { display: none !important; }
+  main > section#card { border: 0; padding: 0; margin: 0; }
+  .pocket { border-color: #999; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+
+<header class="bar">
+  <div class="col">
+    <a class="mark" href="#top" aria-label="Noki"><span>no</span><span>ki</span></a>
+    <nav class="nav" aria-label="Lessons" data-es-label="Lecciones">
+      <a href="#l1" data-lesson="l1" data-es="&lt;b&gt;1&lt;/b&gt;Sonidos"><b>1</b>Sounds</a>
+      <a href="#l2" data-lesson="l2" data-es="&lt;b&gt;2&lt;/b&gt;Quién"><b>2</b>Who</a>
+      <a href="#l3" data-lesson="l3" data-es="&lt;b&gt;3&lt;/b&gt;Cosas"><b>3</b>Things</a>
+      <a href="#l4" data-lesson="l4" data-es="&lt;b&gt;4&lt;/b&gt;Hacer"><b>4</b>Doing</a>
+      <a href="#l5" data-lesson="l5" data-es="&lt;b&gt;5&lt;/b&gt;No"><b>5</b>Not</a>
+      <a href="#l6" data-lesson="l6" data-es="&lt;b&gt;6&lt;/b&gt;Cuándo"><b>6</b>When</a>
+      <a href="#l7" data-lesson="l7" data-es="&lt;b&gt;7&lt;/b&gt;Preguntas"><b>7</b>Questions</a>
+      <a href="#l8" data-lesson="l8" data-es="&lt;b&gt;8&lt;/b&gt;Más"><b>8</b>More</a>
+      <a href="#phrases" data-es="Frases secretas">Secret phrases</a>
+      <a href="#build" data-es="Máquina">Build</a>
+      <a href="#words" data-es="Palabras">All words</a>
+      <a href="#card" data-es="Tarjeta">Pocket card</a>
+    </nav>
+    <div class="lang" id="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+</header>
+
+<div class="col" id="top">
+  <div class="hero">
+    <p class="eyebrow" data-es="El libro secreto">The codebook</p>
+    <h1 aria-label="Noki"><span>no</span><span>ki</span></h1>
+    <p class="lead" data-es="Un idioma secreto para dos. Tiene muy pocas letras, muy pocas palabras, y las palabras nunca cambian. Apréndelo aquí y úsalo donde quieras. Nadie más lo entenderá.">A secret language for two. It has very few letters, very few words, and the words never change. Learn it here, then use it anywhere. Nobody else will understand.</p>
+    <ul class="facts" data-es="&lt;li&gt;&lt;b&gt;15&lt;/b&gt; letras&lt;/li&gt;&lt;li&gt;&lt;b&gt;38&lt;/b&gt; palabras&lt;/li&gt;&lt;li&gt;&lt;b&gt;2&lt;/b&gt; palabras de pregunta&lt;/li&gt;&lt;li&gt;&lt;b&gt;0&lt;/b&gt; terminaciones que aprender&lt;/li&gt;">
+      <li><b>15</b> letters</li>
+      <li><b>38</b> words</li>
+      <li><b>2</b> question words</li>
+      <li><b>0</b> word endings to learn</li>
+    </ul>
+
+    <div class="machine" aria-labelledby="machine-title">
+      <div class="machine-top">
+        <h3 id="machine-title" style="margin:0" data-es="Una frase es una fila de bloques">A sentence is a row of blocks</h3>
+        <p data-es="Siempre en este orden. Salta los que no necesites.">Always in this order. Skip the ones you don't need.</p>
+      </div>
+      <div class="strip" id="hero-strip"></div>
+      <div class="say-line">
+        <p class="en" id="hero-en"></p>
+        <button class="hear" id="hero-hear" type="button"></button>
+        <button class="btn ghost" id="hero-next" type="button"></button>
+      </div>
+      <ul class="legend" id="legend"></ul>
+    </div>
+    <p class="voice-note" id="voice-note" hidden></p>
+  </div>
+
+  <main>
+    <!-- ——— Lesson 1 ——— -->
+    <section id="l1" class="lesson">
+      <div class="lesson-head">
+        <p class="eyebrow" data-es="Lección 1 de 8">Lesson 1 of 8</p>
+        <h2 data-es="Dilo bien">Say it right</h2>
+        <p class="goal" data-es="Noki solo tiene 15 letras, y cada una suena siempre igual.">Noki has only 15 letters, and each one always sounds the same.</p>
+      </div>
+      <div class="letters" data-es="&lt;span class=&quot;letter vowel&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;letter vowel&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;letter vowel&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;letter vowel&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;letter vowel&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;letter&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;letter&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;letter&quot;&gt;k&lt;small&gt;siempre fuerte&lt;/small&gt;&lt;/span&gt;&lt;span class=&quot;letter&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;letter&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;letter&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;letter&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;letter&quot;&gt;s&lt;small&gt;siempre s&lt;/small&gt;&lt;/span&gt;&lt;span class=&quot;letter&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;letter&quot;&gt;v&lt;small&gt;como b&lt;/small&gt;&lt;/span&gt;">
+        <span class="letter vowel">a</span><span class="letter vowel">e</span><span class="letter vowel">i</span><span class="letter vowel">o</span><span class="letter vowel">u</span>
+        <span class="letter">d</span><span class="letter">f</span><span class="letter">k<small>always hard</small></span><span class="letter">l</span><span class="letter">m</span><span class="letter">n</span><span class="letter">p</span><span class="letter">s<small>always s</small></span><span class="letter">t</span><span class="letter">v<small>like b</small></span>
+      </div>
+      <p class="fact" data-es="Fuera a propósito: &lt;span class=&quot;letter gone inline&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;letter gone inline&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;letter gone inline&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;letter gone inline&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;letter gone inline&quot;&gt;z&lt;/span&gt;">Left out on purpose: <span class="letter gone inline">b</span> <span class="letter gone inline">g</span> <span class="letter gone inline">r</span> <span class="letter gone inline">y</span> <span class="letter gone inline">z</span></p>
+
+      <h3 data-es="Cuatro reglas de sonido">Four sound rules</h3>
+      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;1. Las vocales suenan como en español:&lt;/b&gt; a, e, i, o, u. Dilas completas, nunca flojas.&lt;/p&gt;&lt;p&gt;&lt;b&gt;2. La primera parte de la palabra es la fuerte:&lt;/b&gt; &lt;b&gt;LE&lt;/b&gt;-fu, &lt;b&gt;SU&lt;/b&gt;-li, &lt;b&gt;KI&lt;/b&gt;-fi.&lt;/p&gt;&lt;p&gt;&lt;b&gt;3. La v suena como la b/v española.&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;vimo&lt;/span&gt; suena como “bimo”.&lt;/p&gt;&lt;p&gt;&lt;b&gt;4. &lt;span class=&quot;nk&quot;&gt;kui&lt;/span&gt; es un solo sonido rápido,&lt;/b&gt; como el “cui” de &lt;i&gt;cuidado&lt;/i&gt;.&lt;/p&gt;">
+        <p><b>1. Vowels sound like Spanish:</b> a, e, i, o, u. Say them fully, never a lazy “uh”.</p>
+        <p><b>2. The first part of a word is the strong part:</b> <b>LE</b>-fu, <b>SU</b>-li, <b>KI</b>-fi.</p>
+        <p><b>3. v sounds like the Spanish b/v.</b> <span class="nk">vimo</span> sounds like “bimo”.</p>
+        <p><b>4. <span class="nk">kui</span> is one quick sound,</b> like the “cui” in <i>cuidado</i>.</p>
+      </div>
+      <p class="fact" data-es="Los botones de escuchar usan la voz española de tu dispositivo. Si una palabra suena rara, fíate de estas reglas.">The hear buttons use your device's Spanish voice. If a word sounds odd, trust these rules.</p>
+      <div class="cards" data-words="lefu,suli,kifi,vimo,kui,vek"></div>
+      <p class="fact" data-es="&lt;b&gt;Las palabras cortas son el pegamento.&lt;/b&gt; Palabras como &lt;span class=&quot;nk&quot;&gt;ka&lt;/span&gt;, &lt;span class=&quot;nk&quot;&gt;si&lt;/span&gt; y &lt;span class=&quot;nk&quot;&gt;e&lt;/span&gt; tienen una parte. Las palabras de cosas y acciones tienen dos, como &lt;span class=&quot;nk&quot; data-done=&quot;1&quot;&gt;fo-ma&lt;/span&gt;."><b>Short words are the glue.</b> Words like <span class="nk">ka</span>, <span class="nk">si</span> and <span class="nk">e</span> have one part. The words for things and actions have two parts, like <span class="nk" data-done="1">fo-ma</span>.</p>
+      <p class="fact" data-es="&lt;b&gt;Detalle secreto:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;vek&lt;/span&gt; (no) es la única palabra que acaba en sonido fuerte, así nunca se pierde un “no”."><b>Secret detail:</b> <span class="nk">vek</span> (no) is the only word that ends with a hard sound, so nobody ever misses a “no”.</p>
+      <div class="quiz" data-quiz="l1"></div>
+    </section>
+
+    <!-- ——— Lesson 2 ——— -->
+    <section id="l2" class="lesson">
+      <div class="lesson-head">
+        <p class="eyebrow" data-es="Lección 2 de 8">Lesson 2 of 8</p>
+        <h2 data-es="Quién">Who</h2>
+        <p class="goal" data-es="Tres palabras diminutas para personas, más sí y no — y cómo juntarlas.">Three tiny words for people, plus yes and no — and how to stick them together.</p>
+      </div>
+      <div class="cards" data-words="ka,si,lo,da,vek"></div>
+      <div class="rule" data-es="&lt;p&gt;&lt;span class=&quot;nk&quot;&gt;lo&lt;/span&gt; significa &lt;b&gt;él o ella&lt;/b&gt;. A Noki le da igual.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿Dos personas? Di las dos.&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si ka&lt;/span&gt; = nosotros (tú y yo). &lt;span class=&quot;nk&quot;&gt;lo ka&lt;/span&gt; = nosotros, pero tú no.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿La misma dos veces? Son más.&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si si&lt;/span&gt; = vosotros. &lt;span class=&quot;nk&quot;&gt;lo lo&lt;/span&gt; = ellos.&lt;/p&gt;&lt;p&gt;Así Noki dice algo que el español no puede decir con una sola palabra: &lt;span class=&quot;nk&quot;&gt;si ka lefu&lt;/span&gt; = tú y yo nos vamos. &lt;span class=&quot;nk&quot;&gt;lo ka lefu&lt;/span&gt; = él y yo nos vamos, tú no.&lt;/p&gt;&lt;p&gt;Lo que no se dice nunca es &lt;span class=&quot;nk&quot;&gt;ka ka&lt;/span&gt; — ¡en español significa otra cosa! Di &lt;span class=&quot;nk&quot;&gt;si ka&lt;/span&gt; o &lt;span class=&quot;nk&quot;&gt;lo ka&lt;/span&gt;.&lt;/p&gt;">
+        <p><span class="nk">lo</span> means <b>he or she</b>. Noki doesn't care which.</p>
+        <p><b>Two people? Say both.</b> <span class="nk">si ka</span> = we (you and me). <span class="nk">lo ka</span> = we, but not you.</p>
+        <p><b>Same one twice? That's more of them.</b> <span class="nk">si si</span> = you two, or all of you. <span class="nk">lo lo</span> = they.</p>
+        <p>That lets Noki say something English can't say in one word: <span class="nk">si ka lefu</span> = you and I are going. <span class="nk">lo ka lefu</span> = he and I are going, you're not.</p>
+        <p>The one you never say is <span class="nk">ka ka</span> — it means something else in Spanish! Say <span class="nk">si ka</span> or <span class="nk">lo ka</span>.</p>
+      </div>
+      <div class="examples">
+        <div class="ex" data-s="si ka" data-en="we — you and me" data-es="nosotros — tú y yo"></div>
+        <div class="ex" data-s="si si" data-en="you two / you all" data-es="vosotros"></div>
+        <div class="ex" data-s="lo lo" data-en="they" data-es="ellos"></div>
+        <div class="ex" data-s="da!" data-en="Yes!" data-es="¡Sí!"></div>
+        <div class="ex" data-s="vek!" data-en="No!" data-es="¡No!"></div>
+      </div>
+      <div class="quiz" data-quiz="l2"></div>
+    </section>
+
+    <!-- ——— Lesson 3 ——— -->
+    <section id="l3" class="lesson">
+      <div class="lesson-head">
+        <p class="eyebrow" data-es="Lección 3 de 8">Lesson 3 of 8</p>
+        <h2 data-es="Cosas">Things</h2>
+        <p class="goal" data-es="Palabras para cosas, y cómo decir de quién son.">Words for stuff, and how to say whose it is.</p>
+      </div>
+      <div class="cards" data-words="foma,vimo,tuka,suno,fusu,mufo,fipo,ke"></div>
+      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;Algunas cosas también son acciones.&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;foma&lt;/span&gt; es comida &lt;i&gt;y&lt;/i&gt; comer. &lt;span class=&quot;nk&quot;&gt;vimo&lt;/span&gt; es agua &lt;i&gt;y&lt;/i&gt; beber. &lt;span class=&quot;nk&quot;&gt;fipo&lt;/span&gt; es jugar, un juego &lt;i&gt;y&lt;/i&gt; diversión.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿De quién es?&lt;/b&gt; Pon la persona delante: &lt;span class=&quot;nk&quot;&gt;ka tuka&lt;/span&gt; = mi casa.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Ese:&lt;/b&gt; pon &lt;span class=&quot;nk&quot;&gt;ke&lt;/span&gt; delante: &lt;span class=&quot;nk&quot;&gt;ke suno&lt;/span&gt; = esa persona.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿No hay palabra en Noki?&lt;/b&gt; Di la palabra normal. Los nombres no cambian nunca. Truco: usa el idioma que menos entienda la gente de alrededor.&lt;/p&gt;&lt;p&gt;Si repites mucho la misma palabra prestada, apúntala en tu &lt;b&gt;lista de deseos&lt;/b&gt; (en papel o en las notas del móvil). Algún día podría ser una palabra de Noki.&lt;/p&gt;">
+        <p><b>Some things are also actions.</b> <span class="nk">foma</span> is food <i>and</i> eat. <span class="nk">vimo</span> is water <i>and</i> drink. <span class="nk">fipo</span> is play, a game, <i>and</i> fun.</p>
+        <p><b>Whose is it?</b> Put the person first: <span class="nk">ka tuka</span> = my home.</p>
+        <p><b>That one:</b> put <span class="nk">ke</span> first: <span class="nk">ke suno</span> = that person.</p>
+        <p><b>No Noki word for it?</b> Just say the normal word. Names never change. Tip: use the language the people around you understand less.</p>
+        <p>If you keep borrowing the same word, put it on your <b>wishlist</b> (on paper or in your phone's notes). It might become a Noki word one day.</p>
+      </div>
+      <div class="examples">
+        <div class="ex" data-s="ka tuka" data-en="my home" data-es="mi casa"></div>
+        <div class="ex" data-s="si foma" data-en="your food" data-es="tu comida"></div>
+        <div class="ex" data-s="si ka tuka" data-en="our home" data-es="nuestra casa"></div>
+        <div class="ex" data-s="ke suno" data-en="that person" data-es="esa persona"></div>
+        <div class="ex" data-s="ke fipo" data-en="that game" data-es="ese juego"></div>
+        <div class="ex" data-s="abuela kui?" data-en="Where's grandma?" data-es="¿Dónde está la abuela?" data-note="Borrowed Spanish word: good when people nearby speak English." data-note-es="Palabra prestada del español: bien cuando la gente de alrededor habla inglés."></div>
+        <div class="ex" data-s="ka suli lefu school." data-en="I want to go to school." data-es="Quiero ir al colegio." data-note="Borrowed English word: good when people nearby speak Spanish." data-note-es="Palabra prestada del inglés: bien cuando la gente de alrededor habla español."></div>
+      </div>
+      <div class="quiz" data-quiz="l3"></div>
+    </section>
+
+    <!-- ——— Lesson 4 ——— -->
+    <section id="l4" class="lesson">
+      <div class="lesson-head">
+        <p class="eyebrow" data-es="Lección 4 de 8">Lesson 4 of 8</p>
+        <h2 data-es="Hacer">Doing</h2>
+        <p class="goal" data-es="Acciones, y tus primeras frases de verdad.">Actions, and your first real sentences.</p>
+      </div>
+      <div class="cards" data-words="suli,duni,lefu,milu,deli,dusa,naki,luma,tavo,nisu,moku,dafu,doki,mela"></div>
+      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;Quién, luego acción, luego qué:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;ka suli vimo&lt;/span&gt; = quiero agua.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿Sin “quién”? Entonces es una orden:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;lefu tuka!&lt;/span&gt; = ¡vete a casa!&lt;/p&gt;&lt;p&gt;&lt;b&gt;Dos acciones juntas:&lt;/b&gt; la segunda es lo que quieres o necesitas hacer. &lt;span class=&quot;nk&quot;&gt;ka suli lefu tuka&lt;/span&gt; = quiero ir a casa.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Una persona después de la acción es a quién va dirigida:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;dafu ka!&lt;/span&gt; = ¡ayúdame! · &lt;span class=&quot;nk&quot;&gt;milu ka!&lt;/span&gt; = ¡ven a mí! · &lt;span class=&quot;nk&quot;&gt;ka lefu si&lt;/span&gt; = iré contigo. Si también hay una cosa, la persona va primero: &lt;span class=&quot;nk&quot;&gt;moku ka vimo&lt;/span&gt; = dame agua.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Las acciones también pueden ser cosas.&lt;/b&gt; El sitio de la palabra decide su trabajo: &lt;span class=&quot;nk&quot;&gt;ka dafu si&lt;/span&gt; = yo te ayudo, &lt;span class=&quot;nk&quot;&gt;ka duni dafu:what&lt;/span&gt; = necesito ayuda.&lt;/p&gt;">
+        <p><b>Who, then action, then what:</b> <span class="nk">ka suli vimo</span> = I want water.</p>
+        <p><b>No “who”? Then it's an order:</b> <span class="nk">lefu tuka!</span> = Go home!</p>
+        <p><b>Two actions together:</b> the second one is what you want or need to do. <span class="nk">ka suli lefu tuka</span> = I want to go home.</p>
+        <p><b>A person after an action is who you mean it for:</b> <span class="nk">dafu ka!</span> = help me! · <span class="nk">milu ka!</span> = come to me! · <span class="nk">ka lefu si</span> = I'll go with you. If there's a thing too, the person comes first: <span class="nk">moku ka vimo</span> = give me water.</p>
+        <p><b>Actions can be things, too.</b> Where a word sits decides its job: <span class="nk">ka dafu si</span> = I help you, <span class="nk">ka duni dafu:what</span> = I need help.</p>
+      </div>
+      <div class="examples">
+        <div class="ex" data-s="ka suli vimo." data-en="I want water." data-es="Quiero agua."></div>
+        <div class="ex" data-s="si duni foma?" data-en="Do you need to eat?" data-es="¿Necesitas comer?" data-note="A question: just say it like a question. More in Lesson 7." data-note-es="Una pregunta: solo dilo como pregunta. Más en la lección 7."></div>
+        <div class="ex" data-s="lo mela fipo." data-en="He loves playing." data-es="Le encanta jugar." data-note="or: She loves playing." data-note-es="Vale para él o para ella."></div>
+        <div class="ex" data-s="lefu tuka!" data-en="Go home!" data-es="¡Vete a casa!"></div>
+        <div class="ex" data-s="dafu ka!" data-en="Help me!" data-es="¡Ayúdame!"></div>
+        <div class="ex" data-s="ka suli lefu tuka." data-en="I want to go home." data-es="Quiero ir a casa."></div>
+        <div class="ex" data-s="ka duni fusu." data-en="I need the toilet." data-es="Necesito ir al baño."></div>
+        <div class="ex" data-s="ka duni dafu:what." data-en="I need help." data-es="Necesito ayuda."></div>
+        <div class="ex" data-s="moku ka vimo!" data-en="Give me water!" data-es="¡Dame agua!"></div>
+        <div class="ex" data-s="ka lefu si." data-en="I'll go with you." data-es="Iré contigo."></div>
+        <div class="ex" data-s="deli ke meni!" data-en="Leave it here!" data-es="¡Déjalo aquí!" data-note="deli = leave, leave behind, put down." data-note-es="deli = dejar, dejar atrás, poner."></div>
+      </div>
+      <div class="quiz" data-quiz="l4"></div>
+    </section>
+
+    <!-- ——— Lesson 5 ——— -->
+    <section id="l5" class="lesson">
+      <div class="lesson-head">
+        <p class="eyebrow" data-es="Lección 5 de 8">Lesson 5 of 8</p>
+        <h2 data-es="No">Not</h2>
+        <p class="goal" data-es="Una palabra le da la vuelta a todo.">One word turns anything around.</p>
+      </div>
+      <div class="cards" data-words="vek"></div>
+      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;Delante de una acción, &lt;span class=&quot;nk&quot;&gt;vek&lt;/span&gt; significa no:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;ka vek naki&lt;/span&gt; = no entiendo.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Delante de una cosa significa ninguno:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;vek suno&lt;/span&gt; = nadie.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Sin “quién”, significa no hagas:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;vek doki!&lt;/span&gt; = ¡no lo digas!&lt;/p&gt;">
+        <p><b>Before an action, <span class="nk">vek</span> means not:</b> <span class="nk">ka vek naki</span> = I don't understand.</p>
+        <p><b>Before a thing, it means none:</b> <span class="nk">vek suno</span> = nobody.</p>
+        <p><b>With no “who”, it means don't:</b> <span class="nk">vek doki!</span> = Don't tell!</p>
+      </div>
+      <div class="examples">
+        <div class="ex" data-s="ka vek naki." data-en="I don't understand." data-es="No entiendo."></div>
+        <div class="ex" data-s="ka vek suli foma." data-en="I don't want food." data-es="No quiero comida."></div>
+        <div class="ex" data-s="ka vek mela ke." data-en="I don't like that." data-es="Eso no me gusta."></div>
+        <div class="ex" data-s="vek suno." data-en="Nobody." data-es="Nadie."></div>
+        <div class="ex" data-s="vek doki!" data-en="Don't tell!" data-es="¡No lo digas!"></div>
+      </div>
+      <div class="quiz" data-quiz="l5"></div>
+    </section>
+
+    <!-- ——— Lesson 6 ——— -->
+    <section id="l6" class="lesson">
+      <div class="lesson-head">
+        <p class="eyebrow" data-es="Lección 6 de 8">Lesson 6 of 8</p>
+        <h2 data-es="Cuándo">When</h2>
+        <p class="goal" data-es="Antes, ahora, luego. Ese es todo el sistema de tiempo.">Before, now, later. That's the whole time system.</p>
+      </div>
+      <div class="cards" data-words="panu,kifi,lati,e"></div>
+      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;Las palabras nunca cambian.&lt;/b&gt; Para decir cuándo, pon una palabra de tiempo justo delante de la acción.&lt;/p&gt;&lt;p&gt;&lt;span class=&quot;nk&quot;&gt;panu&lt;/span&gt; = ya ha pasado. &lt;span class=&quot;nk&quot;&gt;kifi&lt;/span&gt; = ahora mismo. &lt;span class=&quot;nk&quot;&gt;lati&lt;/span&gt; = va a pasar.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿Sin palabra de tiempo?&lt;/b&gt; Entonces se sabe por la situación.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Una palabra de tiempo solo vale para la acción siguiente.&lt;/b&gt; Usa &lt;span class=&quot;nk&quot;&gt;e&lt;/span&gt; (y) para añadir otra acción con su propia palabra de tiempo.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Truco:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;ka foma&lt;/span&gt; puede ser “mi comida” o “yo como”. Añade una palabra de tiempo para que sea una acción: &lt;span class=&quot;nk&quot;&gt;ka kifi foma:do&lt;/span&gt; = estoy comiendo ahora.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿No hay acción? La palabra de tiempo va en el mismo sitio.&lt;/b&gt; Así se dice hay, había y habrá: &lt;span class=&quot;nk&quot;&gt;vimo lati meni&lt;/span&gt; = aquí habrá agua. También te da era y será: &lt;span class=&quot;nk&quot;&gt;ka panu mufo:desc&lt;/span&gt; = yo estaba cansado.&lt;/p&gt;">
+        <p><b>Words never change.</b> To say when, put a time word right before the action.</p>
+        <p><span class="nk">panu</span> = it already happened. <span class="nk">kifi</span> = right now. <span class="nk">lati</span> = it will happen.</p>
+        <p><b>No time word?</b> Then you'll know from what's going on.</p>
+        <p><b>A time word only works on the next action.</b> Use <span class="nk">e</span> (and) to add another action with its own time word.</p>
+        <p><b>Tip:</b> <span class="nk">ka foma</span> can mean “my food” or “I eat”. Add a time word to make it an action: <span class="nk">ka kifi foma:do</span> = I'm eating now.</p>
+        <p><b>No action? The time word still goes in the same place.</b> That's how you say there is, there was and there will be: <span class="nk">vimo lati meni</span> = there will be water here. It also gives you was and will be: <span class="nk">ka panu mufo:desc</span> = I was tired.</p>
+      </div>
+      <div class="examples">
+        <div class="ex" data-s="ka panu foma:do." data-en="I ate." data-es="Comí." data-note="or: I already ate." data-note-es="o: ya he comido."></div>
+        <div class="ex" data-s="si ka kifi lefu tuka." data-en="We're going home now." data-es="Ahora vamos a casa."></div>
+        <div class="ex" data-s="lo lati milu." data-en="He'll come later." data-es="Vendrá luego." data-note="or: She'll come later." data-note-es="Vale para él o para ella."></div>
+        <div class="ex" data-s="ka panu foma:do e lati lefu tuka." data-en="I ate, and I'll go home later." data-es="Comí, y luego iré a casa."></div>
+        <div class="ex" data-s="si ka kifi foma:do e lati deli." data-en="We're eating now, and we'll leave later." data-es="Ahora comemos, y luego nos vamos."></div>
+        <div class="ex" data-s="vimo lati meni." data-en="There will be water here." data-es="Aquí habrá agua."></div>
+        <div class="ex" data-s="suno suno suno panu lopa." data-en="There were lots of people there." data-es="Allí había mucha gente."></div>
+        <div class="ex" data-s="ka panu mufo:desc." data-en="I was tired." data-es="Estaba cansado."></div>
+        <div class="ex" data-s="vek suno panu tuka:where." data-en="There was nobody at home." data-es="No había nadie en casa."></div>
+      </div>
+      <div class="quiz" data-quiz="l6"></div>
+    </section>
+
+    <!-- ——— Lesson 7 ——— -->
+    <section id="l7" class="lesson">
+      <div class="lesson-head">
+        <p class="eyebrow" data-es="Lección 7 de 8">Lesson 7 of 8</p>
+        <h2 data-es="Dónde, y preguntas">Where, and questions</h2>
+        <p class="goal" data-es="Aquí, allí, y las dos palabras de pregunta.">Here, there, and the two question words.</p>
+      </div>
+      <div class="cards" data-words="meni,lopa,kui,fa"></div>
+      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;Los lugares van al final:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si ka lefu lopa&lt;/span&gt; = vamos allí.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Preguntas de sí o no:&lt;/b&gt; solo dilo como pregunta. &lt;span class=&quot;nk&quot;&gt;si naki?&lt;/span&gt; = ¿entiendes?&lt;/p&gt;&lt;p&gt;&lt;b&gt;Una pregunta sin palabra de tiempo también significa “¿vamos?” o “¿podemos?”:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si ka lefu?&lt;/span&gt; = ¿vamos? · &lt;span class=&quot;nk&quot;&gt;si ka kifi deli?&lt;/span&gt; = ¿nos vamos ya? Por eso Noki no necesita palabra para “poder”.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Todas las demás preguntas usan &lt;span class=&quot;nk&quot;&gt;kui&lt;/span&gt;.&lt;/b&gt; Pon &lt;span class=&quot;nk&quot;&gt;kui&lt;/span&gt; donde iría la respuesta. La respuesta va en el mismo sitio.&lt;/p&gt;">
+        <p><b>Places go at the end:</b> <span class="nk">si ka lefu lopa</span> = we're going there.</p>
+        <p><b>Yes-or-no questions:</b> just say it like a question. <span class="nk">si naki?</span> = do you understand?</p>
+        <p><b>A question with no time word also means “shall we” or “can we”:</b> <span class="nk">si ka lefu?</span> = shall we go? · <span class="nk">si ka kifi deli?</span> = can we leave now? That's why Noki needs no word for “can”.</p>
+        <p><b>Every other question uses <span class="nk">kui</span>.</b> Put <span class="nk">kui</span> where the answer would go. The answer goes in the same place.</p>
+      </div>
+      <div class="qa-wrap">
+        <table class="qa" data-es="&lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Pregunta&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Significa&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Respuesta&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;span class=&quot;nk&quot;&gt;si suli kui?&lt;/span&gt;&lt;/td&gt;&lt;td&gt;¿Qué quieres?&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;nk&quot;&gt;ka suli vimo.&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;span class=&quot;nk&quot;&gt;kui milu?&lt;/span&gt;&lt;/td&gt;&lt;td&gt;¿Quién viene?&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;nk&quot;&gt;lo milu.&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;span class=&quot;nk&quot;&gt;si lefu kui?&lt;/span&gt;&lt;/td&gt;&lt;td&gt;¿Adónde vas?&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;nk&quot;&gt;ka lefu tuka.&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;span class=&quot;nk&quot;&gt;si kui lefu?&lt;/span&gt;&lt;/td&gt;&lt;td&gt;¿Cuándo vas?&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;nk&quot;&gt;ka lati lefu.&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;">
+          <thead><tr><th scope="col">Ask</th><th scope="col">Means</th><th scope="col">Answer</th></tr></thead>
+          <tbody>
+            <tr><td><span class="nk">si suli kui?</span></td><td>What do you want?</td><td><span class="nk">ka suli vimo.</span></td></tr>
+            <tr><td><span class="nk">kui milu?</span></td><td>Who is coming?</td><td><span class="nk">lo milu.</span></td></tr>
+            <tr><td><span class="nk">si lefu kui?</span></td><td>Where are you going?</td><td><span class="nk">ka lefu tuka.</span></td></tr>
+            <tr><td><span class="nk">si kui lefu?</span></td><td>When are you going?</td><td><span class="nk">ka lati lefu.</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fact" data-es="&lt;b&gt;&lt;span class=&quot;nk&quot;&gt;kui?&lt;/span&gt; sola&lt;/b&gt; significa “¿Qué?” o “¿Eh?”"><b>Just <span class="nk">kui?</span> on its own</b> means “What?” or “Huh?”</p>
+      <div class="examples">
+        <div class="ex" data-s="milu meni!" data-en="Come here!" data-es="¡Ven aquí!"></div>
+        <div class="ex" data-s="dusa meni!" data-en="Stay here!" data-es="¡Quédate aquí!"></div>
+        <div class="ex" data-s="fusu kui?" data-en="Where's the toilet?" data-es="¿Dónde está el baño?"></div>
+        <div class="ex" data-s="lo kui?" data-en="Where is he?" data-es="¿Dónde está?" data-note="or: Where is she?" data-note-es="Vale para él o para ella."></div>
+        <div class="ex" data-s="ke kui?" data-en="What's that?" data-es="¿Qué es eso?"></div>
+      </div>
+      <h3 data-es="¿Por qué?">Why?</h3>
+      <p data-es="&lt;span class=&quot;nk&quot;&gt;kui&lt;/span&gt; no puede preguntar por qué, así que Noki tiene otra palabra pequeña: &lt;span class=&quot;nk&quot;&gt;fa&lt;/span&gt;. Funciona como &lt;span class=&quot;nk&quot;&gt;e&lt;/span&gt; (y), pero lo que va detrás es el motivo. Sola, &lt;span class=&quot;nk&quot;&gt;fa?&lt;/span&gt; significa “¿Por qué?”"><span class="nk">kui</span> can't ask why, so Noki has one more small word: <span class="nk">fa</span>. It works like <span class="nk">e</span> (and), but what comes after it is the reason. On its own, <span class="nk">fa?</span> means “Why?”</p>
+      <div class="examples">
+        <div class="ex" data-s="fa?" data-en="Why?" data-es="¿Por qué?"></div>
+        <div class="ex" data-s="si vek foma:do fa?" data-en="Why aren't you eating?" data-es="¿Por qué no comes?"></div>
+        <div class="ex" data-s="ka vek foma:do fa ka mufo:desc." data-en="I'm not eating because I'm tired." data-es="No como porque estoy cansado."></div>
+        <div class="ex" data-s="fa ka mufo:desc." data-en="Because I'm tired." data-es="Porque estoy cansado."></div>
+      </div>
+      <div class="quiz" data-quiz="l7"></div>
+    </section>
+
+    <!-- ——— Lesson 8 ——— -->
+    <section id="l8" class="lesson">
+      <div class="lesson-head">
+        <p class="eyebrow" data-es="Lección 8 de 8">Lesson 8 of 8</p>
+        <h2 data-es="Bien, mal y más">Good, bad, and more</h2>
+        <p class="goal" data-es="Describe cosas, y dilo dos veces para hacerlo más grande.">Describe things, and say it twice to make it bigger.</p>
+      </div>
+      <div class="cards" data-words="pomi,vesa,siko"></div>
+      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;No hay palabra para “es”:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;ke suno pomi&lt;/span&gt; = esa persona es buena. &lt;span class=&quot;nk&quot;&gt;ka mufo:desc&lt;/span&gt; = estoy cansado.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Dilo dos veces para que sea más.&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;pomi pomi&lt;/span&gt; = ¡muy bien! &lt;span class=&quot;nk&quot;&gt;ka mela mela si&lt;/span&gt; = te quiero muchísimo.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Para las cosas, cuenta repitiendo:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;suno&lt;/span&gt; = una persona, &lt;span class=&quot;nk&quot;&gt;suno suno&lt;/span&gt; = dos personas, &lt;span class=&quot;nk&quot;&gt;suno suno suno&lt;/span&gt; = mucha gente.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Y con las personas:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si si&lt;/span&gt; = vosotros, &lt;span class=&quot;nk&quot;&gt;lo lo&lt;/span&gt; = ellos.&lt;/p&gt;&lt;p&gt;&lt;b&gt;También vale para palabras de tiempo y acciones:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;panu panu&lt;/span&gt; = hace mucho, &lt;span class=&quot;nk&quot;&gt;lati lati&lt;/span&gt; = mucho más tarde u otro día, &lt;span class=&quot;nk&quot;&gt;kifi kifi&lt;/span&gt; = ¡ahora mismo!, &lt;span class=&quot;nk&quot;&gt;fipo fipo!&lt;/span&gt; = ¡jugar otra vez!&lt;/p&gt;">
+        <p><b>No word for “is”:</b> <span class="nk">ke suno pomi</span> = that person is good. <span class="nk">ka mufo:desc</span> = I'm tired.</p>
+        <p><b>Say it twice to make it more.</b> <span class="nk">pomi pomi</span> = very good! <span class="nk">ka mela mela si</span> = I love you so much.</p>
+        <p><b>For things, count by saying it again:</b> <span class="nk">suno</span> = one person, <span class="nk">suno suno</span> = two people, <span class="nk">suno suno suno</span> = lots of people.</p>
+        <p><b>And on people:</b> <span class="nk">si si</span> = you all, <span class="nk">lo lo</span> = they.</p>
+        <p><b>It works on time words and actions too:</b> <span class="nk">panu panu</span> = long ago, <span class="nk">lati lati</span> = much later or another day, <span class="nk">kifi kifi</span> = right now!, <span class="nk">fipo fipo!</span> = play again!</p>
+      </div>
+      <div class="examples">
+        <div class="ex" data-s="ke suno pomi." data-en="That person is okay." data-es="Esa persona está bien." data-note="or: good, or safe." data-note-es="o: buena, o de fiar."></div>
+        <div class="ex" data-s="ke foma vesa." data-en="That food is bad." data-es="Esa comida está mala."></div>
+        <div class="ex" data-s="pomi pomi!" data-en="Great!" data-es="¡Genial!"></div>
+        <div class="ex" data-s="vesa!" data-en="Danger!" data-es="¡Peligro!" data-note="or: Problem!" data-note-es="o: ¡Problema!"></div>
+        <div class="ex" data-s="suno suno suno luma si ka." data-en="Lots of people are looking at us." data-es="Mucha gente nos está mirando."></div>
+        <div class="ex" data-s="siko!" data-en="It's a secret!" data-es="¡Es un secreto!"></div>
+      </div>
+      <div class="quiz" data-quiz="l8"></div>
+    </section>
+
+    <!-- ——— Phrasebook ——— -->
+    <section id="phrases">
+      <div class="lesson-head">
+        <p class="eyebrow" data-es="Úsalo">Use it</p>
+        <h2 data-es="Frases secretas">Secret phrases</h2>
+        <p class="goal" data-es="Frases listas para la vida real. Dilas bajito.">Ready-made sentences for real life. Say them quietly.</p>
+      </div>
+      <div class="situation">
+        <h3 data-es="Hola y adiós">Hello and goodbye</h3>
+        <div class="examples">
+          <div class="ex" data-s="noki!" data-en="Hi!" data-es="¡Hola!" data-note="Also means: let's switch to Noki now." data-note-es="También significa: ahora hablamos en Noki."></div>
+          <div class="ex" data-s="lati!" data-en="Bye! See you later!" data-es="¡Adiós! ¡Hasta luego!"></div>
+          <div class="ex" data-s="mufo pomi!" data-en="Good night!" data-es="¡Buenas noches!" data-note="Word by word: good sleep." data-note-es="Palabra por palabra: sueño bueno."></div>
+        </div>
+      </div>
+      <div class="situation">
+        <h3 data-es="Cuando necesitas algo">When you need something</h3>
+        <div class="examples">
+          <div class="ex" data-s="ka duni fusu." data-en="I need the toilet." data-es="Necesito ir al baño."></div>
+          <div class="ex" data-s="fusu kui?" data-en="Where's the toilet?" data-es="¿Dónde está el baño?"></div>
+          <div class="ex" data-s="ka suli vimo." data-en="I'm thirsty." data-es="Tengo sed." data-note="Word by word: I want water." data-note-es="Palabra por palabra: quiero agua."></div>
+          <div class="ex" data-s="ka panu foma:do." data-en="I already ate." data-es="Ya he comido."></div>
+          <div class="ex" data-s="ka duni dafu:what." data-en="I need help." data-es="Necesito ayuda."></div>
+          <div class="ex" data-s="foma lati tuka:where?" data-en="Will there be food at home?" data-es="¿Habrá comida en casa?"></div>
+        </div>
+      </div>
+      <div class="situation">
+        <h3 data-es="Cuando es aburrido">When it's boring</h3>
+        <div class="examples">
+          <div class="ex" data-s="ka mufo:desc." data-en="I'm tired." data-es="Estoy cansado."></div>
+          <div class="ex" data-s="ke vek fipo:desc. si ka lefu?" data-en="This is boring. Can we go?" data-es="Esto es aburrido. ¿Nos vamos?"></div>
+          <div class="ex" data-s="si ka kifi deli?" data-en="Can we leave now?" data-es="¿Nos podemos ir ya?"></div>
+          <div class="ex" data-s="si ka lati fipo:do?" data-en="Shall we play later?" data-es="¿Jugamos luego?"></div>
+        </div>
+      </div>
+      <div class="situation">
+        <h3 data-es="Estar seguros">Staying safe</h3>
+        <div class="examples">
+          <div class="ex" data-s="vesa!" data-en="Danger!" data-es="¡Peligro!"></div>
+          <div class="ex" data-s="ke suno vesa." data-en="That person is not safe." data-es="Esa persona no es de fiar."></div>
+          <div class="ex" data-s="ke suno pomi." data-en="That person is safe." data-es="Esa persona es de fiar."></div>
+          <div class="ex" data-s="si pomi?" data-en="Are you okay?" data-es="¿Estás bien?"></div>
+          <div class="ex" data-s="dusa meni!" data-en="Stay here!" data-es="¡Quédate aquí!"></div>
+          <div class="ex" data-s="milu meni!" data-en="Come here!" data-es="¡Ven aquí!"></div>
+          <div class="ex" data-s="vek tavo ke!" data-en="Don't do that!" data-es="¡No hagas eso!"></div>
+        </div>
+      </div>
+      <div class="situation">
+        <h3 data-es="Guardar secretos">Keeping secrets</h3>
+        <div class="examples">
+          <div class="ex" data-s="siko!" data-en="It's a secret!" data-es="¡Es un secreto!"></div>
+          <div class="ex" data-s="vek doki!" data-en="Don't tell!" data-es="¡No lo digas!"></div>
+          <div class="ex" data-s="ka lati doki si." data-en="I'll tell you later." data-es="Te lo cuento luego."></div>
+          <div class="ex" data-s="si naki?" data-en="Do you understand?" data-es="¿Entiendes?"></div>
+          <div class="ex" data-s="da. ka naki." data-en="Yes. I understand." data-es="Sí. Entiendo."></div>
+        </div>
+      </div>
+      <div class="situation">
+        <h3 data-es="Solo para vosotros dos">Just for the two of you</h3>
+        <div class="examples">
+          <div class="ex" data-s="ka mela si." data-en="I love you." data-es="Te quiero."></div>
+          <div class="ex" data-s="ka mela mela si." data-en="I love you so much." data-es="Te quiero muchísimo."></div>
+          <div class="ex" data-s="si ka pomi pomi." data-en="We're a great team." data-es="Somos un equipo genial." data-note="Word by word: you me very good." data-note-es="Palabra por palabra: tú yo muy bien."></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ——— Builder ——— -->
+    <section id="build">
+      <div class="lesson-head">
+        <p class="eyebrow" data-es="Juega">Play</p>
+        <h2 data-es="Máquina de frases">Sentence machine</h2>
+        <p class="goal" data-es="Elige un bloque para cada sitio y escucha lo que has hecho.">Pick a block for each place and hear what you made.</p>
+      </div>
+      <div class="machine builder">
+        <div class="strip" id="builder-strip"></div>
+        <div class="builder-out">
+          <div class="ex">
+            <div class="ex-words" id="builder-words" aria-live="polite"></div>
+            <button class="hear" id="builder-hear" type="button"></button>
+          </div>
+          <p class="hint" id="builder-hint"></p>
+          <button class="btn" id="builder-random" type="button"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ——— Dictionary ——— -->
+    <section id="words">
+      <div class="lesson-head">
+        <p class="eyebrow" data-es="Búscalo">Look it up</p>
+        <h2 data-es="Las 38 palabras">All 38 words</h2>
+        <p class="goal" data-es="Toca una palabra para escucharla.">Tap a word to hear it.</p>
+      </div>
+      <label for="dict-search" class="eyebrow" style="display:block;margin-top:1.2rem" data-es="Busca una palabra">Find a word</label>
+      <input class="search" id="dict-search" type="search" autocomplete="off">
+      <div id="dict"></div>
+      <p class="empty-note" id="dict-empty" hidden data-es="Ninguna palabra coincide. Noki es pequeño a propósito.">No word matches that. Noki is small on purpose.</p>
+    </section>
+
+    <!-- ——— Pocket card ——— -->
+    <section id="card">
+      <div class="lesson-head no-print">
+        <p class="eyebrow" data-es="Imprímelo">Print it</p>
+        <h2 data-es="Tarjeta de bolsillo">Pocket card</h2>
+        <p class="goal" data-es="Todo en una página. Al imprimir esta página solo sale la tarjeta.">Everything on one page. Printing this page prints only this card.</p>
+        <p><button class="btn" id="print-card" type="button"></button></p>
+      </div>
+      <div class="pocket">
+        <div class="pocket-head">
+          <b><span class="nk" data-done="1">noki</span></b>
+          <span data-es="15 letras · 38 palabras · acento en la primera parte · la v suena como b">15 letters · 38 words · stress the first part · v sounds like b</span>
+        </div>
+        <div class="pocket-grid" id="pocket-grid"></div>
+        <ol class="pocket-rules" data-es="&lt;li&gt;&lt;b&gt;Orden:&lt;/b&gt; quién · cuándo · no · acción · qué · dónde.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Las palabras nunca cambian.&lt;/b&gt; Sin “quién” = una orden.&lt;/li&gt;&lt;li&gt;&lt;b&gt;El tiempo&lt;/b&gt; (&lt;span class=&quot;nk&quot;&gt;panu kifi lati&lt;/span&gt;) y el &lt;b&gt;no&lt;/b&gt; (&lt;span class=&quot;nk&quot;&gt;vek&lt;/span&gt;) van justo delante de la acción.&lt;/li&gt;&lt;li&gt;&lt;b&gt;De quién:&lt;/b&gt; la persona primero — &lt;span class=&quot;nk&quot;&gt;ka tuka&lt;/span&gt; = mi casa. &lt;b&gt;Ese:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;ke suno&lt;/span&gt;.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Preguntas:&lt;/b&gt; pon &lt;span class=&quot;nk&quot;&gt;kui&lt;/span&gt; donde va la respuesta. &lt;b&gt;Por qué:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;fa?&lt;/span&gt; · porque: frase + &lt;span class=&quot;nk&quot;&gt;fa&lt;/span&gt; + motivo.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Dilo otra vez = más:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;suno suno&lt;/span&gt; = dos, &lt;span class=&quot;nk&quot;&gt;suno suno suno&lt;/span&gt; = muchos, &lt;span class=&quot;nk&quot;&gt;pomi pomi&lt;/span&gt; = muy bien.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Personas juntas:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si ka&lt;/span&gt; = nosotros · &lt;span class=&quot;nk&quot;&gt;lo ka&lt;/span&gt; = nosotros, tú no · &lt;span class=&quot;nk&quot;&gt;si si&lt;/span&gt; = vosotros · &lt;span class=&quot;nk&quot;&gt;lo lo&lt;/span&gt; = ellos.&lt;/li&gt;&lt;li&gt;&lt;b&gt;¿No hay palabra en Noki?&lt;/b&gt; Usa la palabra normal. Los nombres no cambian.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Hola:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;noki!&lt;/span&gt; · &lt;b&gt;Adiós:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;lati!&lt;/span&gt; · &lt;b&gt;Buenas noches:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;mufo pomi!&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Hay / había / habrá:&lt;/b&gt; cosa + tiempo + dónde — &lt;span class=&quot;nk&quot;&gt;vimo lati meni&lt;/span&gt; = aquí habrá agua.&lt;/li&gt;">
+          <li><b>Order:</b> who · when · not · action · what · where.</li>
+          <li><b>Words never change.</b> No “who” = an order.</li>
+          <li><b>Time</b> (<span class="nk">panu kifi lati</span>) and <b>not</b> (<span class="nk">vek</span>) go right before the action.</li>
+          <li><b>Whose:</b> person first — <span class="nk">ka tuka</span> = my home. <b>That:</b> <span class="nk">ke suno</span>.</li>
+          <li><b>Questions:</b> put <span class="nk">kui</span> where the answer goes. <b>Why:</b> <span class="nk">fa?</span> · because: sentence + <span class="nk">fa</span> + reason.</li>
+          <li><b>Say it again = more:</b> <span class="nk">suno suno</span> = two, <span class="nk">suno suno suno</span> = lots, <span class="nk">pomi pomi</span> = very good.</li>
+          <li><b>People together:</b> <span class="nk">si ka</span> = we · <span class="nk">lo ka</span> = we, not you · <span class="nk">si si</span> = you all · <span class="nk">lo lo</span> = they.</li>
+          <li><b>No Noki word?</b> Use the normal word. Names never change.</li>
+          <li><b>Hi:</b> <span class="nk">noki!</span> · <b>Bye:</b> <span class="nk">lati!</span> · <b>Good night:</b> <span class="nk">mufo pomi!</span></li>
+          <li><b>There is / was / will be:</b> thing + time + where — <span class="nk">vimo lati meni</span> = there will be water here.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p data-es="&lt;span class=&quot;nk&quot;&gt;siko!&lt;/span&gt; Este libro es solo para dos personas."><span class="nk">siko!</span> This codebook is for two people only.</p>
+    <p data-es="Para mayores: las reglas completas están en el documento de reglas de Noki (en inglés).">For grown-ups: the full rules are in the Noki spec (English only).</p>
+  </footer>
+</div>
+
+<script>
+(() => {
+  // ——— Language ———
+  const stored = (() => { try { return localStorage.getItem("noki.lang"); } catch { return null; } })();
+  let lang = stored === "es" || stored === "en"
+    ? stored
+    : ((navigator.language || "en").toLowerCase().startsWith("es") ? "es" : "en");
+  // Strings are either plain (same in both languages) or {en, es}.
+  const t = (v) => (v && typeof v === "object" && !Array.isArray(v) ? (v[lang] ?? v.en) : v);
+
+  const UI = {
+    navLabel: { en: "Lessons", es: "Lecciones" },
+    langLabel: { en: "Language", es: "Idioma" },
+    another: { en: "Another one", es: "Otra frase" },
+    hearSentence: { en: "Hear this sentence", es: "Escuchar esta frase" },
+    hearYours: { en: "Hear your sentence", es: "Escuchar tu frase" },
+    hear: { en: "Hear", es: "Escuchar" },
+    hearIt: { en: "Hear it.", es: "Escúchalo." },
+    legendLabel: { en: "Word colors", es: "Colores de las palabras" },
+    practice: { en: "Practice", es: "Practica" },
+    tryAgain: { en: "Try again", es: "Otra vez" },
+    allRight: { en: "All right! This lesson is done.", es: "¡Todo bien! Lección terminada." },
+    surprise: { en: "Surprise me", es: "Sorpréndeme" },
+    pickBlocks: { en: "Pick some blocks above.", es: "Elige algunos bloques arriba." },
+    printCard: { en: "Print the pocket card", es: "Imprimir la tarjeta" },
+    searchPlaceholder: { en: "Type Noki or English, like “water” or “lefu”", es: "Escribe en Noki o en español, como “agua” o “lefu”" },
+    noSpeech: {
+      en: "This browser can't speak, so the hear buttons are hidden. Read the words out loud with the sound rules in Lesson 1.",
+      es: "Este navegador no puede hablar, así que los botones de escuchar están ocultos. Lee las palabras en voz alta con las reglas de la lección 1.",
+    },
+    noSpanishVoice: {
+      en: "This device has no Spanish voice, so the hear buttons may sound a bit off. Trust the sound rules in Lesson 1.",
+      es: "Este dispositivo no tiene voz en español, así que los botones pueden sonar raro. Fíate de las reglas de sonido de la lección 1.",
+    },
+    hintOrder: { en: "No “who”, so it's an order.", es: "Sin “quién”, así que es una orden." },
+    hintAction: { en: "Tip: most sentences need an action.", es: "Truco: casi todas las frases necesitan una acción." },
+    hintQuestion: { en: "kui makes it a question. The answer goes in the same place.", es: "kui lo convierte en pregunta. La respuesta va en el mismo sitio." },
+    hintWhen: { en: "kui in the “when” place asks when.", es: "kui en el sitio de “cuándo” pregunta cuándo." },
+    borrowed: { en: "borrowed", es: "prestada" },
+    score: (r, n) => (lang === "es" ? `${r} de ${n} bien` : `${r} of ${n} right`),
+    almost: (r, n) => (lang === "es" ? `${r} de ${n}. Inténtalo otra vez para acertarlas todas.` : `${r} of ${n}. Try again to get them all.`),
+  };
+
+  // ——— Vocabulary: role colors the word by what kind of word it is ———
+  const W = {
+    ka: { r: "who", g: { en: "I, me", es: "yo" }, m: { en: "I, me", es: "yo, mí" } },
+    si: { r: "who", g: { en: "you", es: "tú" }, m: { en: "you", es: "tú" } },
+    lo: { r: "who", g: { en: "he, she", es: "él, ella" }, m: { en: "he, she, him, her", es: "él, ella" } },
+    da: { r: "link", g: { en: "yes", es: "sí" }, m: { en: "yes", es: "sí" } },
+    vek: { r: "not", g: { en: "not", es: "no" }, m: { en: "no, not, none", es: "no, ningún, nada" } },
+    suli: { r: "do", g: { en: "want", es: "querer" }, m: { en: "want", es: "querer" } },
+    duni: { r: "do", g: { en: "need", es: "necesitar" }, m: { en: "need", es: "necesitar" } },
+    lefu: { r: "do", g: { en: "go", es: "ir" }, m: { en: "go", es: "ir" } },
+    milu: { r: "do", g: { en: "come", es: "venir" }, m: { en: "come", es: "venir" } },
+    deli: { r: "do", g: { en: "leave, put", es: "dejar, poner" }, m: { en: "leave, leave behind, put down", es: "dejar, dejar atrás, poner" } },
+    dusa: { r: "do", g: { en: "wait, stay", es: "esperar" }, m: { en: "wait, stay", es: "esperar, quedarse" } },
+    naki: { r: "do", g: { en: "know", es: "saber" }, m: { en: "know, understand", es: "saber, entender" } },
+    luma: { r: "do", g: { en: "see", es: "ver" }, m: { en: "see, look", es: "ver, mirar" } },
+    tavo: { r: "do", g: { en: "do, make", es: "hacer" }, m: { en: "do, make", es: "hacer" } },
+    nisu: { r: "do", g: { en: "take", es: "coger" }, m: { en: "take, get", es: "coger, conseguir" } },
+    moku: { r: "do", g: { en: "give", es: "dar" }, m: { en: "give", es: "dar" } },
+    dafu: { r: "do", g: { en: "help", es: "ayudar" }, m: { en: "help", es: "ayudar, ayuda" } },
+    doki: { r: "do", g: { en: "say, tell", es: "decir" }, m: { en: "say, speak, tell", es: "decir, hablar, contar" } },
+    mela: { r: "do", g: { en: "love", es: "querer" }, m: { en: "love, like, enjoy", es: "querer, gustar, disfrutar" } },
+    foma: { r: "what", g: { en: "food, eat", es: "comida, comer" }, m: { en: "food, eat", es: "comida, comer" } },
+    vimo: { r: "what", g: { en: "water, drink", es: "agua, beber" }, m: { en: "water, drink", es: "agua, beber" } },
+    tuka: { r: "what", g: { en: "home", es: "casa" }, m: { en: "home", es: "casa" } },
+    suno: { r: "what", g: { en: "person", es: "persona" }, m: { en: "person", es: "persona" } },
+    fusu: { r: "what", g: { en: "toilet", es: "baño" }, m: { en: "toilet, bathroom", es: "baño, aseo" } },
+    mufo: { r: "what", g: { en: "sleep, tired", es: "dormir, cansado" }, m: { en: "sleep, sleepy, tired, rest", es: "dormir, sueño, cansado, descansar" } },
+    fipo: { r: "what", g: { en: "play, fun", es: "jugar, diversión" }, m: { en: "play, game, fun", es: "jugar, juego, diversión" } },
+    ke: { r: "what", g: { en: "that, it", es: "eso" }, m: { en: "that, it", es: "eso, ese, lo" } },
+    meni: { r: "where", g: { en: "here", es: "aquí" }, m: { en: "here", es: "aquí" } },
+    lopa: { r: "where", g: { en: "there", es: "allí" }, m: { en: "there", es: "allí" } },
+    kui: { r: "link", g: { en: "what? who? where? when?", es: "¿qué? ¿quién? ¿dónde? ¿cuándo?" }, m: { en: "question word: what, who, where, when", es: "palabra de pregunta: qué, quién, dónde, cuándo" } },
+    panu: { r: "when", g: { en: "before", es: "antes" }, m: { en: "before, earlier (already happened)", es: "antes, ya pasado" } },
+    kifi: { r: "when", g: { en: "now", es: "ahora" }, m: { en: "now", es: "ahora" } },
+    lati: { r: "when", g: { en: "later", es: "luego" }, m: { en: "later, after", es: "luego, después" } },
+    pomi: { r: "desc", g: { en: "good", es: "bien" }, m: { en: "good, okay, safe", es: "bien, bueno, de fiar" } },
+    vesa: { r: "desc", g: { en: "bad", es: "malo" }, m: { en: "bad, problem, danger", es: "malo, problema, peligro" } },
+    siko: { r: "desc", g: { en: "secret", es: "secreto" }, m: { en: "secret, private", es: "secreto, privado" } },
+    e: { r: "link", g: { en: "and", es: "y" }, m: { en: "and", es: "y" } },
+    fa: { r: "link", g: { en: "why, because", es: "por qué, porque" }, m: { en: "why, because", es: "por qué, porque" } },
+  };
+  // The language's own name works as the greeting; it is not one of the 38 words.
+  const EXTRA = { noki: { r: "link", g: { en: "hi!", es: "¡hola!" } } };
+  // Pronoun groups: two pronouns side by side. Not extra words — just ka/si/lo together.
+  const GROUPS = {
+    "si ka": { r: "who", g: { en: "we", es: "nosotros" } },
+    "lo ka": { r: "who", g: { en: "we, not you", es: "nosotros, tú no" } },
+    "si si": { r: "who", g: { en: "you all", es: "vosotros" } },
+    "lo lo": { r: "who", g: { en: "they", es: "ellos" } },
+  };
+  const glossOf = (w) => W[w] || GROUPS[w] || EXTRA[w];
+
+  const ROLES = [
+    { r: "who", name: { en: "Who", es: "Quién" }, title: { en: "People", es: "Personas" }, sample: "ka" },
+    { r: "when", name: { en: "When", es: "Cuándo" }, title: { en: "Time", es: "Tiempo" }, sample: "kifi" },
+    { r: "not", name: { en: "Not", es: "No" }, title: { en: "Not", es: "No" }, sample: "vek" },
+    { r: "do", name: { en: "Action", es: "Acción" }, title: { en: "Actions", es: "Acciones" }, sample: "lefu" },
+    { r: "what", name: { en: "What", es: "Qué" }, title: { en: "Things", es: "Cosas" }, sample: "foma" },
+    { r: "where", name: { en: "Where", es: "Dónde" }, title: { en: "Places", es: "Lugares" }, sample: "meni" },
+    { r: "desc", name: { en: "Describe", es: "Describe" }, title: { en: "Describing words", es: "Palabras que describen" }, sample: "pomi" },
+    { r: "link", name: { en: "Little", es: "Pequeñas" }, title: { en: "Little words", es: "Palabras pequeñas" }, sample: "e" },
+  ];
+  const SLOTS = ROLES.slice(0, 6);
+
+  const SPEAKER = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M15.5 8.8a4.5 4.5 0 0 1 0 6.4M18 6.3a8 8 0 0 1 0 11.4"/></svg>';
+
+  // "foma:do" forces a role; trailing punctuation stays with the word.
+  // Anything that isn't a Noki word is a borrowed word.
+  const parse = (token) => {
+    const m = token.match(/^([a-z]+)(?::([a-z]+))?([?!.,]*)$/i);
+    if (!m) return { w: token, r: "borrow", g: t(UI.borrowed), p: "" };
+    const w = m[1].toLowerCase();
+    const entry = W[w] || EXTRA[w];
+    return { w, r: m[2] || (entry ? entry.r : "borrow"), g: entry ? t(entry.g) : t(UI.borrowed), p: m[3] || "" };
+  };
+  const spoken = (s) => s.replace(/:[a-z]+/gi, "");
+  const plain = (s) => spoken(s).replace(/\s+/g, " ").trim();
+
+  const chip = (tok, withGloss = true) => {
+    const el = document.createElement("span");
+    el.className = "w";
+    el.dataset.r = tok.r;
+    const b = document.createElement("b");
+    b.textContent = tok.w + tok.p;
+    el.append(b);
+    if (withGloss) {
+      const small = document.createElement("small");
+      small.textContent = tok.g || " ";
+      el.append(small);
+    }
+    return el;
+  };
+
+  // ——— Speech: the device's Spanish voice reads Noki spelling correctly ———
+  const synth = "speechSynthesis" in window ? window.speechSynthesis : null;
+  let voice = null;
+  let voicesChecked = false;
+  const voiceNote = document.getElementById("voice-note");
+  const showVoiceNote = (key) => {
+    if (!key) { voiceNote.hidden = true; voiceNote.dataset.noteKey = ""; return; }
+    voiceNote.dataset.noteKey = key;
+    voiceNote.textContent = t(UI[key]);
+    voiceNote.hidden = false;
+  };
+  const pickVoice = () => {
+    if (!synth) return;
+    const voices = synth.getVoices();
+    if (!voices.length) return;
+    voicesChecked = true;
+    voice = voices.find((v) => /^es[-_]ES/i.test(v.lang)) || voices.find((v) => /^es/i.test(v.lang)) || null;
+    showVoiceNote(voice ? null : "noSpanishVoice");
+  };
+  if (!synth) {
+    document.documentElement.classList.add("nospeech");
+    showVoiceNote("noSpeech");
+  } else {
+    pickVoice();
+    synth.onvoiceschanged = pickVoice;
+  }
+  let playingBtn = null;
+  const say = (text, btn) => {
+    if (!synth) return;
+    if (!voicesChecked) pickVoice();
+    synth.cancel();
+    const u = new SpeechSynthesisUtterance(plain(text));
+    u.lang = voice ? voice.lang : "es-ES";
+    if (voice) u.voice = voice;
+    u.rate = 0.8;
+    if (playingBtn) playingBtn.classList.remove("playing");
+    if (btn) {
+      playingBtn = btn;
+      btn.classList.add("playing");
+      const done = () => btn.classList.remove("playing");
+      u.onend = done;
+      u.onerror = done;
+    }
+    // Chrome can drop an utterance queued in the same tick as cancel().
+    setTimeout(() => synth.speak(u), 60);
+  };
+  const hearButton = (text, label) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "hear";
+    btn.innerHTML = SPEAKER;
+    btn.setAttribute("aria-label", label || `${t(UI.hear)} “${plain(text)}”`);
+    btn.addEventListener("click", () => say(text, btn));
+    return btn;
+  };
+
+  // ——— Inline Noki words get their color ———
+  const colorInline = (root = document) => {
+    root.querySelectorAll(".nk:not([data-done])").forEach((el) => {
+      const text = el.textContent;
+      el.textContent = "";
+      text.split(/(\s+)/).forEach((part) => {
+        if (!part.trim()) { el.append(part); return; }
+        const tok = parse(part);
+        const span = document.createElement("span");
+        span.dataset.r = tok.r;
+        span.textContent = tok.w + tok.p;
+        el.append(span);
+      });
+      el.dataset.done = "1";
+    });
+  };
+
+  // ——— Word cards ———
+  const card = (w) => {
+    const e = W[w];
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "card";
+    btn.dataset.r = e.r;
+    btn.dataset.word = w;
+    btn.setAttribute("aria-label", `${w}: ${t(e.m)}. ${t(UI.hearIt)}`);
+    btn.innerHTML = `<span class="cw"></span><span class="cm"></span><span class="ci">${SPEAKER}</span>`;
+    btn.querySelector(".cw").textContent = w;
+    btn.querySelector(".cm").textContent = t(e.m);
+    btn.addEventListener("click", () => say(w, null));
+    return btn;
+  };
+  const renderCards = () => {
+    document.querySelectorAll(".cards[data-words]").forEach((box) => {
+      box.textContent = "";
+      box.dataset.words.split(",").forEach((w) => box.append(card(w.trim())));
+    });
+  };
+
+  // ——— Example sentences ———
+  const renderExample = (el) => {
+    el.textContent = "";
+    const s = el.dataset.s;
+    const words = document.createElement("div");
+    words.className = "ex-words";
+    s.split(/\s+/).forEach((token) => words.append(chip(parse(token))));
+    const en = document.createElement("p");
+    en.className = "ex-en";
+    en.textContent = (lang === "es" && el.dataset.es) ? el.dataset.es : el.dataset.en;
+    const note = lang === "es" ? (el.dataset.noteEs || el.dataset.note) : el.dataset.note;
+    if (note) {
+      const small = document.createElement("small");
+      small.textContent = note;
+      en.append(small);
+    }
+    el.append(words, en, hearButton(s));
+  };
+  const renderExamples = () => document.querySelectorAll(".ex[data-s]").forEach(renderExample);
+
+  // ——— Legend ———
+  const legend = document.getElementById("legend");
+  const renderLegend = () => {
+    legend.textContent = "";
+    legend.setAttribute("aria-label", t(UI.legendLabel));
+    ROLES.forEach((role) => {
+      const li = document.createElement("li");
+      li.append(chip({ w: role.sample, r: role.r, g: t(role.title).toLowerCase(), p: "" }));
+      legend.append(li);
+    });
+  };
+
+  // ——— Hero sentence strip ———
+  const HERO = [
+    { s: { who: "ka", when: "kifi", do: "lefu", where: "tuka" }, en: "I'm going home now.", es: "Ahora voy a casa." },
+    { s: { who: "si", do: "suli", what: "vimo?" }, en: "Do you want water?", es: "¿Quieres agua?" },
+    { s: { who: "si ka", when: "lati", not: "vek", do: "foma", where: "lopa" }, en: "We won't eat there later.", es: "Luego no comeremos allí.", note: { en: "si ka = you and me. Noki has no single word for “we”.", es: "si ka = tú y yo. Noki no tiene una sola palabra para “nosotros”." } },
+    { s: { who: "ka", do: "duni", what: "fusu" }, en: "I need the toilet.", es: "Necesito ir al baño." },
+    { s: { do: "milu", where: "meni!" }, en: "Come here!", es: "¡Ven aquí!", note: { en: "No “who”, so it's an order.", es: "Sin “quién”, así que es una orden." } },
+    { s: { who: "lo lo", when: "panu", do: "luma", what: "si ka" }, en: "They saw us.", es: "Nos vieron.", note: { en: "Two pronouns together: lo lo = they, si ka = us.", es: "Dos pronombres juntos: lo lo = ellos, si ka = nosotros." } },
+    { s: { who: "ka", not: "vek", do: "mela", what: "ke" }, en: "I don't like that.", es: "Eso no me gusta." },
+    { s: { who: "si", when: "kui", do: "lefu", where: "tuka?" }, en: "When are you going home?", es: "¿Cuándo vas a casa?", note: { en: "kui sits in the “when” place, so it asks when.", es: "kui está en el sitio de “cuándo”, así que pregunta cuándo." } },
+  ];
+  const heroStrip = document.getElementById("hero-strip");
+  const heroEn = document.getElementById("hero-en");
+  const heroHear = document.getElementById("hero-hear");
+  const heroNext = document.getElementById("hero-next");
+  heroHear.innerHTML = SPEAKER;
+  let slotEls = [];
+  const buildHeroStrip = () => {
+    heroStrip.textContent = "";
+    slotEls = SLOTS.map((slot) => {
+      const wrap = document.createElement("div");
+      wrap.className = "slot";
+      wrap.dataset.r = slot.r;
+      const name = document.createElement("span");
+      name.className = "slot-name";
+      name.textContent = t(slot.name);
+      const box = document.createElement("div");
+      box.className = "slot-box";
+      wrap.append(name, box);
+      heroStrip.append(wrap);
+      return box;
+    });
+  };
+  let heroIndex = 0;
+  const heroSentence = (ex) => SLOTS.map((slot) => ex.s[slot.r]).filter(Boolean).join(" ");
+  const showHero = (i, animate) => {
+    const ex = HERO[i];
+    SLOTS.forEach((slot, k) => {
+      const box = slotEls[k];
+      box.textContent = "";
+      const word = ex.s[slot.r];
+      if (word) {
+        // A slot can hold a pronoun group ("si ka"), which is two chips.
+        word.split(" ").forEach((piece) => {
+          const tok = parse(piece);
+          tok.r = slot.r; // color by the place it sits in
+          const c = chip(tok);
+          if (animate) c.classList.add("pop");
+          box.append(c);
+        });
+        box.classList.add("filled");
+      } else {
+        const dash = document.createElement("span");
+        dash.className = "empty";
+        dash.textContent = "·";
+        dash.setAttribute("aria-hidden", "true");
+        box.append(dash);
+        box.classList.remove("filled");
+      }
+    });
+    heroEn.textContent = t(ex);
+    const note = t(ex.note);
+    if (note) {
+      const small = document.createElement("small");
+      small.textContent = note;
+      heroEn.append(small);
+    }
+    heroHear.setAttribute("aria-label", `${t(UI.hear)} “${heroSentence(ex)}”`);
+    heroNext.textContent = t(UI.another);
+  };
+  heroHear.addEventListener("click", () => say(heroSentence(HERO[heroIndex]), heroHear));
+  heroNext.addEventListener("click", () => {
+    heroIndex = (heroIndex + 1) % HERO.length;
+    showHero(heroIndex, true);
+  });
+
+  // ——— Progress (per-viewer convenience; the page works without it) ———
+  const store = {
+    read() { try { return JSON.parse(localStorage.getItem("noki.progress") || "{}"); } catch { return {}; } },
+    write(v) { try { localStorage.setItem("noki.progress", JSON.stringify(v)); } catch { /* storage unavailable */ } },
+  };
+  const markNav = () => {
+    const progress = store.read();
+    document.querySelectorAll(".nav a[data-lesson]").forEach((a) => {
+      a.classList.toggle("done", Boolean(progress[a.dataset.lesson]));
+    });
+  };
+
+  // ——— Quizzes ———
+  const nk = (s) => `<span class="nk">${s}</span>`;
+  const QUIZ = {
+    l1: [
+      { q: { en: `Which part of ${nk("lefu")} do you say strongest?`, es: `¿Qué parte de ${nk("lefu")} se dice más fuerte?` },
+        o: ["LE-fu", "le-FU", { en: "Both the same", es: "Las dos igual" }], a: 0 },
+      { q: { en: `How does the v in ${nk("vimo")} sound?`, es: `¿Cómo suena la v de ${nk("vimo")}?` },
+        o: [{ en: "Like the English v in “very”", es: "Como la v inglesa de “very”" }, { en: "Like the Spanish b or v, so it sounds like “bimo”", es: "Como la b/v española: suena “bimo”" }, { en: "It's silent", es: "No se dice" }], a: 1 },
+      { q: { en: "Which is the only Noki word that ends with a hard sound?", es: "¿Cuál es la única palabra de Noki que acaba en sonido fuerte?" },
+        o: [nk("ka"), nk("kui"), nk("vek")], a: 2 },
+    ],
+    l2: [
+      { q: { en: `What does ${nk("ka")} mean?`, es: `¿Qué significa ${nk("ka")}?` },
+        o: [{ en: "you", es: "tú" }, { en: "I, me", es: "yo, mí" }, { en: "they", es: "ellos" }], a: 1 },
+      { q: { en: "How do you say “we” — you and me?", es: "¿Cómo se dice “nosotros” — tú y yo?" }, o: [nk("ka"), nk("si ka"), nk("ka ka")], a: 1 },
+      { q: { en: `${nk("lo")} means…`, es: `${nk("lo")} significa…` },
+        o: [{ en: "only he", es: "solo él" }, { en: "he or she", es: "él o ella" }, { en: "only she", es: "solo ella" }], a: 1 },
+      { q: { en: `${nk("si si")} means…`, es: `${nk("si si")} significa…` },
+        o: [{ en: "you two, or all of you", es: "vosotros dos, o todos vosotros" }, { en: "very you", es: "muy tú" }, { en: "they", es: "ellos" }], a: 0 },
+    ],
+    l3: [
+      { q: { en: `${nk("vimo")} means…`, es: `${nk("vimo")} significa…` },
+        o: [{ en: "food or eat", es: "comida o comer" }, { en: "water or drink", es: "agua o beber" }, { en: "home", es: "casa" }], a: 1 },
+      { q: { en: "How do you say “my home”?", es: "¿Cómo se dice “mi casa”?" }, o: [nk("tuka ka"), nk("ka tuka"), nk("ke tuka")], a: 1 },
+      { q: { en: `${nk("ke suno")} means…`, es: `${nk("ke suno")} significa…` },
+        o: [{ en: "that person", es: "esa persona" }, { en: "my person", es: "mi persona" }, { en: "nobody", es: "nadie" }], a: 0 },
+    ],
+    l4: [
+      { q: { en: `${nk("ka suli vimo")} means…`, es: `${nk("ka suli vimo")} significa…` },
+        o: [{ en: "You want water.", es: "Tú quieres agua." }, { en: "I give water.", es: "Yo doy agua." }, { en: "I want water.", es: "Yo quiero agua." }], a: 2 },
+      { q: { en: "How do you say “Come home!”?", es: "¿Cómo se dice “¡Ven a casa!”?" }, o: [nk("ka milu tuka"), nk("milu tuka!"), nk("tuka milu!")], a: 1 },
+      { q: { en: `${nk("moku ka vimo!")} means…`, es: `${nk("moku ka vimo!")} significa…` },
+        o: [{ en: "Give me water!", es: "¡Dame agua!" }, { en: "I give water.", es: "Yo doy agua." }, { en: "Take my water!", es: "¡Coge mi agua!" }], a: 0 },
+    ],
+    l5: [
+      { q: { en: `${nk("ka vek naki")} means…`, es: `${nk("ka vek naki")} significa…` },
+        o: [{ en: "I know.", es: "Lo sé." }, { en: "I don't understand.", es: "No entiendo." }, { en: "Do you know?", es: "¿Lo sabes?" }], a: 1 },
+      { q: { en: `Where does ${nk("vek")} go to say “not”?`, es: `¿Dónde va ${nk("vek")} para decir “no”?` },
+        o: [{ en: "At the very end", es: "Al final del todo" }, { en: "Right before the action", es: "Justo delante de la acción" }, { en: "Before the person", es: "Delante de la persona" }], a: 1 },
+      { q: { en: `${nk("vek suno")} means…`, es: `${nk("vek suno")} significa…` },
+        o: [{ en: "nobody", es: "nadie" }, { en: "a bad person", es: "una persona mala" }, { en: "No, person!", es: "¡No, persona!" }], a: 0 },
+    ],
+    l6: [
+      { q: { en: `${nk("ka panu foma:do")} means…`, es: `${nk("ka panu foma:do")} significa…` },
+        o: [{ en: "I will eat.", es: "Comeré." }, { en: "I'm eating now.", es: "Estoy comiendo ahora." }, { en: "I ate.", es: "Comí." }], a: 2 },
+      { q: { en: "How do you say “We're going home now”?", es: "¿Cómo se dice “Ahora vamos a casa”?" },
+        o: [nk("si ka lefu kifi tuka"), nk("si ka kifi lefu tuka"), nk("kifi si ka tuka lefu")], a: 1 },
+      { q: { en: `${nk("ka panu foma:do e lati lefu tuka")} means…`, es: `${nk("ka panu foma:do e lati lefu tuka")} significa…` },
+        o: [{ en: "I ate, and I'll go home later.", es: "Comí, y luego iré a casa." }, { en: "I ate and went home.", es: "Comí y me fui a casa." }, { en: "I'll eat and go home.", es: "Comeré e iré a casa." }], a: 0 },
+    ],
+    l7: [
+      { q: { en: `${nk("si suli kui?")} means…`, es: `${nk("si suli kui?")} significa…` },
+        o: [{ en: "Where do you want to go?", es: "¿Adónde quieres ir?" }, { en: "What do you want?", es: "¿Qué quieres?" }, { en: "Do you want that?", es: "¿Quieres eso?" }], a: 1 },
+      { q: { en: "How do you ask “Where's the toilet?”", es: "¿Cómo se pregunta “¿Dónde está el baño?”" },
+        o: [nk("fusu kui?"), nk("si fusu?"), nk("ka duni fusu.")], a: 0 },
+      { q: { en: `${nk("kui milu?")} means…`, es: `${nk("kui milu?")} significa…` },
+        o: [{ en: "Are you coming?", es: "¿Vienes?" }, { en: "Who is coming?", es: "¿Quién viene?" }, { en: "Where do you come from?", es: "¿De dónde vienes?" }], a: 1 },
+      { q: { en: "How do you ask “Why?”", es: "¿Cómo se pregunta “¿Por qué?”" }, o: [nk("kui?"), nk("vek?"), nk("fa?")], a: 2 },
+    ],
+    l8: [
+      { q: { en: `${nk("suno suno suno")} means…`, es: `${nk("suno suno suno")} significa…` },
+        o: [{ en: "exactly three people", es: "exactamente tres personas" }, { en: "lots of people", es: "mucha gente" }, { en: "a very good person", es: "una persona muy buena" }], a: 1 },
+      { q: { en: `${nk("pomi pomi!")} means…`, es: `${nk("pomi pomi!")} significa…` },
+        o: [{ en: "Great!", es: "¡Genial!" }, { en: "Two good things", es: "Dos cosas buenas" }, { en: "Is it okay?", es: "¿Está bien?" }], a: 0 },
+      { q: { en: "How do you say “That person is safe”?", es: "¿Cómo se dice “Esa persona es de fiar”?" },
+        o: [nk("ke suno vesa."), nk("suno ke siko."), nk("ke suno pomi.")], a: 2 },
+    ],
+  };
+  const CHEERS = ["pomi pomi!", "pomi!", "da!"];
+
+  const renderQuiz = (box) => {
+    const id = box.dataset.quiz;
+    const questions = QUIZ[id];
+    box.textContent = "";
+    const head = document.createElement("div");
+    head.className = "quiz-title";
+    head.innerHTML = `<h3></h3><span aria-live="polite"></span>`;
+    head.querySelector("h3").textContent = t(UI.practice);
+    const counter = head.querySelector("span");
+    box.append(head);
+    let answered = 0;
+    let right = 0;
+    const update = () => { counter.textContent = UI.score(right, questions.length); };
+    update();
+    const finish = () => {
+      const end = document.createElement("div");
+      end.className = "quiz-end";
+      const msg = document.createElement("p");
+      const perfect = right === questions.length;
+      msg.textContent = perfect ? t(UI.allRight) : UI.almost(right, questions.length);
+      const again = document.createElement("button");
+      again.type = "button";
+      again.className = "btn ghost";
+      again.textContent = t(UI.tryAgain);
+      again.addEventListener("click", () => renderQuiz(box));
+      end.append(msg, again);
+      box.append(end);
+      if (perfect) {
+        const progress = store.read();
+        progress[id] = true;
+        store.write(progress);
+        markNav();
+      }
+    };
+    questions.forEach((item, qi) => {
+      const q = document.createElement("div");
+      q.className = "q";
+      const text = document.createElement("p");
+      text.className = "q-text";
+      text.id = `${id}-q${qi}`;
+      text.innerHTML = `${qi + 1}. ${t(item.q)}`;
+      const opts = document.createElement("div");
+      opts.className = "opts";
+      opts.setAttribute("role", "group");
+      opts.setAttribute("aria-labelledby", text.id);
+      const buttons = item.o.map((label, oi) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "opt";
+        b.innerHTML = `<span>${t(label)}</span><span class="mark-i" aria-hidden="true"></span>`;
+        b.addEventListener("click", () => {
+          buttons.forEach((x) => { x.disabled = true; });
+          const ok = oi === item.a;
+          buttons[item.a].classList.add("right");
+          buttons[item.a].querySelector(".mark-i").textContent = ok ? CHEERS[qi % CHEERS.length] : "✓";
+          if (!ok) {
+            b.classList.add("wrong");
+            b.querySelector(".mark-i").textContent = "✗";
+          }
+          answered += 1;
+          if (ok) right += 1;
+          update();
+          if (answered === questions.length) finish();
+        });
+        return b;
+      });
+      opts.append(...buttons);
+      q.append(text, opts);
+      box.append(q);
+    });
+    colorInline(box);
+  };
+  const renderQuizzes = () => document.querySelectorAll(".quiz[data-quiz]").forEach(renderQuiz);
+
+  // ——— Sentence machine ———
+  const PEOPLE = ["ka", "si", "lo"];
+  const TEAMS = ["si ka", "lo ka", "si si", "lo lo"];
+  const CHOICES = {
+    who: ["", ...PEOPLE, ...TEAMS],
+    when: ["", "panu", "kifi", "lati", "kui"],
+    not: ["", "vek"],
+    do: ["", "suli", "duni", "lefu", "milu", "deli", "dusa", "naki", "luma", "tavo", "nisu", "moku", "dafu", "doki", "mela", "foma", "vimo", "mufo", "fipo"],
+    what: ["", "ke", "foma", "vimo", "tuka", "suno", "fusu", "fipo", "kui", ...PEOPLE, ...TEAMS],
+    where: ["", "meni", "lopa", "tuka", "kui"],
+  };
+  const PRESETS = [
+    { who: "ka", when: "kifi", do: "lefu", where: "tuka" },
+    { who: "si ka", when: "lati", do: "fipo" },
+    { who: "si", do: "suli", what: "kui" },
+    { who: "ka", not: "vek", do: "mela", what: "ke" },
+    { do: "milu", where: "meni" },
+    { who: "lo", when: "panu", do: "foma" },
+    { who: "ka", do: "duni", what: "fusu" },
+    { who: "lo lo", when: "lati", do: "milu", where: "meni" },
+    { do: "moku", what: "ka" },
+    { who: "si", do: "lefu", where: "kui" },
+    { who: "ka", when: "lati", do: "doki", what: "si" },
+    { not: "vek", do: "doki" },
+  ];
+  const builderStrip = document.getElementById("builder-strip");
+  const builderWords = document.getElementById("builder-words");
+  const builderHint = document.getElementById("builder-hint");
+  const builderHear = document.getElementById("builder-hear");
+  const builderRandom = document.getElementById("builder-random");
+  builderHear.innerHTML = SPEAKER;
+  let selects = {};
+  const buildBuilder = (keep = {}) => {
+    builderStrip.textContent = "";
+    selects = {};
+    SLOTS.forEach((slot) => {
+      const wrap = document.createElement("div");
+      wrap.className = "slot";
+      wrap.dataset.r = slot.r;
+      const label = document.createElement("label");
+      label.className = "slot-name";
+      label.htmlFor = `b-${slot.r}`;
+      label.textContent = t(slot.name);
+      const sel = document.createElement("select");
+      sel.id = `b-${slot.r}`;
+      CHOICES[slot.r].forEach((w) => {
+        const opt = document.createElement("option");
+        opt.value = w;
+        opt.textContent = w ? `${w} · ${t(glossOf(w).g)}` : "—";
+        sel.append(opt);
+      });
+      sel.value = keep[slot.r] || "";
+      sel.addEventListener("change", renderBuilt);
+      selects[slot.r] = sel;
+      wrap.append(label, sel);
+      builderStrip.append(wrap);
+    });
+    builderHear.setAttribute("aria-label", t(UI.hearYours));
+    builderRandom.textContent = t(UI.surprise);
+  };
+  function builtWords() {
+    // A pronoun group ("si ka") fills one slot but shows as two chips.
+    return SLOTS.flatMap((slot) => {
+      const v = selects[slot.r].value;
+      return v ? v.split(" ").map((w) => ({ w, r: slot.r })) : [];
+    });
+  }
+  function renderBuilt() {
+    const words = builtWords();
+    builderWords.textContent = "";
+    if (!words.length) {
+      const p = document.createElement("span");
+      p.style.color = "var(--soft)";
+      p.textContent = t(UI.pickBlocks);
+      builderWords.append(p);
+      builderHint.textContent = "";
+      return;
+    }
+    const isQuestion = words.some((x) => x.w === "kui");
+    words.forEach((x, i) => {
+      const tok = parse(x.w);
+      tok.r = x.r === "not" ? "not" : (PEOPLE.includes(x.w) ? "who" : x.r);
+      if (x.w === "kui") tok.r = "link";
+      if (i === words.length - 1) tok.p = isQuestion ? "?" : "";
+      builderWords.append(chip(tok));
+    });
+    const hints = [];
+    if (!selects.who.value && selects.do.value) hints.push(t(UI.hintOrder));
+    if (!selects.do.value) hints.push(t(UI.hintAction));
+    if (isQuestion) hints.push(t(UI.hintQuestion));
+    if (selects.when.value === "kui") hints.push(t(UI.hintWhen));
+    builderHint.textContent = hints.join(" ");
+  }
+  builderHear.addEventListener("click", () => {
+    const text = builtWords().map((x) => x.w).join(" ");
+    if (text) say(text, builderHear);
+  });
+  const applyPreset = (preset) => {
+    SLOTS.forEach((slot) => { selects[slot.r].value = preset[slot.r] || ""; });
+    renderBuilt();
+  };
+  let lastPreset = 0;
+  builderRandom.addEventListener("click", () => {
+    let next = Math.floor(Math.random() * PRESETS.length);
+    if (next === lastPreset) next = (next + 1) % PRESETS.length;
+    lastPreset = next;
+    applyPreset(PRESETS[next]);
+  });
+
+  // ——— Dictionary ———
+  const dict = document.getElementById("dict");
+  const dictEmpty = document.getElementById("dict-empty");
+  const search = document.getElementById("dict-search");
+  let groups = [];
+  const buildDict = () => {
+    dict.textContent = "";
+    groups = ROLES.map((role) => {
+      const words = Object.keys(W).filter((w) => W[w].r === role.r);
+      const g = document.createElement("div");
+      g.className = "dict-group";
+      g.dataset.r = role.r;
+      g.innerHTML = `<h3><i aria-hidden="true"></i><span></span></h3><div class="cards"></div>`;
+      g.querySelector("h3 span").textContent = t(role.title);
+      const cardsBox = g.querySelector(".cards");
+      const cards = words.map((w) => { const c = card(w); cardsBox.append(c); return c; });
+      dict.append(g);
+      return { g, cards };
+    });
+  };
+  const filterDict = () => {
+    const q = search.value.trim().toLowerCase();
+    let shown = 0;
+    groups.forEach(({ g, cards }) => {
+      let any = false;
+      cards.forEach((c) => {
+        const w = c.dataset.word;
+        const hit = !q || w.includes(q) || t(W[w].m).toLowerCase().includes(q);
+        c.hidden = !hit;
+        if (hit) { any = true; shown += 1; }
+      });
+      g.hidden = !any;
+    });
+    dictEmpty.hidden = shown > 0;
+  };
+  search.addEventListener("input", filterDict);
+
+  // ——— Pocket card ———
+  const pocket = document.getElementById("pocket-grid");
+  const buildPocket = () => {
+    pocket.textContent = "";
+    ROLES.forEach((role) => {
+      const words = Object.keys(W).filter((w) => W[w].r === role.r);
+      const block = document.createElement("div");
+      block.dataset.r = role.r;
+      const h = document.createElement("h4");
+      h.textContent = t(role.title);
+      const ul = document.createElement("ul");
+      words.forEach((w) => {
+        const li = document.createElement("li");
+        const n = document.createElement("span");
+        n.className = "nk";
+        n.textContent = w;
+        li.append(n, ` ${t(W[w].g)}`);
+        ul.append(li);
+      });
+      block.append(h, ul);
+      pocket.append(block);
+    });
+  };
+  document.getElementById("print-card").addEventListener("click", () => {
+    try { window.print(); } catch { /* printing blocked; use the browser menu */ }
+  });
+
+  // ——— Prose written in both languages ———
+  const applyProse = () => {
+    document.querySelectorAll("[data-es]").forEach((el) => {
+      if (el.classList.contains("ex")) return; // examples render themselves
+      if (!el.dataset.enHtml) el.dataset.enHtml = el.innerHTML;
+      el.innerHTML = lang === "es" ? el.dataset.es : el.dataset.enHtml;
+      colorInline(el);
+    });
+    document.querySelector(".nav").setAttribute("aria-label", t(UI.navLabel));
+    document.getElementById("lang-switch").setAttribute("aria-label", t(UI.langLabel));
+    search.placeholder = t(UI.searchPlaceholder);
+    document.getElementById("print-card").textContent = t(UI.printCard);
+    heroHear.setAttribute("aria-label", t(UI.hearSentence));
+    if (voiceNote.dataset.noteKey) voiceNote.textContent = t(UI[voiceNote.dataset.noteKey]);
+    document.documentElement.lang = lang;
+  };
+
+  const renderAll = () => {
+    const keep = Object.keys(selects).length
+      ? SLOTS.reduce((acc, s) => ({ ...acc, [s.r]: selects[s.r].value }), {})
+      : PRESETS[0];
+    const query = search.value;
+    applyProse();
+    renderCards();
+    renderExamples();
+    renderLegend();
+    buildHeroStrip();
+    showHero(heroIndex, false);
+    renderQuizzes();
+    buildBuilder(keep);
+    renderBuilt();
+    buildDict();
+    search.value = query;
+    filterDict();
+    buildPocket();
+    colorInline();
+    markNav();
+  };
+
+  document.getElementById("lang-switch").addEventListener("click", (ev) => {
+    const btn = ev.target.closest("button[data-lang]");
+    if (!btn || btn.dataset.lang === lang) return;
+    lang = btn.dataset.lang;
+    try { localStorage.setItem("noki.lang", lang); } catch { /* storage unavailable */ }
+    document.querySelectorAll("#lang-switch button").forEach((b) => {
+      b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
+    });
+    renderAll();
+  });
+  document.querySelectorAll("#lang-switch button").forEach((b) => {
+    b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
+  });
+
+  renderAll();
+})();
+</script>
