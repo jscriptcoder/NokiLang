@@ -119,23 +119,55 @@ button { font: inherit; color: inherit; }
 .mark { font: 600 1.35rem/1 var(--font-noki); text-decoration: none; flex: none; }
 .mark span:nth-child(1) { color: var(--who-ink); }
 .mark span:nth-child(2) { color: var(--do-ink); }
-.nav { display: flex; gap: .35rem; overflow-x: auto; scrollbar-width: none; padding-block: .15rem; }
-.nav::-webkit-scrollbar { display: none; }
-.nav a {
-  flex: none;
-  text-decoration: none;
-  font-size: .85rem;
-  padding: .3rem .65rem;
-  border-radius: 999px;
+.bar .col { position: relative; }
+.menu-btn {
+  flex: 1; min-width: 0;
+  display: flex; align-items: center; gap: .5rem;
   border: 1px solid var(--line);
+  border-radius: 999px;
   background: var(--surface);
-  color: var(--soft);
-  white-space: nowrap;
+  padding: .35rem .8rem;
+  font-size: .95rem;
+  cursor: pointer;
+  text-align: left;
 }
-.nav a:hover { color: var(--ink); border-color: var(--soft); }
-.nav a b { font-variant-numeric: tabular-nums; color: var(--ink); margin-right: .2rem; }
+.menu-btn:hover { border-color: var(--soft); }
+.menu-btn .burger { flex: none; width: 1rem; height: .7rem; border-block: 2px solid var(--ink); position: relative; }
+.menu-btn .burger::after { content: ""; position: absolute; inset: 50% 0 auto; border-top: 2px solid var(--ink); transform: translateY(-50%); }
+.menu-btn .here { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.menu-btn .here b { font-variant-numeric: tabular-nums; margin-right: .3rem; }
+.menu-btn .caret { flex: none; color: var(--soft); transition: transform .15s; }
+.menu-btn[aria-expanded="true"] .caret { transform: rotate(180deg); }
+.nav {
+  position: absolute; top: calc(100% + .35rem); left: 0; right: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem;
+  padding: .6rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  box-shadow: var(--shadow);
+  max-height: calc(100dvh - 5rem); overflow-y: auto;
+}
+.nav hr { grid-column: 1 / -1; width: 100%; border: 0; border-top: 1px solid var(--line); margin: .15rem 0; }
+.nav a {
+  display: flex; align-items: center; gap: .45rem;
+  text-decoration: none;
+  font-size: .95rem;
+  padding: .55rem .7rem;
+  border-radius: .8rem;
+  border: 1px solid var(--line);
+  background: var(--ground);
+  color: var(--ink);
+  min-width: 0;
+}
+.nav a:hover { border-color: var(--soft); }
+.nav a[aria-current="true"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.nav a b { font-variant-numeric: tabular-nums; flex: none; display: inline-grid; place-items: center; width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--surface-2); font-size: .85rem; }
 .nav a.done { color: var(--good); border-color: color-mix(in srgb, var(--good) 55%, transparent); }
-.nav a.done::after { content: " ✓"; }
+.nav a.done b { background: color-mix(in srgb, var(--good) 22%, transparent); color: var(--good); }
+.nav a.done::after { content: "✓"; margin-left: auto; font-weight: 700; }
+.next-lesson { margin-top: 1.4rem; display: flex; justify-content: flex-end; }
+.next-lesson .btn { text-decoration: none; }
 .lang { display: flex; flex: none; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--surface); }
 .lang button {
   border: 0;
@@ -460,7 +492,8 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
 <header class="bar">
   <div class="col">
     <a class="mark" href="#top" aria-label="Noki"><span>no</span><span>ki</span></a>
-    <nav class="nav" aria-label="Lessons" data-es-label="Lecciones">
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span class="burger" aria-hidden="true"></span><span class="here" id="menu-here"></span><span class="caret" aria-hidden="true">▾</span></button>
+    <nav class="nav" id="menu" aria-label="Lessons" hidden>
       <a href="#l1" data-lesson="l1" data-es="&lt;b&gt;1&lt;/b&gt;Sonidos"><b>1</b>Sounds</a>
       <a href="#l2" data-lesson="l2" data-es="&lt;b&gt;2&lt;/b&gt;Quién"><b>2</b>Who</a>
       <a href="#l3" data-lesson="l3" data-es="&lt;b&gt;3&lt;/b&gt;Cosas"><b>3</b>Things</a>
@@ -469,6 +502,7 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       <a href="#l6" data-lesson="l6" data-es="&lt;b&gt;6&lt;/b&gt;Cuándo"><b>6</b>When</a>
       <a href="#l7" data-lesson="l7" data-es="&lt;b&gt;7&lt;/b&gt;Preguntas"><b>7</b>Questions</a>
       <a href="#l8" data-lesson="l8" data-es="&lt;b&gt;8&lt;/b&gt;Más"><b>8</b>More</a>
+      <hr>
       <a href="#phrases" data-es="Frases secretas">Secret phrases</a>
       <a href="#build" data-es="Máquina">Build</a>
       <a href="#words" data-es="Palabras">All words</a>
@@ -890,7 +924,9 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
   const t = (v) => (v && typeof v === "object" && !Array.isArray(v) ? (v[lang] ?? v.en) : v);
 
   const UI = {
-    navLabel: { en: "Lessons", es: "Lecciones" },
+    navLabel: { en: "Sections", es: "Secciones" },
+    menu: { en: "Menu", es: "Menú" },
+    next: { en: "Next", es: "Siguiente" },
     langLabel: { en: "Language", es: "Idioma" },
     another: { en: "Another one", es: "Otra frase" },
     hearSentence: { en: "Hear this sentence", es: "Escuchar esta frase" },
@@ -1227,6 +1263,72 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
     const progress = store.read();
     document.querySelectorAll(".nav a[data-lesson]").forEach((a) => {
       a.classList.toggle("done", Boolean(progress[a.dataset.lesson]));
+    });
+  };
+
+  // ——— Menu: a button that always says where you are, and a panel with every section ———
+  const bar = document.querySelector(".bar");
+  const menuBtn = document.getElementById("menu-btn");
+  const menu = document.getElementById("menu");
+  const menuHere = document.getElementById("menu-here");
+  const menuLinks = [...menu.querySelectorAll("a")];
+  let current = null;
+
+  const showHere = () => {
+    menuHere.innerHTML = current ? current.innerHTML : t(UI.menu);
+    menuLinks.forEach((a) => {
+      if (a === current) a.setAttribute("aria-current", "true");
+      else a.removeAttribute("aria-current");
+    });
+  };
+  // The current section is the last one whose top has scrolled up to just under the bar.
+  const findCurrent = () => {
+    const line = bar.getBoundingClientRect().bottom + 24;
+    const passed = menuLinks.filter((a) => {
+      const sec = document.getElementById(a.hash.slice(1));
+      return sec && sec.getBoundingClientRect().top <= line;
+    });
+    const found = passed[passed.length - 1] ?? null;
+    if (found !== current) { current = found; showHere(); }
+  };
+  let scrollQueued = false;
+  addEventListener("scroll", () => {
+    if (scrollQueued) return;
+    scrollQueued = true;
+    requestAnimationFrame(() => { scrollQueued = false; findCurrent(); });
+  }, { passive: true });
+
+  const setMenu = (open) => {
+    menu.hidden = !open;
+    menuBtn.setAttribute("aria-expanded", String(open));
+  };
+  menuBtn.addEventListener("click", () => {
+    const open = menu.hidden;
+    setMenu(open);
+    if (open) (current ?? menuLinks[0]).focus();
+  });
+  menu.addEventListener("click", (ev) => { if (ev.target.closest("a")) setMenu(false); });
+  document.addEventListener("click", (ev) => {
+    if (!menu.hidden && !ev.target.closest("#menu, #menu-btn")) setMenu(false);
+  });
+  document.addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape" && !menu.hidden) { setMenu(false); menuBtn.focus(); }
+  });
+
+  // Every lesson ends with a button to whatever comes next in the menu.
+  const renderNext = () => {
+    document.querySelectorAll("section.lesson").forEach((sec) => {
+      const next = menuLinks[menuLinks.findIndex((a) => a.hash === `#${sec.id}`) + 1];
+      if (!next) return;
+      const wrap = sec.querySelector(".next-lesson") ?? sec.appendChild(document.createElement("p"));
+      wrap.className = "next-lesson";
+      const num = next.querySelector("b")?.textContent;
+      const name = [...next.childNodes].filter((n) => n.nodeName !== "B").map((n) => n.textContent).join("").trim();
+      const a = document.createElement("a");
+      a.className = "btn";
+      a.href = next.hash;
+      a.textContent = `${t(UI.next)}: ${num ? `${num} · ` : ""}${name} →`;
+      wrap.replaceChildren(a);
     });
   };
 
@@ -1584,6 +1686,9 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
     buildPocket();
     colorInline();
     markNav();
+    renderNext();
+    showHere();
+    findCurrent();
   };
 
   document.getElementById("lang-switch").addEventListener("click", (ev) => {
