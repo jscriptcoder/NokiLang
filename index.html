@@ -430,7 +430,18 @@ button.w { cursor: pointer; }
 .tabs { display: flex; gap: .4rem; margin-top: 1.2rem; }
 .tabs button { flex: 1; font-weight: 700; font-size: 1rem; padding: .55rem .75rem; }
 .tabs button[aria-selected="true"] { background: var(--btn); color: var(--btn-ink); border-color: var(--btn); }
-.tabs + .quiz, .tabs + .quiz + .quiz { margin-top: .8rem; }
+.tabs ~ .quiz { margin-top: .8rem; }
+.tabs button { padding-inline: .5rem; }
+.mission { margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.mission:first-of-type { border-top: 0; padding-top: 0; }
+.mission h4 { margin: 0; display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; font: 600 1.1rem/1.25 var(--font-display); }
+.m-lesson { font: 400 .78rem/1 var(--font-body); color: var(--soft); border: 1px solid var(--line); border-radius: 999px; padding: .25rem .5rem; }
+.m-lesson b { color: var(--ink); margin-right: .2rem; }
+.mission .examples { margin-top: .7rem; }
+.m-foot { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; margin-top: .7rem; }
+.m-foot small { flex: 1 1 12rem; color: var(--soft); }
+.m-tick[aria-pressed="true"] { border-color: var(--good); color: var(--good); }
+.mission.done h4 .m-title::after { content: " ✓"; color: var(--good); }
 .pr-next { margin-top: 1rem; display: flex; justify-content: flex-end; }
 .switch { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .8rem; }
 .switch button { font-size: .82rem; padding: .3rem .65rem; }
@@ -837,9 +848,11 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       <div class="tabs" role="tablist" id="practice-tabs">
         <button type="button" role="tab" id="tab-build" aria-controls="panel-build" aria-selected="true" data-es="Construye">Builder</button>
         <button type="button" role="tab" id="tab-cards" aria-controls="panel-cards" aria-selected="false" data-es="Tarjetas">Flashcards</button>
+        <button type="button" role="tab" id="tab-missions" aria-controls="panel-missions" aria-selected="false" data-es="Misiones">Missions</button>
       </div>
       <div class="quiz" id="panel-build" role="tabpanel" aria-labelledby="tab-build"></div>
       <div class="quiz" id="panel-cards" role="tabpanel" aria-labelledby="tab-cards" hidden></div>
+      <div class="quiz" id="panel-missions" role="tabpanel" aria-labelledby="tab-missions" hidden></div>
     </section>
 
     <!-- ——— Phrasebook ——— -->
@@ -1016,6 +1029,10 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       ? `${n} palabras: ${first} a la primera, ${retry} en otro intento.`
       : `${n} words: ${first} first time, ${retry} on a retry.`),
     playAgain: { en: "Play again", es: "Otra vez" },
+    missionsDone: (d, n) => (lang === "es" ? `${d} de ${n} hechas` : `${d} of ${n} done`),
+    missionMark: { en: "I did it!", es: "¡Hecho!" },
+    missionDone: { en: "Done ✓", es: "Hecha ✓" },
+    wishlist: { en: "Missing a word? Tell Dad, and add it to the wishlist.", es: "¿Te falta una palabra? Díselo a papá y apuntadla en la lista de deseos." },
     tryAgain: { en: "Try again", es: "Otra vez" },
     allRight: { en: "All right! This lesson is done.", es: "¡Todo bien! Lección terminada." },
     surprise: { en: "Surprise me", es: "Sorpréndeme" },
@@ -2002,8 +2019,119 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
     showCard();
   };
 
+  // Speaking missions: real-life challenges. Phrases are sentences already in the guide,
+  // so each one shows with the guide's own meaning. Ticks are kept on this device only.
+  const MISSIONS = [
+    { id: "m1", l: "l2", s: ["noki!", "da!"],
+      t: { en: "Morning hello", es: "Hola de mañana" },
+      d: { en: "Say hi in Noki at breakfast. The other one answers da!", es: "Saludaos en Noki en el desayuno. El otro contesta da!" } },
+    { id: "m2", l: "l2", s: ["da!", "vek!"],
+      t: { en: "Yes-no game", es: "Juego del sí y el no" },
+      d: { en: "At lunch, ask each other questions in a normal language. You can only answer in Noki.", es: "En la comida, haceos preguntas normales. Solo se puede contestar en Noki." } },
+    { id: "m3", l: "l3", s: ["ka tuka", "si foma", "ke fipo"],
+      t: { en: "Whose is it?", es: "¿De quién es?" },
+      d: { en: "Point at things at home and say whose they are.", es: "Señala cosas en casa y di de quién son." } },
+    { id: "m4", l: "l4", s: ["moku ka vimo!", "ka suli vimo."],
+      t: { en: "Secret water", es: "Agua secreta" },
+      d: { en: "At a restaurant or at a friend's house, ask for water without anyone noticing.", es: "En un restaurante o en casa de alguien, pide agua sin que nadie se entere." } },
+    { id: "m5", l: "l4", s: ["dafu ka!", "ka duni dafu:what."],
+      t: { en: "Help!", es: "¡Ayuda!" },
+      d: { en: "When you need a hand with something, ask in Noki.", es: "Cuando necesites que te echen una mano, pídelo en Noki." } },
+    { id: "m6", l: "l5", s: ["ka vek mela ke.", "ka vek suli foma."],
+      t: { en: "Not for me", es: "Para mí no" },
+      d: { en: "When food you don't like shows up, say it quietly in Noki.", es: "Cuando aparezca comida que no te gusta, dilo bajito en Noki." } },
+    { id: "m7", l: "l5", s: ["vek doki!"],
+      t: { en: "Keep the secret", es: "Guarda el secreto" },
+      d: { en: "Tell each other a tiny secret, then make a promise.", es: "Contaos un secreto pequeñito y prometed no decirlo." } },
+    { id: "m8", l: "l6", s: ["ka panu foma:do.", "si ka lati fipo:do?"],
+      t: { en: "Before and later", es: "Antes y luego" },
+      d: { en: "After school, say one thing you already did and one thing you'll do later.", es: "Al salir del cole, di una cosa que ya hiciste y otra que harás luego." } },
+    { id: "m9", l: "l6", s: ["si ka kifi deli?", "ke vek fipo:desc. si ka lefu?"],
+      t: { en: "Time to go", es: "Hora de irse" },
+      d: { en: "Somewhere boring, ask to leave without anyone understanding.", es: "En un sitio aburrido, pide iros sin que nadie lo entienda." } },
+    { id: "m10", l: "l7", s: ["ka duni fusu.", "fusu kui?"],
+      t: { en: "Where's the toilet?", es: "¿Dónde está el baño?" },
+      d: { en: "In a shop or restaurant, ask where the toilet is, then find it together.", es: "En una tienda o restaurante, pregunta dónde está el baño y buscadlo juntos." } },
+    { id: "m11", l: "l7", s: ["fa?", "si vek foma:do fa?", "fa ka mufo:desc."],
+      t: { en: "Why?", es: "¿Por qué?" },
+      d: { en: "Ask fa? about something, and the other one answers in Noki.", es: "Pregunta fa? sobre algo, y el otro contesta en Noki." } },
+    { id: "m12", l: "l8", s: ["pomi pomi!", "ke foma vesa.", "suno suno suno luma si ka."],
+      t: { en: "Secret reviewers", es: "Críticos secretos" },
+      d: { en: "At a café or party, rate the food and the place out loud, all in Noki.", es: "En una cafetería o una fiesta, puntuad la comida y el sitio en voz alta, todo en Noki." } },
+  ];
+  const missionStore = {
+    read() { try { return JSON.parse(localStorage.getItem("noki.missions") || "{}"); } catch { return {}; } },
+    write(v) { try { localStorage.setItem("noki.missions", JSON.stringify(v)); } catch { /* storage unavailable */ } },
+  };
+  const missionsPanel = document.getElementById("panel-missions");
+  const renderMissions = () => {
+    missionsPanel.textContent = "";
+    const [head, counter] = panelHead(t({ en: "Missions", es: "Misiones" }));
+    missionsPanel.append(head);
+    const shown = MISSIONS.filter((m) => chosen.includes(m.l));
+    const count = () => {
+      const done = missionStore.read();
+      counter.textContent = UI.missionsDone(shown.filter((m) => done[m.id]).length, shown.length);
+    };
+    count();
+    const lessonName = (id) => menu.querySelector(`a[href="#${id}"]`).innerHTML;
+    shown.forEach((m) => {
+      const box = document.createElement("div");
+      box.className = "mission";
+      const h = document.createElement("h4");
+      h.innerHTML = `<span class="m-lesson"></span><span class="m-title"></span>`;
+      h.querySelector(".m-lesson").innerHTML = lessonName(m.l);
+      h.querySelector(".m-title").textContent = t(m.t);
+      const d = document.createElement("p");
+      d.textContent = t(m.d);
+      const phrases = document.createElement("div");
+      phrases.className = "examples";
+      m.s.forEach((s) => {
+        const src = [...document.querySelectorAll("main .ex[data-s]")].find((el) => el.dataset.s === s);
+        const ex = document.createElement("div");
+        ex.className = "ex";
+        ex.dataset.s = s;
+        ex.dataset.en = src ? src.dataset.en : "";
+        if (src && src.dataset.es) ex.dataset.es = src.dataset.es;
+        renderExample(ex);
+        phrases.append(ex);
+      });
+      const foot = document.createElement("div");
+      foot.className = "m-foot";
+      const wish = document.createElement("small");
+      wish.textContent = t(UI.wishlist);
+      const tick = document.createElement("button");
+      tick.type = "button";
+      tick.className = "btn ghost m-tick";
+      const paint = () => {
+        const on = Boolean(missionStore.read()[m.id]);
+        tick.setAttribute("aria-pressed", String(on));
+        tick.textContent = on ? t(UI.missionDone) : t(UI.missionMark);
+        box.classList.toggle("done", on);
+      };
+      tick.addEventListener("click", () => {
+        const done = missionStore.read();
+        if (done[m.id]) delete done[m.id];
+        else done[m.id] = true;
+        missionStore.write(done);
+        paint();
+        count();
+      });
+      paint();
+      foot.append(wish, tick);
+      box.append(h, d, phrases, foot);
+      missionsPanel.append(box);
+    });
+    colorInline(missionsPanel);
+  };
+
   const activeTab = () => tabs.find((b) => b.getAttribute("aria-selected") === "true");
-  const startActive = () => (activeTab().id === "tab-cards" ? startCards() : startBuild());
+  const startActive = () => {
+    const id = activeTab().id;
+    if (id === "tab-cards") startCards();
+    else if (id === "tab-missions") renderMissions();
+    else startBuild();
+  };
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       tabs.forEach((b) => {

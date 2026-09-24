@@ -10,7 +10,7 @@ A tiny secret spoken language for a parent and their 9-year-old son, who both sp
 |---|---|
 | `CLAUDE.md` | Why Noki exists, what it is optimised for, and the rules any AI session must follow when working on it. |
 | `noki-language-handoff.md` | **The source of truth.** Every rule, the whole vocabulary, the open questions, and a changelog of every decision with the options that were rejected. Written in English only, and also serves as the handoff document for any AI model continuing the work. |
-| `index.html` | The learner's guide for the child: 8 lessons, secret phrases, a sentence machine, the word list and a printable pocket card. **Bilingual** — an EN/ES switch in the top bar, remembered per device. |
+| `index.html` | The learner's guide for the child: 8 lessons, a Practice section (sentence builder, flashcards, speaking missions), secret phrases, a sentence machine, the word list and a printable pocket card. **Bilingual** — an EN/ES switch in the top bar, remembered per device. |
 | `tools/noki_audit.py` | Checks new words against the confusion rules. Run `python tools/noki_audit.py audit` before accepting any vocabulary change. |
 
 ## The guide
