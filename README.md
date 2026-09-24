@@ -2,7 +2,7 @@
 
 A tiny secret spoken language for a parent and their 9-year-old son, who both speak Spanish and English.
 
-**Current state: 15 letters, 48 words, spec version 2.12 (2026-09-24).**
+**Current state: 15 letters, 48 words, spec version 2.13 (2026-09-24).**
 
 ## Files
 
@@ -50,3 +50,4 @@ The full working rules, and the story behind the project, are in `CLAUDE.md`.
 - Eight words added in version 2.10 because any conversation needs them: `pufa` (hot), `tisi` (cold), `neku` (hurt), `lidu` (listen), `pemo` (sad), `dipu` (angry), `sedu` (scared), `koti` (true). 46 words.
 - Then `tolu` (number / count: `suno tolu?` = how many people?) and `tesu` (please / thank you / you're welcome). 48 words; exact numbers are borrowed for now.
 - If and then need no word: say the condition as a question, then the answer (`si foma? lati fipo!` = if you eat, then you can play). Version 2.12.
+- If works with past and future time words; there is no "would" — say what really happened with `vek` and `fa`. Version 2.13.

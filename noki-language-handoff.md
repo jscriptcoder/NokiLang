@@ -1,6 +1,6 @@
 # Noki Language — Model Handoff Specification
 
-**Version 2.12 — 2026-09-24.** See the changelog at the end for what changed.
+**Version 2.13 — 2026-09-24.** See the changelog at the end for what changed.
 
 ## 1. Project Goal
 
@@ -874,6 +874,7 @@ The following areas are intentionally **not yet finalized**:
 - describing words beyond the current ones (e.g. big/small);
 - comparisons such as bigger/smaller;
 - "have";
+- "would" (things that didn't happen): for now, say what really happened with **vek** and **fa** (Section 30);
 - whether noun/verb dual-use such as `foma`, `vimo`, `mufo`, `fipo` ever becomes too ambiguous;
 - whether **lo** also covers animals and pets, or only people (parked in the first find-gaps pass).
 
@@ -1066,6 +1067,22 @@ English and Spanish already talk like this ("Finished your homework? Then you ca
 
 *Then* on its own needs nothing new either: **ka foma e lati fipo.** — I eat and then play (Section 15).
 
+## If, with time words
+
+Each half keeps its own time word (Section 14). In the second half, **lati** does two jobs: *then* and *will*.
+
+| Noki | Meaning |
+|---|---|
+| **si suli? ka lati lefu si.** | If you want, I'll go with you. |
+| **lo lati milu? si ka lati fipo.** | If he comes, we'll play. |
+| **si panu foma? kifi fipo!** | If you've already eaten, play now! |
+
+## Things that didn't happen
+
+Noki has no *would*. "If I had known, I would have played with you" cannot use the pattern above: **ka panu naki? ka panu fipo si.** says it *did* happen. **Say what really happened instead, with vek and fa:**
+
+**ka panu vek fipo si fa ka panu vek naki.** — I didn't play with you because I didn't know.
+
 Known ambiguity: the first half can sound like a real question. What follows, and the tone, tell which. Not fixed until it causes a real mix-up (Section 22).
 
 ---
@@ -1133,6 +1150,14 @@ When continuing development:
 ---
 
 ## Changelog
+
+### Version 2.13 — 2026-09-24
+
+**If with past and future, and things that didn't happen (Section 30).** No new word.
+
+- Real conditions work in any time: each half keeps its own time word (**si suli? ka lati lefu si.** — if you want, I'll go with you).
+- "If I had known, I would have…" is said as what really happened: **ka panu vek fipo si fa ka panu vek naki.**
+- Rejected: a new word for *would*. The only exact way to say it, but it would be the hardest grammar in Noki, and it has not been missed in real use. Added to the open questions.
 
 ### Version 2.12 — 2026-09-24
 
