@@ -18,7 +18,9 @@ Usage (from the project root):
         chosen in this round but not yet official.
 
     python tools/noki_audit.py check word1,word2,...  [extra,words]
-        Check specific candidates and list their nearest neighbours.
+        Check specific candidates and list their nearest neighbours. A word
+        that is already official, parked or retired is marked ALREADY-LISTED
+        and compared with the other words only.
 
 The blocklist below is hand-kept. Add to it whenever a candidate turns out to
 be a real Spanish or English word; that knowledge is otherwise lost.
@@ -160,9 +162,11 @@ if __name__ == "__main__":
         extra = arg(3).split(",") if arg(3) else []
         prot = set(protected(extra))
         for w in arg(2).split(","):
-            near = sorted((lev(whisper(w), whisper(p)), p) for p in prot if len(p) >= 3)
+            # A word already on a list is compared with the others, not with itself.
+            near = sorted((lev(whisper(w), whisper(p)), p) for p in prot if len(p) >= 3 and p != w)
             close = [f"{p}({d})" for d, p in near if d <= 2]
             flag = "BLOCKED-SOUND-ALIKE " if w in BLOCK else ""
+            flag += "ALREADY-LISTED " if w in prot else ""
             ok = "OK " if not near or near[0][0] >= 2 else "TOO-CLOSE "
             print(f"{w:6} {ok}{flag}neighbours<=2: {' '.join(close) or '-'}")
     else:
