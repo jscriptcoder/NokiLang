@@ -47,7 +47,7 @@ The following were intentionally removed:
 Important historical decisions:
 
 - `z` was merged into `s`.
-- `b` was merged into `v`. Since version 2.9 `v` is said like English v, so Noki has no b sound at all — b was too easy to mistake for p.
+- `b` was merged into `v`: in Spanish they do the same job, so one letter is enough. Since version 2.9 `v` is said like English v, so Noki has no b sound at all — which also removes the b/p mix-up.
 - `r` was removed because it may be difficult for some children.
 - `g` remains excluded.
 - `d` was originally removed but was deliberately reintroduced because it is easy enough to distinguish and expands vocabulary options.
@@ -1077,6 +1077,7 @@ When continuing development:
 - Rejected: keeping `v` as Spanish b/v and only rewording the guide ("like the v in *vaca*"). It would keep zero whisper clashes, but it keeps the b sound the user wanted out.
 - Known cost: the guide's hear buttons use the device's Spanish voice, which says `v` like a b. The guide tells the learner to say it like English v anyway.
 - `tools/noki_audit.py` now whispers v as f.
+- Considered and rejected the same day: **removing `f` or `v`** so that no pair of letters differs only by voice. Removing `f` would replace 8 words (`lefu kifi foma fa fipo dafu fusu mufo`); removing `v` would replace 4 (`vek vimo vesa tavo`) and cost the hard ending of `vek`. Rejected because v/f is the same kind of pair as d/t, which Noki already handles with the whisper rule, and the one real v/f risk (the two whispered pairs above) was tested and works. Do not reopen without a real confusion in use.
 
 ### Version 2.8 — 2026-09-23
 
