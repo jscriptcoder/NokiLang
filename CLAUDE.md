@@ -31,7 +31,7 @@ Meaning comes from word order, context, repetition, omission, and a handful of s
 4. **Check every proposed word** against the rules in Sections 2 and 21 with `python tools/noki_audit.py check <word>`, and add newly discovered Spanish or English sound-alikes to that script's blocklist.
 5. **Prefer a rule that uses what already exists** over a new word, and prefer no rule at all over a rule for a problem that has not happened yet. The spec says it plainly: do not solve theoretical ambiguities before they occur.
 6. **Flag ambiguity out loud** instead of silently adding complexity to remove it.
-7. **The guide (`noki-guide.html`) is bilingual** — update English and Spanish together. Noki words themselves are never translated. It is written for a 9-year-old: short sentences, concrete examples, playful but not babyish.
+7. **The guide (`index.html`, published with GitHub Pages) is bilingual** — update English and Spanish together. Noki words themselves are never translated. It is written for a 9-year-old: short sentences, concrete examples, playful but not babyish.
 8. **New words enter through real use.** Words the pair had to borrow go on a wishlist first (spec Section 25) and become official only when they are genuinely needed.
 9. **Keep it playful.** This is a game between a father and his son, not a linguistics project.
 
