@@ -29,7 +29,7 @@ import sys
 CONSONANTS = "dfklmnpstv"
 VOWELS = "aeiou"
 
-# The 46 official words — noki-language-handoff.md Section 3 (spec version 2.10).
+# The 48 official words — noki-language-handoff.md Section 3 (spec version 2.11).
 # There is no word for we / you-all / they: pronouns are combined (Section 29).
 CURRENT = {
     "ka": "I, me", "si": "you", "lo": "he, she",
@@ -46,6 +46,7 @@ CURRENT = {
     "fa": "why, because",
     "lidu": "listen, hear", "pufa": "hot", "tisi": "cold", "neku": "hurt, pain",
     "pemo": "sad", "dipu": "angry", "sedu": "scared", "koti": "true",
+    "tolu": "number, count", "tesu": "please, thank you, you're welcome",
 }
 # Meanings still waiting for a word (Section 19).
 DEFERRED = ["dema", "dino"]
@@ -75,7 +76,7 @@ kiti poti doli loli sidi piti peti veli teli neli deli disi fasi mesi laki taki 
 sofa lotto nano demo veto pika niko teo toni dani lola lupe nina lina sofi susi pili lalo kike fani
 mimi mili lili nuri sami moni kati nela pau duna lulu lala kiki fifi tiki dodo tutu kaka popo napi
 soni muvi fotu miso sake pasta diva mafi lasi nasi mosa fumi lemo tuki tesi nosa sona fosi kuso sana
-kolu pina tipu nida sopu sosu samu kono kona komu
+kolu pina tipu nida sopu sosu samu kono kona komu pilo sapu vami saku safi felo
 senu fetu kodu kolo pudu putu vudu sadu fuma paku lolo sika
 """.split())
 

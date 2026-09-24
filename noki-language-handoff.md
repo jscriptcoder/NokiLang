@@ -1,6 +1,6 @@
 # Noki Language — Model Handoff Specification
 
-**Version 2.10 — 2026-09-24.** See the changelog at the end for what changed.
+**Version 2.11 — 2026-09-24.** See the changelog at the end for what changed.
 
 ## 1. Project Goal
 
@@ -117,7 +117,7 @@ Existing sound-alikes deliberately kept, because they are tiny grammar words or 
 
 # 3. Current Official Core Vocabulary
 
-There are currently **46 core words**.
+There are currently **48 core words**.
 
 ## Pronouns
 
@@ -141,6 +141,7 @@ See Section 29.
 |---|---|
 | **da** | yes |
 | **vek** | no / not / none |
+| **tesu** | please / thank you / you're welcome |
 
 ---
 
@@ -177,6 +178,7 @@ See Section 29.
 | **fusu** | toilet / bathroom |
 | **mufo** | sleep / tired / rest |
 | **fipo** | play / fun / game |
+| **tolu** | number / count |
 
 **Any action word can also be a thing, and any thing word can also be an action. Its place in the sentence decides.** In the action place it is an action; in the "what" place it is a thing.
 
@@ -374,7 +376,24 @@ two waters / two drinks
 
 lots of water / many drinks
 
-If exact quantities beyond two become necessary later, a separate number system may eventually be designed. None exists yet.
+## How many: `tolu`
+
+**tolu** means number or count. Like every Noki word, its place decides the rest:
+
+| Noki | Meaning |
+|---|---|
+| **tolu?** | How many? (on its own, like **fa?**) |
+| **ke tolu?** | How many of those? |
+| **suno tolu?** | How many people? |
+| **vimo tolu?** | How much water? |
+| **tolu suno!** | Count the people! |
+| **ka tolu.** | I'm counting. |
+
+Answer by repeating (**suno suno** — two, **suno suno suno** — lots), with **vek** (**vek suno** — nobody), or with a borrowed number, from the language the people nearby understand less.
+
+**suno tolu?** could also be read as "does the person count?" (person + action). Nobody asks that, so it is left alone (Section 22).
+
+There are no number words. If borrowing numbers becomes a nuisance in real use, numbers can be added later without changing **tolu**.
 
 ## Descriptions and actions
 
@@ -848,7 +867,7 @@ Do not solve theoretical ambiguities before they occur in actual use.
 
 The following areas are intentionally **not yet finalized**:
 
-- exact numbers beyond one/two/many;
+- exact numbers beyond one/two/many (ask with **tolu**, borrow the number for now);
 - a word or structure for "all";
 - explicit "this" versus "that";
 - possession involving complex noun phrases;
@@ -858,7 +877,6 @@ The following areas are intentionally **not yet finalized**:
 - conditional constructions such as if;
 - exact chronological connector such as then;
 - whether noun/verb dual-use such as `foma`, `vimo`, `mufo`, `fipo` ever becomes too ambiguous;
-- please / thank you (parked in the first find-gaps pass: rarely needed in secret talk — add only if real use asks for it);
 - whether **lo** also covers animals and pets, or only people (parked in the first find-gaps pass).
 
 Do not automatically solve these. Introduce solutions only when useful.
@@ -1096,6 +1114,19 @@ When continuing development:
 ---
 
 ## Changelog
+
+### Version 2.11 — 2026-09-24
+
+**Two new words, 46 → 48: `tolu` and `tesu`.**
+
+- **tolu** — number / count (Section 8). The user's design: not a question word but an ordinary noun-action word, so **tolu?** alone asks "how many?", **suno tolu?** asks how many people, and **tolu suno!** means count them.
+  - Rejected: a dedicated "how many" question word (same sentences, but narrower than a word that also means number and count).
+  - Rejected: number words 1–5 (6 words) or 0–10 (12 words). Too many words for a need borrowing covers, and they would use up most of the unused first syllables left.
+  - Spellings that lost: **sovi**, **vodu**.
+- **tesu** — please, thank you, and you're welcome, one word for all three (like German *bitte*). The moment tells which.
+  - Rejected: separate words for each, and **pomi!** for you're welcome.
+  - Spellings that lost: **vuna**, **pimu**, **sovu**, **vupi**, **vofi**. The user chose **tesu**.
+- New sound-alikes in the audit blocklist: **pilo** (*pillo*), **sapu** (*sapo*), **vami** (*vamos*), **saku** (*saco*), **safi** (*safe*), **felo** (*feo*).
 
 ### Version 2.10 — 2026-09-24
 

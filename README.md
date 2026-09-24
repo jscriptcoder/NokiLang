@@ -2,7 +2,7 @@
 
 A tiny secret spoken language for a parent and their 9-year-old son, who both speak Spanish and English.
 
-**Current state: 15 letters, 46 words, spec version 2.10 (2026-09-24).**
+**Current state: 15 letters, 48 words, spec version 2.11 (2026-09-24).**
 
 ## Files
 
@@ -47,4 +47,5 @@ The full working rules, and the story behind the project, are in `CLAUDE.md`.
 - Later rounds replaced `pako` and `penu`, added "there is / was / will be", simplified several rules, and made `fa` (why / because) word 40.
 - `nu` (we) and `ma` (they) were then removed: pronouns are combined instead — `si ka` (you and me), `si si` (you all), `lo lo` (they). That closed the missing plural "you" and brought the vocabulary to 38.
 - `v` is now said like English v (version 2.9). Noki has no b sound at all, since b was too easy to mistake for p. Whispered, v now sounds like f; the two pairs that brings close (`dafu`/`tavo`, `fipo`/`vimo`) were tested whispered and kept.
-- Eight words added in version 2.10 because any conversation needs them: `pufa` (hot), `tisi` (cold), `neku` (hurt), `lidu` (listen), `pemo` (sad), `dipu` (angry), `sedu` (scared), `koti` (true). 46 words. "How many" is still to design.
+- Eight words added in version 2.10 because any conversation needs them: `pufa` (hot), `tisi` (cold), `neku` (hurt), `lidu` (listen), `pemo` (sad), `dipu` (angry), `sedu` (scared), `koti` (true). 46 words.
+- Then `tolu` (number / count: `suno tolu?` = how many people?) and `tesu` (please / thank you / you're welcome). 48 words; exact numbers are borrowed for now.
