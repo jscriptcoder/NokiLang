@@ -1,6 +1,6 @@
 # Noki Language — Model Handoff Specification
 
-**Version 2.18 — 2026-09-25.** See the changelog at the end for what changed.
+**Version 2.20 — 2026-09-25.** See the changelog at the end for what changed.
 
 ## 1. Project Goal
 
@@ -625,6 +625,8 @@ Noki has no word for *have*. **Say "got earlier" instead: panu nisu** — the sa
 
 It also keeps its plain meaning, "I got it earlier"; in practice that means the same thing. Future needs nothing new: **ka lati nisu perro** — I'll get (have) a dog.
 
+After **nisu**, a person before the thing is its owner (Section 17): **lo panu nisu ka ball** — he has (took) my ball.
+
 Known gap: **"I had"** (possession in the past, "I had a dog when I was little") cannot be said, because **panu** is already used up. Borrow the word for now. If this, or the length of **panu nisu**, becomes a real problem, the ready candidate is **dema** (Section 19).
 
 ---
@@ -770,6 +772,22 @@ I wanted [something/contextual], and later I will go home.
 
 The presence of **e** explicitly separates the actions.
 
+## Someone else does it
+
+**Put a person between the two actions, and that person is the one who should do the second one.** Word order is the whole difference:
+
+| Noki | Meaning |
+|---|---|
+| **ka suli si lefu.** | I want you to go. |
+| **ka suli lefu si.** | I want to go with you. (Section 17) |
+| **ka suli si milu.** | I want you to come. |
+| **doki lo dusa!** | Tell him/her to wait! |
+| **ka duni si dafu.** | I need you to help. / I need your help. |
+
+Nothing new: a person right after an action is who it is aimed at (Section 17), and the action after that is what they should do (above).
+
+**Watch out with thing-action words** (**foma**, **vimo**, **fipo**, **mufo**): **ka suli si foma** can mean "I want you to eat" or "I want your food" (Section 12). Add a time word, which only ever goes before an action: **ka suli si kifi foma** — I want you to eat now.
+
 ---
 
 # 17. A Person After an Action
@@ -791,6 +809,23 @@ The presence of **e** explicitly separates the actions.
 When the action also has a thing, the **person comes first, then the thing**: **moku ka vimo** (give me water), **doki si ke** (tell you that).
 
 (Read as possession — "give my water" — the meaning is the same in practice, so the overlap is harmless.)
+
+## Take and get: `nisu`
+
+**After nisu, a person followed by a thing is the owner.** To get something *for* someone, give it: **moku**.
+
+| Noki | Meaning |
+|---|---|
+| **lo panu nisu ka ball.** | He/she took my ball. |
+| **lo panu moku ka ball.** | He/she got me a ball. / gave me a ball. |
+| **si panu nisu lo foma?** | Did you take his/her food? / Have you got his/her food? |
+| **moku ka vimo!** | Get me water! / Give me water! |
+
+Without this, **lo panu nisu ka ball** could mean both "took my ball" and "got me a ball", which are opposites. With **moku** there is no such problem: "give me the ball" and "give me my ball" end the same way.
+
+It also fits *have* (Section 12): **lo panu nisu ka ball** means "he took my ball" and "he has my ball", which agree.
+
+With no thing after it, the person is simply who is taken: **nisu ka!** — Take me!
 
 ---
 
@@ -933,6 +968,7 @@ The following areas are intentionally **not yet finalized**:
 - a word or structure for "all";
 - explicit "this" versus "that";
 - possession involving complex noun phrases;
+- "mine!" and "whose is this?" on their own: owner + thing needs a thing after the owner (Section 12);
 - comparisons such as bigger/smaller (**somu somu** means *huge*, not *bigger*);
 - words for family members (mum, dad, grandparents): borrowing **mama** gives away who you are talking about. Decide from real use who the pair talks about most;
 - "had" (possession in the past): **panu nisu** covers *have* (Section 12), but "I had a dog" cannot be said; the ready candidate is **dema** (Section 19);
@@ -1223,6 +1259,24 @@ When continuing development:
 ---
 
 ## Changelog
+
+### Version 2.20 — 2026-09-25
+
+**A person between two actions is who should do the second one (Section 16).** The user's decision; no new word. **ka suli si lefu** — I want you to go; **ka suli lefu si** — I want to go with you. Found in the same grammar-gap review as version 2.19: sentences like "I want you to come" and "tell him to wait" followed from Sections 16 and 17 but were written nowhere.
+
+- Why word order is enough: both readings come from rules that already exist, and two swapped words are easy to hear apart, even whispered — unlike two words that differ by one sound.
+- Known trap: with thing-action words, **ka suli si foma** is also "I want your food". Fixed with the existing time-word trick (Section 12): **ka suli si kifi foma**. Not fixed further until it causes a real mix-up (Section 22).
+- Rejected: a word meaning "that" or "so that" before the second action (a new word for something word order already does).
+
+### Version 2.19 — 2026-09-25
+
+**After nisu, a person followed by a thing is the owner (Section 17).** The user's decision; no new word. Found while looking for grammar gaps: by Sections 12 and 17 together, **lo panu nisu ka ball** meant both "he took my ball" and "he got me a ball" — opposite meanings, in exactly the sentence a child says when telling on someone. The guide's first story already used it the new way.
+
+- Getting something *for* someone is **moku**: **lo panu moku ka ball** — he got me a ball. From where the speaker stands, "got me" and "gave me" are the same event.
+- It agrees with *have* (Section 12): **lo panu nisu ka ball** is both "he took my ball" and "he has my ball".
+- Rejected: keeping Section 17's reading for **nisu** (**nisu ka vimo** = get me water), which leaves the opposite meanings in place; a separate word for *take away* or *steal* (a new word for something word order already solves); putting the thing first (**nisu ball ka**), which breaks "person first, then the thing".
+- Known cost: **nisu ka tuka** reads as "take my home", not "take me home". That is nonsense, so context decides, and **lefu tuka!** already says it.
+- Still open: "mine!" and "whose is this?" on their own (Section 23).
 
 ### Version 2.18 — 2026-09-25
 

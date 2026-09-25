@@ -2,7 +2,7 @@
 
 A tiny secret spoken language for a parent and their 9-year-old son, who both speak Spanish and English.
 
-**Current state: 15 letters, 52 words, spec version 2.18 (2026-09-25).**
+**Current state: 15 letters, 52 words, spec version 2.20 (2026-09-25).**
 
 ## Files
 
@@ -55,3 +55,5 @@ The full working rules, and the story behind the project, are in `CLAUDE.md`.
 - `na` is parked as an idea for *if / when* (like German *wenn*), in case a whispered condition gets misheard; the question trick stays. Version 2.16.
 - Four everyday words in version 2.17: `sata` (stop / enough / done), `somu` (big), `mipi` (small / a little), `lamu` (friend). 52 words. Maybe is `da vek` (yes-no) and sorry is `ka vesa` (I feel bad) — no new words.
 - `lo` covers animals and pets too, not only people (version 2.18). The guide gained five short stories to read.
+- After `nisu`, a person before a thing is the owner: `lo panu nisu ka ball` = he took my ball. To get someone something, use `moku` (version 2.19).
+- A person between two actions is who should do the second: `ka suli si lefu` = I want you to go, `ka suli lefu si` = I want to go with you (version 2.20).
