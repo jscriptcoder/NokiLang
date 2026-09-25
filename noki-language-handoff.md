@@ -1,6 +1,6 @@
 # Noki Language — Model Handoff Specification
 
-**Version 2.20 — 2026-09-25.** See the changelog at the end for what changed.
+**Version 2.22 — 2026-09-25.** See the changelog at the end for what changed.
 
 ## 1. Project Goal
 
@@ -318,6 +318,16 @@ Meaning:
 
 Noki should generally prefer short sentences over complicated syntax.
 
+## Two short sentences instead of one long one
+
+Noki has no word like *who* or *that* for hanging an action on a thing ("the cake **that** you made"). **Say it as two sentences**, and point back with **ke** (a thing) or **lo** (a person or animal):
+
+| Noki | Meaning |
+|---|---|
+| **si panu tavo cake. ke pomi pomi!** | The cake you made is great! |
+| **suno panu dafu si ka. lo meni.** | The person who helped us is here. |
+| **si panu tavo foma. ka vek mela ke.** | I don't like the food you made. |
+
 ---
 
 # 5. Questions
@@ -343,6 +353,28 @@ Shall we go? / Can we go?
 **si ka kifi deli?**
 
 Can we leave now?
+
+## Answering a "not" question
+
+After a question with **vek** in it, **da** or **vek** alone is unclear. To **si vek duni fusu?** (Don't you need the toilet?), **da** could mean "yes, I do" or "yes, right, I don't". English and Spanish have the same problem. **Say the action too:**
+
+| Noki | Meaning |
+|---|---|
+| **si vek duni fusu?** | Don't you need the toilet? |
+| **da, ka duni.** | Yes, I do. |
+| **vek, ka vek duni.** | No, I don't. |
+| **si vek suli foma?** | Don't you want food? |
+| **ka suli!** | I do! |
+
+The action decides; **da** or **vek** only starts the answer and can be left out.
+
+## Or
+
+Noki has no word for *or*. **Ask two quick questions**, one after the other; the answer is the one you pick:
+
+**vimo? juice?** — Water or juice? → **vimo.**
+
+**si ka fipo? si ka lefu tuka?** — Shall we play, or go home?
 
 For what / who / where / when questions, see Section 18.
 
@@ -671,6 +703,22 @@ I eat / I'm eating / eating is what I'm doing, depending on context.
 
 Do not force every sentence to specify tense.
 
+## Before and after something
+
+Time words only go before an action (Section 12), so "after school" cannot be **lati school**. Two existing patterns cover it.
+
+**Say the things in the order they happen**, with **e lati** (and then, Section 15):
+
+**lefu fusu e lati foma!** — Go to the toilet before you eat!
+
+**ka foma e lati lefu school.** — I eat before I go to school.
+
+**Or ask whether the first thing is over, with sata** (the if pattern, Section 30):
+
+**school sata? si ka fipo.** — After school, we'll play. (School done? We play.)
+
+**foma sata? lati fipo!** — After dinner you can play!
+
 ---
 
 # 14. Local Time Scope
@@ -853,6 +901,17 @@ Without an action, **kui** after a person or place asks where:
 **kui** alone means "What?" / "Huh?" / "What do you mean?"
 
 "Why" has its own word, **fa** — see Section 28.
+
+## How
+
+**kui** does not ask *how*, and Noki has no word for it. The existing words already cover the everyday "how" questions:
+
+| Noki | Literally | Meaning |
+|---|---|---|
+| **si pomi?** | You good? | How are you? |
+| **ke panu pomi?** | Was it good? | How did it go? |
+| **ka tavo kui?** | I do what? | How do I do it? / What do I do? |
+| **tolu?** | Number? | How many? / How much? (Section 8) |
 
 ---
 
@@ -1259,6 +1318,22 @@ When continuing development:
 ---
 
 ## Changelog
+
+### Version 2.22 — 2026-09-25
+
+**Four things written down that the existing grammar already says.** No new words and no new rules; found in the same grammar-gap review as versions 2.19–2.21.
+
+- **Or** (Section 5): two quick questions, **vimo? juice?**
+- **How** (Section 18): **si pomi?** (how are you?), **ke panu pomi?** (how did it go?), **ka tavo kui?** (how do I do it?).
+- **"The cake that you made"** (Section 4): two short sentences, pointing back with **ke** or **lo**.
+- **Before / after an event** (Section 13): say things in order with **e lati**, or ask whether the first is over with **sata** (**school sata? si ka fipo.**).
+- Rejected for now: words for *or*, *how*, *who / that* and *after* — each would be a new word for something existing words already do (Section 22). Revisit only if one of these patterns fails in real use.
+
+### Version 2.21 — 2026-09-25
+
+**Answer a "not" question with the action, not with da or vek alone (Section 5).** The user's decision; no new word and no new rule, only a habit. Found in the same grammar-gap review as versions 2.19 and 2.20.
+
+- Rejected: fixing what **da** means after a "not" question (for example "**da** = what you said is true", as in Japanese) — one more thing to remember, and it pulls against how English and Spanish speakers answer; a separate word for contradicting a "not" question (like French *si* or German *doch*) — a new word for something a short answer already does.
 
 ### Version 2.20 — 2026-09-25
 
