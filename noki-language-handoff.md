@@ -454,6 +454,12 @@ A repeated action can also mean **again**:
 
 Play again! / More playing!
 
+**doki doki?**
+
+Say it again?
+
+Any action works this way; **fipo** is only the example. For things, repeating counts instead (**vimo vimo** = two waters), so it does not mean *more water*.
+
 ## Time words
 
 **panu panu** — long ago
