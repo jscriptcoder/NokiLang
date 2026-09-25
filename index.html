@@ -356,6 +356,10 @@ main > section { padding-block: 3rem 1rem; border-top: 1px solid var(--line); ma
 .ex-words { display: flex; flex-wrap: wrap; gap: .35rem; flex: 1 1 auto; }
 .ex-en { flex: 1 1 11rem; color: var(--ink); font-weight: 700; margin: 0; }
 .ex-en small { display: block; font-weight: 400; color: var(--soft); }
+/* Stories: read the Noki first; the translation shows when you ask. */
+.story-toggle { margin-top: .6rem; }
+.story-toggle[aria-pressed="true"] { background: var(--btn); color: var(--btn-ink); border-color: var(--btn); }
+.story:not(.open) .ex-en { display: none; }
 
 .qa { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 1rem; }
 .qa-wrap { overflow-x: auto; }
@@ -567,6 +571,7 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       <hr>
       <a href="#practice" data-es="Practica">Practice</a>
       <a href="#phrases" data-es="Frases secretas">Secret phrases</a>
+      <a href="#stories" data-es="Cuentos">Stories</a>
       <a href="#build" data-es="Máquina">Build</a>
       <a href="#words" data-es="Palabras">All words</a>
       <a href="#card" data-es="Tarjeta">Pocket card</a>
@@ -641,8 +646,8 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
         <p class="goal" data-es="Tres palabras diminutas para personas, más sí y no — y cómo juntarlas.">Three tiny words for people, plus yes and no — and how to stick them together.</p>
       </div>
       <div class="cards" data-words="ka,si,lo,da,vek,tesu"></div>
-      <div class="rule" data-es="&lt;p&gt;&lt;span class=&quot;nk&quot;&gt;lo&lt;/span&gt; significa &lt;b&gt;él o ella&lt;/b&gt;. A Noki le da igual.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿Dos personas? Di las dos.&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si ka&lt;/span&gt; = nosotros (tú y yo). &lt;span class=&quot;nk&quot;&gt;lo ka&lt;/span&gt; = nosotros, pero tú no.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿La misma dos veces? Son más.&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si si&lt;/span&gt; = vosotros. &lt;span class=&quot;nk&quot;&gt;lo lo&lt;/span&gt; = ellos.&lt;/p&gt;&lt;p&gt;Así Noki dice algo que el español no puede decir con una sola palabra: &lt;span class=&quot;nk&quot;&gt;si ka lefu&lt;/span&gt; = tú y yo nos vamos. &lt;span class=&quot;nk&quot;&gt;lo ka lefu&lt;/span&gt; = él y yo nos vamos, tú no.&lt;/p&gt;&lt;p&gt;Lo que no se dice nunca es &lt;span class=&quot;nk&quot;&gt;ka ka&lt;/span&gt; — ¡en español significa otra cosa! Di &lt;span class=&quot;nk&quot;&gt;si ka&lt;/span&gt; o &lt;span class=&quot;nk&quot;&gt;lo ka&lt;/span&gt;.&lt;/p&gt;">
-        <p><span class="nk">lo</span> means <b>he or she</b>. Noki doesn't care which.</p>
+      <div class="rule" data-es="&lt;p&gt;&lt;span class=&quot;nk&quot;&gt;lo&lt;/span&gt; significa &lt;b&gt;él o ella&lt;/b&gt;. A Noki le da igual. También vale para animales: un perro es &lt;span class=&quot;nk&quot;&gt;lo&lt;/span&gt;.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿Dos personas? Di las dos.&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si ka&lt;/span&gt; = nosotros (tú y yo). &lt;span class=&quot;nk&quot;&gt;lo ka&lt;/span&gt; = nosotros, pero tú no.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿La misma dos veces? Son más.&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si si&lt;/span&gt; = vosotros. &lt;span class=&quot;nk&quot;&gt;lo lo&lt;/span&gt; = ellos.&lt;/p&gt;&lt;p&gt;Así Noki dice algo que el español no puede decir con una sola palabra: &lt;span class=&quot;nk&quot;&gt;si ka lefu&lt;/span&gt; = tú y yo nos vamos. &lt;span class=&quot;nk&quot;&gt;lo ka lefu&lt;/span&gt; = él y yo nos vamos, tú no.&lt;/p&gt;&lt;p&gt;Lo que no se dice nunca es &lt;span class=&quot;nk&quot;&gt;ka ka&lt;/span&gt; — ¡en español significa otra cosa! Di &lt;span class=&quot;nk&quot;&gt;si ka&lt;/span&gt; o &lt;span class=&quot;nk&quot;&gt;lo ka&lt;/span&gt;.&lt;/p&gt;">
+        <p><span class="nk">lo</span> means <b>he or she</b>. Noki doesn't care which. It works for animals too: a dog is <span class="nk">lo</span>.</p>
         <p><b>Two people? Say both.</b> <span class="nk">si ka</span> = we (you and me). <span class="nk">lo ka</span> = we, but not you.</p>
         <p><b>Same one twice? That's more of them.</b> <span class="nk">si si</span> = you two, or all of you. <span class="nk">lo lo</span> = they.</p>
         <p>That lets Noki say something English can't say in one word: <span class="nk">si ka lefu</span> = you and I are going. <span class="nk">lo ka lefu</span> = he and I are going, you're not.</p>
@@ -986,6 +991,104 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       </div>
     </section>
 
+    <!-- ——— Stories ——— -->
+    <section id="stories">
+      <div class="lesson-head">
+        <p class="eyebrow" data-es="Lee">Read</p>
+        <h2 data-es="Cuentos">Stories</h2>
+        <p class="goal" data-es="Lee cada cuento en voz alta. ¿Sabes contarlo en español? Luego compruébalo con el botón.">Read each story out loud. Can you tell it in English? Then check with the button.</p>
+      </div>
+      <p class="fact" data-es="Las palabras en inglés son &lt;b&gt;prestadas&lt;/b&gt;: Noki todavía no tiene palabra para ellas.">The English words are <b>borrowed</b>: Noki has no word for them yet.</p>
+      <div class="situation story">
+        <h3 data-es="El perro grande">The big dog</h3>
+        <button class="btn ghost story-toggle" type="button" aria-pressed="false" data-es="Ver traducción">Show translation</button>
+        <div class="examples">
+          <div class="ex" data-s="dad e ka panu lefu park." data-en="Dad and I went to the park." data-es="Papá y yo fuimos al parque."></div>
+          <div class="ex" data-s="dog somu panu lopa." data-en="There was a big dog there." data-es="Allí había un perro grande."></div>
+          <div class="ex" data-s="ka panu sedu." data-en="I was scared." data-es="Tenía miedo."></div>
+          <div class="ex" data-s="dad panu doki: vek sedu! lo pomi." data-en="Dad said: Don&#x27;t be scared! He&#x27;s nice." data-es="Papá dijo: ¡No tengas miedo! Es bueno." data-note="lo = the dog. lo works for animals too." data-note-es="lo = el perro. lo también vale para animales."></div>
+          <div class="ex" data-s="dog panu milu ka e panu lick ka." data-en="The dog came to me and licked me." data-es="El perro vino y me lamió."></div>
+          <div class="ex" data-s="lo e ka panu fipo:do fipo:do." data-en="He and I played and played." data-es="Él y yo jugamos y jugamos."></div>
+          <div class="ex" data-s="lo panu nisu ka ball e panu lefu!" data-en="He took my ball and ran off!" data-es="¡Cogió mi pelota y se fue!"></div>
+          <div class="ex" data-s="ka panu dipu. sata! moku ka ke ball!" data-en="I was angry. Stop! Give me that ball!" data-es="Me enfadé. ¡Para! ¡Dame esa pelota!" data-note="Not ka ka ball: never say ka ka!" data-note-es="No ka ka ball: ¡nunca digas ka ka!"></div>
+          <div class="ex" data-s="lo panu vek sata." data-en="He didn&#x27;t stop." data-es="No paró."></div>
+          <div class="ex" data-s="suno mipi panu milu." data-en="A little kid came along." data-es="Vino una niña pequeña." data-note="Word by word: small person." data-note-es="Palabra por palabra: persona pequeña."></div>
+          <div class="ex" data-s="suno mipi panu doki: max! milu meni!" data-en="The kid shouted: Max! Come here!" data-es="La niña gritó: ¡Max! ¡Ven aquí!"></div>
+          <div class="ex" data-s="max panu milu lo e panu moku ka ball." data-en="Max went to her and gave me my ball." data-es="Max fue con ella y me dio mi pelota."></div>
+          <div class="ex" data-s="lo panu doki: ka vesa." data-en="She said: Sorry." data-es="Ella dijo: Lo siento."></div>
+          <div class="ex" data-s="ka panu doki: pomi! tesu!" data-en="I said: It&#x27;s okay! Thanks!" data-es="Yo dije: ¡No pasa nada! ¡Gracias!"></div>
+          <div class="ex" data-s="lo ka kifi lamu lamu." data-en="Now she and I are friends." data-es="Ahora ella y yo somos amigos."></div>
+          <div class="ex" data-s="dad panu doki: si ka lefu tuka?" data-en="Dad said: Shall we go home?" data-es="Papá dijo: ¿Nos vamos a casa?"></div>
+          <div class="ex" data-s="ka panu doki: da vek!" data-en="I said: Maybe!" data-es="Yo dije: ¡Quizás!"></div>
+        </div>
+      </div>
+      <div class="situation story">
+        <h3 data-es="Helado">Ice cream</h3>
+        <button class="btn ghost story-toggle" type="button" aria-pressed="false" data-es="Ver traducción">Show translation</button>
+        <div class="examples">
+          <div class="ex" data-s="dad e ka lefu shop." data-en="Dad and I go to the shop." data-es="Papá y yo vamos a la tienda."></div>
+          <div class="ex" data-s="suno suno suno meni." data-en="There are lots of people here." data-es="Aquí hay mucha gente."></div>
+          <div class="ex" data-s="ka luma ice cream somu." data-en="I see a big ice cream." data-es="Veo un helado grande."></div>
+          <div class="ex" data-s="ka doki dad: ka suli ke! tesu!" data-en="I tell Dad: I want that! Please!" data-es="Le digo a papá: ¡Quiero eso! ¡Por favor!"></div>
+          <div class="ex" data-s="dad doki: vek. si panu foma:do cake." data-en="Dad says: No. You already ate cake." data-es="Papá dice: No. Ya has comido pastel."></div>
+          <div class="ex" data-s="ka pemo pemo." data-en="I&#x27;m very sad." data-es="Estoy muy triste."></div>
+          <div class="ex" data-s="dad luma ka e doki: ice cream mipi?" data-en="Dad looks at me and says: A small ice cream?" data-es="Papá me mira y dice: ¿Un helado pequeño?"></div>
+          <div class="ex" data-s="ka doki: da! da! tesu!" data-en="I say: Yes! Yes! Thank you!" data-es="Yo digo: ¡Sí! ¡Sí! ¡Gracias!"></div>
+          <div class="ex" data-s="ke ice cream pomi pomi!" data-en="That ice cream is great!" data-es="¡Ese helado está buenísimo!"></div>
+          <div class="ex" data-s="ka mela mela dad." data-en="I love Dad so much." data-es="Quiero muchísimo a papá."></div>
+        </div>
+      </div>
+      <div class="situation story">
+        <h3 data-es="El secreto">The secret</h3>
+        <button class="btn ghost story-toggle" type="button" aria-pressed="false" data-es="Ver traducción">Show translation</button>
+        <div class="examples">
+          <div class="ex" data-s="dad milu school." data-en="Dad comes to school." data-es="Papá viene al colegio."></div>
+          <div class="ex" data-s="ka lamu luma lo ka." data-en="My friend looks at him and me." data-es="Mi amigo nos mira a él y a mí." data-note="lo ka = him and me." data-note-es="lo ka = él y yo."></div>
+          <div class="ex" data-s="dad doki: noki!" data-en="Dad says: Hi!" data-es="Papá dice: ¡Hola!" data-note="And now they speak Noki." data-note-es="Y ahora hablan en Noki."></div>
+          <div class="ex" data-s="ka doki: si ka lefu park?" data-en="I say: Shall we go to the park?" data-es="Yo digo: ¿Vamos al parque?"></div>
+          <div class="ex" data-s="dad doki: da! si ka kifi kifi lefu!" data-en="Dad says: Yes! We&#x27;re going right now!" data-es="Papá dice: ¡Sí! ¡Nos vamos ahora mismo!"></div>
+          <div class="ex" data-s="ka lamu doki: kui? kui?" data-en="My friend says: What? What?" data-es="Mi amigo dice: ¿Qué? ¿Qué?"></div>
+          <div class="ex" data-s="lo vek naki!" data-en="He doesn&#x27;t understand!" data-es="¡No entiende nada!"></div>
+          <div class="ex" data-s="ka doki lo: siko!" data-en="I tell him: It&#x27;s a secret!" data-es="Le digo: ¡Es un secreto!"></div>
+          <div class="ex" data-s="dad e ka laugh laugh." data-en="Dad and I laugh and laugh." data-es="Papá y yo nos reímos sin parar."></div>
+        </div>
+      </div>
+      <div class="situation story">
+        <h3 data-es="El ruido">The noise</h3>
+        <button class="btn ghost story-toggle" type="button" aria-pressed="false" data-es="Ver traducción">Show translation</button>
+        <div class="examples">
+          <div class="ex" data-s="night. ka vek mufo:do." data-en="Night. I can&#x27;t sleep." data-es="Es de noche. No puedo dormir."></div>
+          <div class="ex" data-s="ka lidu noise somu!" data-en="I hear a big noise!" data-es="¡Oigo un ruido grande!"></div>
+          <div class="ex" data-s="ka sedu sedu." data-en="I&#x27;m very scared." data-es="Tengo mucho miedo."></div>
+          <div class="ex" data-s="ka doki: dad! dafu ka!" data-en="I say: Dad! Help me!" data-es="Yo digo: ¡Papá! ¡Ayúdame!"></div>
+          <div class="ex" data-s="dad milu. lo doki: kui?" data-en="Dad comes. He says: What is it?" data-es="Papá viene. Dice: ¿Qué pasa?"></div>
+          <div class="ex" data-s="ka doki: monster lopa!" data-en="I say: There&#x27;s a monster there!" data-es="Yo digo: ¡Allí hay un monstruo!"></div>
+          <div class="ex" data-s="dad luma lopa." data-en="Dad looks over there." data-es="Papá mira allí."></div>
+          <div class="ex" data-s="lo doki: ke vek monster. ke cat!" data-en="He says: That&#x27;s not a monster. It&#x27;s the cat!" data-es="Dice: Eso no es un monstruo. ¡Es el gato!"></div>
+          <div class="ex" data-s="lo doki: meow!" data-en="It says: Meow!" data-es="Dice: ¡Miau!" data-note="lo = the cat." data-note-es="lo = el gato."></div>
+          <div class="ex" data-s="dad e ka laugh." data-en="Dad and I laugh." data-es="Papá y yo nos reímos."></div>
+          <div class="ex" data-s="dad doki: mufo pomi!" data-en="Dad says: Good night!" data-es="Papá dice: ¡Buenas noches!"></div>
+        </div>
+      </div>
+      <div class="situation story">
+        <h3 data-es="La playa">The beach</h3>
+        <button class="btn ghost story-toggle" type="button" aria-pressed="false" data-es="Ver traducción">Show translation</button>
+        <div class="examples">
+          <div class="ex" data-s="dad e ka lefu beach." data-en="Dad and I go to the beach." data-es="Papá y yo vamos a la playa."></div>
+          <div class="ex" data-s="sun pufa pufa!" data-en="The sun is very hot!" data-es="¡El sol quema mucho!"></div>
+          <div class="ex" data-s="ka duni vimo." data-en="I&#x27;m thirsty." data-es="Tengo sed." data-note="Word by word: I need water." data-note-es="Palabra por palabra: necesito agua."></div>
+          <div class="ex" data-s="dad moku ka vimo mipi." data-en="Dad gives me a little water." data-es="Papá me da un poco de agua."></div>
+          <div class="ex" data-s="ka doki: vimo vimo vimo, tesu!" data-en="I say: Lots of water, please!" data-es="Yo digo: ¡Mucha agua, por favor!"></div>
+          <div class="ex" data-s="dad e ka fipo:do sea." data-en="Dad and I play in the sea." data-es="Papá y yo jugamos en el mar."></div>
+          <div class="ex" data-s="ke sea tisi tisi!" data-en="The sea is very cold!" data-es="¡El mar está helado!"></div>
+          <div class="ex" data-s="ka lamu milu." data-en="My friend comes." data-es="Viene mi amigo."></div>
+          <div class="ex" data-s="lo ka fipo:do ball." data-en="He and I play ball." data-es="Él y yo jugamos a la pelota."></div>
+          <div class="ex" data-s="ka lefu tuka. ka mufo:desc mufo:desc." data-en="I go home. I&#x27;m very tired." data-es="Me voy a casa. Estoy muy cansado."></div>
+          <div class="ex" data-s="ke day pomi pomi!" data-en="That was a great day!" data-es="¡Ha sido un día genial!"></div>
+        </div>
+      </div>
+    </section>
+
     <!-- ——— Builder ——— -->
     <section id="build">
       <div class="lesson-head">
@@ -1133,7 +1236,7 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
   const W = {
     ka: { r: "who", g: { en: "I, me", es: "yo" }, m: { en: "I, me", es: "yo, mí" } },
     si: { r: "who", g: { en: "you", es: "tú" }, m: { en: "you", es: "tú" } },
-    lo: { r: "who", g: { en: "he, she", es: "él, ella" }, m: { en: "he, she, him, her", es: "él, ella" } },
+    lo: { r: "who", g: { en: "he, she", es: "él, ella" }, m: { en: "he, she, him, her (people and animals)", es: "él, ella (personas y animales)" } },
     da: { r: "link", g: { en: "yes", es: "sí" }, m: { en: "yes", es: "sí" } },
     vek: { r: "not", g: { en: "not", es: "no" }, m: { en: "no, not, none", es: "no, ningún, nada" } },
     suli: { r: "do", g: { en: "want", es: "querer" }, m: { en: "want", es: "querer" } },
@@ -1209,10 +1312,10 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
 
   const SPEAKER = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M15.5 8.8a4.5 4.5 0 0 1 0 6.4M18 6.3a8 8 0 0 1 0 11.4"/></svg>';
 
-  // "foma:do" forces a role; trailing punctuation stays with the word.
+  // "foma:do" forces a role; trailing punctuation (including "doki:") stays with the word.
   // Anything that isn't a Noki word is a borrowed word.
   const parse = (token) => {
-    const m = token.match(/^([a-z]+)(?::([a-z]+))?([?!.,]*)$/i);
+    const m = token.match(/^([a-z]+)(?::([a-z]+))?([?!.,:]*)$/i);
     if (!m) return { w: token, r: "borrow", g: t(UI.borrowed), p: "" };
     const w = m[1].toLowerCase();
     const entry = W[w] || EXTRA[w];
@@ -1350,6 +1453,13 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
     el.append(words, en, hearButton(s));
   };
   const renderExamples = () => document.querySelectorAll(".ex[data-s]").forEach(renderExample);
+  document.querySelectorAll(".story-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const open = btn.getAttribute("aria-pressed") !== "true";
+      btn.setAttribute("aria-pressed", String(open));
+      btn.closest(".story").classList.toggle("open", open);
+    });
+  });
 
   // ——— Legend ———
   const legend = document.getElementById("legend");

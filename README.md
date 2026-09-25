@@ -2,7 +2,7 @@
 
 A tiny secret spoken language for a parent and their 9-year-old son, who both speak Spanish and English.
 
-**Current state: 15 letters, 52 words, spec version 2.17 (2026-09-25).**
+**Current state: 15 letters, 52 words, spec version 2.18 (2026-09-25).**
 
 ## Files
 
@@ -10,7 +10,7 @@ A tiny secret spoken language for a parent and their 9-year-old son, who both sp
 |---|---|
 | `CLAUDE.md` | Why Noki exists, what it is optimised for, and the rules any AI session must follow when working on it. |
 | `noki-language-handoff.md` | **The source of truth.** Every rule, the whole vocabulary, the open questions, and a changelog of every decision with the options that were rejected. Written in English only, and also serves as the handoff document for any AI model continuing the work. |
-| `index.html` | The learner's guide for the child: 8 lessons, a Practice section (sentence builder, flashcards, speaking missions), secret phrases, a sentence machine, the word list and a printable pocket card. **Bilingual** — an EN/ES switch in the top bar, remembered per device. |
+| `index.html` | The learner's guide for the child: 8 lessons, a Practice section (sentence builder, flashcards, speaking missions), secret phrases, short stories to read, a sentence machine, the word list and a printable pocket card. **Bilingual** — an EN/ES switch in the top bar, remembered per device. |
 | `tools/noki_audit.py` | Checks new words against the confusion rules. Run `python tools/noki_audit.py audit` before accepting any vocabulary change. |
 
 ## The guide
@@ -37,7 +37,7 @@ The full working rules, and the story behind the project, are in `CLAUDE.md`.
 
 - Use Noki with the child for about a week. Keep the wishlist of words you had to borrow, and note where either of you got stuck.
 - Then run a second `find-gaps` pass on the guide, driven by what really happened rather than by guesses.
-- Open questions are listed in spec Section 23: numbers past two, "all", this vs that, bigger/smaller, family words (mum, dad, grandparents), "had" (past possession), and whether `lo` covers pets.
+- Open questions are listed in spec Section 23: numbers past two, "all", this vs that, bigger/smaller, family words (mum, dad, grandparents), and "had" (past possession).
 
 ## History so far
 
@@ -54,3 +54,4 @@ The full working rules, and the story behind the project, are in `CLAUDE.md`.
 - Have needs no word: say "got earlier", `panu nisu` (`ka panu nisu perro` = I have a dog), like English *I've got*. `dema` is parked for when "I had…" is needed (it replaced `kepu` as the candidate in version 2.15). Version 2.14.
 - `na` is parked as an idea for *if / when* (like German *wenn*), in case a whispered condition gets misheard; the question trick stays. Version 2.16.
 - Four everyday words in version 2.17: `sata` (stop / enough / done), `somu` (big), `mipi` (small / a little), `lamu` (friend). 52 words. Maybe is `da vek` (yes-no) and sorry is `ka vesa` (I feel bad) — no new words.
+- `lo` covers animals and pets too, not only people (version 2.18). The guide gained five short stories to read.

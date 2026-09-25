@@ -1,6 +1,6 @@
 # Noki Language — Model Handoff Specification
 
-**Version 2.17 — 2026-09-25.** See the changelog at the end for what changed.
+**Version 2.18 — 2026-09-25.** See the changelog at the end for what changed.
 
 ## 1. Project Goal
 
@@ -125,9 +125,11 @@ There are currently **52 core words**.
 |---|---|
 | **ka** | I / me |
 | **si** | you |
-| **lo** | he / she / him / her |
+| **lo** | he / she / him / her — people and animals |
 
 Noki deliberately uses one gender-neutral third-person singular pronoun: **lo**.
+
+**lo** also covers animals and pets: **dog somu milu. lo pomi.** — A big dog is coming. It's nice. It is not used for things; for a thing, say **ke** (that / it).
 
 There is no word for *we*, *you all* or *they*. Pronouns are put next to each other
 instead: **si ka** (you and me), **si si** (you two / you all), **lo lo** (they).
@@ -937,7 +939,6 @@ The following areas are intentionally **not yet finalized**:
 - "would" (things that didn't happen): for now, say what really happened with **vek** and **fa** (Section 30);
 - a word for "if / when": the question trick works (Section 30), but whispered the tone may be lost; **na** is parked (Section 19);
 - whether noun/verb dual-use such as `foma`, `vimo`, `mufo`, `fipo` ever becomes too ambiguous;
-- whether **lo** also covers animals and pets, or only people (parked in the first find-gaps pass).
 
 Do not automatically solve these. Introduce solutions only when useful.
 
@@ -1222,6 +1223,14 @@ When continuing development:
 ---
 
 ## Changelog
+
+### Version 2.18 — 2026-09-25
+
+**lo covers animals and pets (Section 3).** The user's decision; no new word. It came up while writing the first story for the guide, where the dog kept having to be called "dog" again. Removed from the open questions.
+
+- Things stay **ke** (that / it): **lo** is for anyone who can do something back, people or animals.
+- Rejected: **ke** for animals (it would treat a pet like an object, and **ke** is already "that"); a separate pronoun for animals (a new word for a distinction Spanish and English speakers do not need). Known cost: with a person and an animal in the same story, **lo** can mean either; context decides, as it does for he/she (Section 22).
+- The guide gained a Stories section: short readings built only from official words, with English words borrowed where Noki has none (Section 25).
 
 ### Version 2.17 — 2026-09-25
 
