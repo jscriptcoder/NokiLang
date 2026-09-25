@@ -1,6 +1,6 @@
 # Noki Language — Model Handoff Specification
 
-**Version 2.15 — 2026-09-24.** See the changelog at the end for what changed.
+**Version 2.17 — 2026-09-25.** See the changelog at the end for what changed.
 
 ## 1. Project Goal
 
@@ -117,7 +117,7 @@ Existing sound-alikes deliberately kept, because they are tiny grammar words or 
 
 # 3. Current Official Core Vocabulary
 
-There are currently **48 core words**.
+There are currently **52 core words**.
 
 ## Pronouns
 
@@ -143,6 +143,14 @@ See Section 29.
 | **vek** | no / not / none |
 | **tesu** | please / thank you / you're welcome |
 
+Two answers need no word of their own:
+
+**da vek.** — Maybe. (yes-no, said together as one answer, with a shrug)
+
+**ka vesa.** — Sorry. (I feel bad — like the English phrase)
+
+**ka vesa** can also mean "I'm in trouble" or "I did something bad"; context decides. If that causes a real mix-up, a word for *sorry* can be added then (Section 22).
+
 ---
 
 ## Actions
@@ -164,6 +172,15 @@ See Section 29.
 | **doki** | say / speak / tell |
 | **mela** | love / like / enjoy |
 | **lidu** | listen / hear |
+| **sata** | stop / enough / done / finished |
+
+**sata** is the word for ending something:
+
+**sata!** — Stop! / Enough! · **ka sata.** — I'm done. · **si sata?** — Are you done?
+
+**sata fipo!** — Stop playing! · **ka panu sata foma.** — I've finished eating. (It expects another action, like **suli**; Section 16.)
+
+**ke sata.** — That's over. · **vek sata!** — Don't stop! / Keep going!
 
 ---
 
@@ -179,6 +196,7 @@ See Section 29.
 | **mufo** | sleep / tired / rest |
 | **fipo** | play / fun / game |
 | **tolu** | number / count |
+| **lamu** | friend |
 
 **Any action word can also be a thing, and any thing word can also be an action. Its place in the sentence decides.** In the action place it is an action; in the "what" place it is a thing.
 
@@ -226,6 +244,25 @@ These words also form Noki's tense-like system.
 | **vesa** | bad / problem / danger |
 | **e** | and |
 | **fa** | why / because |
+
+---
+
+## Size
+
+| Noki | Meaning |
+|---|---|
+| **somu** | big |
+| **mipi** | small / a little |
+
+They work like **pomi**: they follow the thing they describe (Section 26), with no word for "is".
+
+**ke suno somu.** — That person is big. · **ke tuka mipi.** — That house is small.
+
+**vimo mipi** — a little water. · **foma mipi, tesu.** — A little food, please.
+
+Said twice, as usual: **somu somu** — huge; **mipi mipi** — tiny.
+
+The sound helps: round vowels for big, thin *i* sounds for small (like *mini*, *pequeñito*).
 
 ---
 
@@ -786,8 +823,8 @@ These **meanings** were proposed but deliberately **not** added to the official 
 | ~~kepu~~ | have / own | spelling retired in version 2.15 in favour of **dema** (the user's preference) |
 | **na** | if / when (like German *wenn*) | parked idea — until then, say the condition as a question (Section 30). Revisit if a whispered condition gets misheard, or the condition is wanted at the end. Soft risks: sounds like English *nah* / Spanish *na'* ("nothing"), and starts like **da** (yes) |
 | **dino** | child | deferred — note most kids hear "dino" as *dinosaur* |
-| ~~dova~~ | big / much | meaning deferred; spelling retired (fails the whisper rule against **lopa**) |
-| ~~dapi~~ | small / little | meaning deferred; spelling retired (fails the whisper rule against **tavo**) |
+| ~~dova~~ | big / much | spelling retired (fails the whisper rule against **lopa**); *big* became **somu** in version 2.17 |
+| ~~dapi~~ | small / little | spelling retired (fails the whisper rule against **tavo**); *small* became **mipi** in version 2.17 |
 
 **dalo** (like/enjoy) was replaced by the official word **mela**.
 
@@ -888,8 +925,8 @@ The following areas are intentionally **not yet finalized**:
 - a word or structure for "all";
 - explicit "this" versus "that";
 - possession involving complex noun phrases;
-- describing words beyond the current ones (e.g. big/small);
-- comparisons such as bigger/smaller;
+- comparisons such as bigger/smaller (**somu somu** means *huge*, not *bigger*);
+- words for family members (mum, dad, grandparents): borrowing **mama** gives away who you are talking about. Decide from real use who the pair talks about most;
 - "had" (possession in the past): **panu nisu** covers *have* (Section 12), but "I had a dog" cannot be said; the ready candidate is **dema** (Section 19);
 - "would" (things that didn't happen): for now, say what really happened with **vek** and **fa** (Section 30);
 - a word for "if / when": the question trick works (Section 30), but whispered the tone may be lost; **na** is parked (Section 19);
@@ -976,6 +1013,15 @@ Give me water!
 
 **pomi pomi!**
 Great!
+
+**sata!**
+Stop! / Enough!
+
+**ka lamu panu nisu foma somu.**
+My friend has a big lunch.
+
+**vimo mipi, tesu.**
+A little water, please.
 
 ---
 
@@ -1170,6 +1216,24 @@ When continuing development:
 ---
 
 ## Changelog
+
+### Version 2.17 — 2026-09-25
+
+**Four new words, 48 → 52: `sata`, `somu`, `mipi`, `lamu`. Maybe and sorry need no word.** The user asked for more everyday words; the first three are basic enough to skip the wishlist (as in version 2.10), and the user chose to add **lamu** now too.
+
+| Word | Meaning | Alternatives that lost |
+|---|---|---|
+| **sata** | stop / enough / done / finished (Section 3) | **kutu** (recommended, hook: a film director's "Cut!"; starts with k and has a t, like **koti**; the user preferred **sata**), **kuta** |
+| **somu** | big (hook: *sumo* backwards) | **vodo**, **kumu**; **sodo** (rhymes with Spanish *todo*, *gordo*) |
+| **mipi** | small / a little | **vuti** (same middle as **kutu**), **vavi** (close to *baby* / *bebé*, which hints at the meaning), **sasi** (Spanish *casi*) |
+| **lamu** | friend | **sonu** (the same sounds as **suno**, person, in the same place in a sentence), **sada** |
+
+- Why these: **sata** fills a real gap — **vek tavo ke** is only "don't do that", and nothing said *stop*, *I'm done* or *enough*. **somu** / **mipi** close the big/small open question and give *a little* (**vimo mipi**). Friend could have waited: borrowing "friend" in English around Spanish speakers already hides it.
+- **sata** takes another action like **suli** (**sata fipo!** — stop playing!). **somu** and **mipi** are opposites in the same slot, so they share no sounds at all (Section 21, rule 5). **mipi** starts like **milu** (come) — a soft risk, since one is an action and the other describes.
+- **Maybe = da vek** (yes-no) and **sorry = ka vesa** (I feel bad): existing words, Section 3. Rejected for now: new words for either.
+- Not added: hungry, thirsty, hurry, quiet, again, boring and buy — existing words already say them (**duni foma**, **kifi kifi**, **vek doki**, **fipo fipo**, **vek fipo**, **suli nisu**).
+- Still open: family words (Section 23), "all", this vs that, numbers.
+- New sound-alikes in the audit blocklist: **laso** (*lazo*), **soto** (*soto*, a surname), **vana** (*vana*), **vado** (*vado*), **vala** (*bala*), **volo** (*bolo*), **kuko** (*cuco*), **sosa** (*sosa*), **vano** (*vano* / *baño*), **kulu** (*culo*), **vamu** (*vamos*), **sodo** (*todo*).
 
 ### Version 2.16 — 2026-09-24
 

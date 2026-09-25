@@ -2,7 +2,7 @@
 
 A tiny secret spoken language for a parent and their 9-year-old son, who both speak Spanish and English.
 
-**Current state: 15 letters, 48 words, spec version 2.16 (2026-09-24).**
+**Current state: 15 letters, 52 words, spec version 2.17 (2026-09-25).**
 
 ## Files
 
@@ -37,7 +37,7 @@ The full working rules, and the story behind the project, are in `CLAUDE.md`.
 
 - Use Noki with the child for about a week. Keep the wishlist of words you had to borrow, and note where either of you got stuck.
 - Then run a second `find-gaps` pass on the guide, driven by what really happened rather than by guesses.
-- Open questions are listed in spec Section 23: numbers past two, "all", this vs that, bigger/smaller, "had" (past possession), please/thank you, and whether `lo` covers pets.
+- Open questions are listed in spec Section 23: numbers past two, "all", this vs that, bigger/smaller, family words (mum, dad, grandparents), "had" (past possession), and whether `lo` covers pets.
 
 ## History so far
 
@@ -53,3 +53,4 @@ The full working rules, and the story behind the project, are in `CLAUDE.md`.
 - If works with past and future time words; there is no "would" — say what really happened with `vek` and `fa`. Version 2.13.
 - Have needs no word: say "got earlier", `panu nisu` (`ka panu nisu perro` = I have a dog), like English *I've got*. `dema` is parked for when "I had…" is needed (it replaced `kepu` as the candidate in version 2.15). Version 2.14.
 - `na` is parked as an idea for *if / when* (like German *wenn*), in case a whispered condition gets misheard; the question trick stays. Version 2.16.
+- Four everyday words in version 2.17: `sata` (stop / enough / done), `somu` (big), `mipi` (small / a little), `lamu` (friend). 52 words. Maybe is `da vek` (yes-no) and sorry is `ka vesa` (I feel bad) — no new words.
