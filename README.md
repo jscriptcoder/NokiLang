@@ -10,7 +10,7 @@ A tiny secret spoken language for a parent and their 9-year-old son, who both sp
 |---|---|
 | `CLAUDE.md` | Why Noki exists, what it is optimised for, and the rules any AI session must follow when working on it. |
 | `noki-language-handoff.md` | **The source of truth.** Every rule, the whole vocabulary, the open questions, and a changelog of every decision with the options that were rejected. Written in English only, and also serves as the handoff document for any AI model continuing the work. |
-| `index.html` | The learner's guide for the child: 8 lessons, a Practice section (sentence builder, flashcards, speaking missions), secret phrases, short stories to read, a sentence machine, the word list and a printable pocket card. **Bilingual** — an EN/ES switch in the top bar, remembered per device. |
+| `index.html` | The learner's guide for the child: 14 short lessons, a Practice section (sentence builder, flashcards, speaking missions), secret phrases, short stories to read, a sentence machine, the word list and a printable pocket card. **Bilingual** — an EN/ES switch in the top bar, remembered per device. |
 | `tools/noki_audit.py` | Checks new words against the confusion rules. Run `python tools/noki_audit.py audit` before accepting any vocabulary change. |
 
 ## The guide
@@ -25,6 +25,7 @@ A tiny secret spoken language for a parent and their 9-year-old son, who both sp
 - **The old claude.ai artifact is deleted**, not kept as a "moved" page or kept in sync. Progress saved in the browser does not carry over to the new address.
 - **Navigation is a menu button** ("☰ 3 · Things") that opens a panel with every section and its ✓. Rejected: the sideways-scrolling row (you could not see there was more), wrapping onto two rows (the sticky bar takes too much of a phone screen), and a bottom tab bar. Each lesson ends with a "Next →" button that is never locked behind the quiz.
 - **Practice:** sentence builder (in each lesson's quiz and in a Practice section), flashcards, and speaking missions. Rejected: more multiple-choice (more of the same) and listen-and-pick (phone voices say Noki badly). Builder sentences are only ones already in the guide; missions only use phrases already in the guide.
+- **One idea per lesson (2026-09-26).** 14 lessons: Sounds, Who, Things, Doing, Yes and no, Being polite, When, And/or, Where, Questions, If… then, Good and bad, How you feel, How many. Each lesson only uses words from earlier ones. Lessons have names as ids (`#where`), and the guide numbers them from the menu order, so moving a lesson needs no renumbering. Ticks saved under the old numbered lessons carry over. Considered for later: splitting Doing (16 words, 5 rules) if it proves heavy.
 - **Testing is manual**, in a real browser at phone size. No test tooling in the repository — a deliberate choice to keep the project simple.
 
 ## How we work on Noki

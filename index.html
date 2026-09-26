@@ -560,14 +560,20 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
     <a class="mark" href="#top" aria-label="Noki"><span>no</span><span>ki</span></a>
     <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span class="burger" aria-hidden="true"></span><span class="here" id="menu-here"></span><span class="caret" aria-hidden="true">▾</span></button>
     <nav class="nav" id="menu" aria-label="Lessons" hidden>
-      <a href="#l1" data-lesson="l1" data-es="&lt;b&gt;1&lt;/b&gt;Sonidos"><b>1</b>Sounds</a>
-      <a href="#l2" data-lesson="l2" data-es="&lt;b&gt;2&lt;/b&gt;Quién"><b>2</b>Who</a>
-      <a href="#l3" data-lesson="l3" data-es="&lt;b&gt;3&lt;/b&gt;Cosas"><b>3</b>Things</a>
-      <a href="#l4" data-lesson="l4" data-es="&lt;b&gt;4&lt;/b&gt;Hacer"><b>4</b>Doing</a>
-      <a href="#l5" data-lesson="l5" data-es="&lt;b&gt;5&lt;/b&gt;No"><b>5</b>Not</a>
-      <a href="#l6" data-lesson="l6" data-es="&lt;b&gt;6&lt;/b&gt;Cuándo"><b>6</b>When</a>
-      <a href="#l7" data-lesson="l7" data-es="&lt;b&gt;7&lt;/b&gt;Preguntas"><b>7</b>Questions</a>
-      <a href="#l8" data-lesson="l8" data-es="&lt;b&gt;8&lt;/b&gt;Más"><b>8</b>More</a>
+      <a href="#sounds" data-lesson="sounds" data-es="Sonidos">Sounds</a>
+      <a href="#who" data-lesson="who" data-es="Quién">Who</a>
+      <a href="#things" data-lesson="things" data-es="Cosas">Things</a>
+      <a href="#doing" data-lesson="doing" data-es="Hacer">Doing</a>
+      <a href="#yesno" data-lesson="yesno" data-es="Sí y no">Yes and no</a>
+      <a href="#polite" data-lesson="polite" data-es="Ser educado">Being polite</a>
+      <a href="#when" data-lesson="when" data-es="Cuándo">When</a>
+      <a href="#andor" data-lesson="andor" data-es="Y, o">And, or</a>
+      <a href="#where" data-lesson="where" data-es="Dónde">Where</a>
+      <a href="#questions" data-lesson="questions" data-es="Preguntas">Questions</a>
+      <a href="#if" data-lesson="if" data-es="Si… entonces">If… then</a>
+      <a href="#goodbad" data-lesson="goodbad" data-es="Bien y mal">Good and bad</a>
+      <a href="#feel" data-lesson="feel" data-es="Cómo te sientes">How you feel</a>
+      <a href="#howmany" data-lesson="howmany" data-es="Cuántos">How many</a>
       <hr>
       <a href="#practice" data-es="Practica">Practice</a>
       <a href="#phrases" data-es="Frases secretas">Secret phrases</a>
@@ -612,10 +618,10 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
   </div>
 
   <main>
-    <!-- ——— Lesson 1 ——— -->
-    <section id="l1" class="lesson">
+    <!-- ——— Lesson: Sounds ——— -->
+    <section id="sounds" class="lesson">
       <div class="lesson-head">
-        <p class="eyebrow" data-es="Lección 1 de 8">Lesson 1 of 8</p>
+        <p class="eyebrow" data-lesson-num></p>
         <h2 data-es="Dilo bien">Say it right</h2>
         <p class="goal" data-es="Noki solo tiene 15 letras, y cada una suena siempre igual.">Noki has only 15 letters, and each one always sounds the same.</p>
       </div>
@@ -635,17 +641,17 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       <div class="cards" data-words="lefu,suli,kifi,vimo,kui,vek"></div>
       <p class="fact" data-es="&lt;b&gt;Las palabras cortas son el pegamento.&lt;/b&gt; Palabras como &lt;span class=&quot;nk&quot;&gt;ka&lt;/span&gt;, &lt;span class=&quot;nk&quot;&gt;si&lt;/span&gt; y &lt;span class=&quot;nk&quot;&gt;e&lt;/span&gt; tienen una parte. Las palabras de cosas y acciones tienen dos, como &lt;span class=&quot;nk&quot; data-done=&quot;1&quot;&gt;fo-ma&lt;/span&gt;."><b>Short words are the glue.</b> Words like <span class="nk">ka</span>, <span class="nk">si</span> and <span class="nk">e</span> have one part. The words for things and actions have two parts, like <span class="nk" data-done="1">fo-ma</span>.</p>
       <p class="fact" data-es="&lt;b&gt;Detalle secreto:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;vek&lt;/span&gt; (no) es la única palabra que acaba en sonido fuerte, así nunca se pierde un “no”."><b>Secret detail:</b> <span class="nk">vek</span> (no) is the only word that ends with a hard sound, so nobody ever misses a “no”.</p>
-      <div class="quiz" data-quiz="l1"></div>
+      <div class="quiz" data-quiz="sounds"></div>
     </section>
 
-    <!-- ——— Lesson 2 ——— -->
-    <section id="l2" class="lesson">
+    <!-- ——— Lesson: Who ——— -->
+    <section id="who" class="lesson">
       <div class="lesson-head">
-        <p class="eyebrow" data-es="Lección 2 de 8">Lesson 2 of 8</p>
+        <p class="eyebrow" data-lesson-num></p>
         <h2 data-es="Quién">Who</h2>
-        <p class="goal" data-es="Tres palabras diminutas para personas, más sí y no — y cómo juntarlas.">Three tiny words for people, plus yes and no — and how to stick them together.</p>
+        <p class="goal" data-es="Tres palabras diminutas para personas, y cómo juntarlas.">Three tiny words for people, and how to stick them together.</p>
       </div>
-      <div class="cards" data-words="ka,si,lo,da,vek,tesu"></div>
+      <div class="cards" data-words="ka,si,lo"></div>
       <div class="rule" data-es="&lt;p&gt;&lt;span class=&quot;nk&quot;&gt;lo&lt;/span&gt; significa &lt;b&gt;él o ella&lt;/b&gt;. A Noki le da igual. También vale para animales: un perro es &lt;span class=&quot;nk&quot;&gt;lo&lt;/span&gt;.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿Dos personas? Di las dos.&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si ka&lt;/span&gt; = nosotros (tú y yo). &lt;span class=&quot;nk&quot;&gt;lo ka&lt;/span&gt; = nosotros, pero tú no.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿La misma dos veces? Son más.&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si si&lt;/span&gt; = vosotros. &lt;span class=&quot;nk&quot;&gt;lo lo&lt;/span&gt; = ellos.&lt;/p&gt;&lt;p&gt;Así Noki dice algo que el español no puede decir con una sola palabra: &lt;span class=&quot;nk&quot;&gt;si ka lefu&lt;/span&gt; = tú y yo nos vamos. &lt;span class=&quot;nk&quot;&gt;lo ka lefu&lt;/span&gt; = él y yo nos vamos, tú no.&lt;/p&gt;&lt;p&gt;Lo que no se dice nunca es &lt;span class=&quot;nk&quot;&gt;ka ka&lt;/span&gt; — ¡en español significa otra cosa! Di &lt;span class=&quot;nk&quot;&gt;si ka&lt;/span&gt; o &lt;span class=&quot;nk&quot;&gt;lo ka&lt;/span&gt;.&lt;/p&gt;">
         <p><span class="nk">lo</span> means <b>he or she</b>. Noki doesn't care which. It works for animals too: a dog is <span class="nk">lo</span>.</p>
         <p><b>Two people? Say both.</b> <span class="nk">si ka</span> = we (you and me). <span class="nk">lo ka</span> = we, but not you.</p>
@@ -655,20 +661,17 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       </div>
       <div class="examples">
         <div class="ex" data-s="si ka" data-en="we — you and me" data-es="nosotros — tú y yo"></div>
+        <div class="ex" data-s="lo ka" data-en="we — him or her and me, not you" data-es="nosotros — él o ella y yo, tú no"></div>
         <div class="ex" data-s="si si" data-en="you two / you all" data-es="vosotros"></div>
         <div class="ex" data-s="lo lo" data-en="they" data-es="ellos"></div>
-        <div class="ex" data-s="da!" data-en="Yes!" data-es="¡Sí!"></div>
-        <div class="ex" data-s="vek!" data-en="No!" data-es="¡No!"></div>
-        <div class="ex" data-s="da vek." data-en="Maybe." data-es="Quizás." data-note="Word by word: yes no. Say it with a shrug." data-note-es="Palabra por palabra: sí no. Dilo encogiendo los hombros."></div>
-        <div class="ex" data-s="tesu!" data-en="Thank you!" data-es="¡Gracias!" data-note="Also: please, and you're welcome. The moment tells which." data-note-es="También: por favor, y de nada. El momento dice cuál."></div>
       </div>
-      <div class="quiz" data-quiz="l2"></div>
+      <div class="quiz" data-quiz="who"></div>
     </section>
 
-    <!-- ——— Lesson 3 ——— -->
-    <section id="l3" class="lesson">
+    <!-- ——— Lesson: Things ——— -->
+    <section id="things" class="lesson">
       <div class="lesson-head">
-        <p class="eyebrow" data-es="Lección 3 de 8">Lesson 3 of 8</p>
+        <p class="eyebrow" data-lesson-num></p>
         <h2 data-es="Cosas">Things</h2>
         <p class="goal" data-es="Palabras para cosas, y cómo decir de quién son.">Words for stuff, and how to say whose it is.</p>
       </div>
@@ -690,13 +693,13 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
         <div class="ex" data-s="abuela kui?" data-en="Where's grandma?" data-es="¿Dónde está la abuela?" data-note="Borrowed Spanish word: good when people nearby speak English." data-note-es="Palabra prestada del español: bien cuando la gente de alrededor habla inglés."></div>
         <div class="ex" data-s="ka suli lefu school." data-en="I want to go to school." data-es="Quiero ir al colegio." data-note="Borrowed English word: good when people nearby speak Spanish." data-note-es="Palabra prestada del inglés: bien cuando la gente de alrededor habla español."></div>
       </div>
-      <div class="quiz" data-quiz="l3"></div>
+      <div class="quiz" data-quiz="things"></div>
     </section>
 
-    <!-- ——— Lesson 4 ——— -->
-    <section id="l4" class="lesson">
+    <!-- ——— Lesson: Doing ——— -->
+    <section id="doing" class="lesson">
       <div class="lesson-head">
-        <p class="eyebrow" data-es="Lección 4 de 8">Lesson 4 of 8</p>
+        <p class="eyebrow" data-lesson-num></p>
         <h2 data-es="Hacer">Doing</h2>
         <p class="goal" data-es="Acciones, y tus primeras frases de verdad.">Actions, and your first real sentences.</p>
       </div>
@@ -710,7 +713,7 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       </div>
       <div class="examples">
         <div class="ex" data-s="ka suli vimo." data-en="I want water." data-es="Quiero agua."></div>
-        <div class="ex" data-s="si duni foma?" data-en="Do you need to eat?" data-es="¿Necesitas comer?" data-note="A question: just say it like a question. More in Lesson 7." data-note-es="Una pregunta: solo dilo como pregunta. Más en la lección 7."></div>
+        <div class="ex" data-s="si duni foma?" data-en="Do you need to eat?" data-es="¿Necesitas comer?" data-note="A question: just say it like a question. More in Questions." data-note-es="Una pregunta: solo dilo como pregunta. Más en Preguntas."></div>
         <div class="ex" data-s="lo mela fipo." data-en="He loves playing." data-es="Le encanta jugar." data-note="or: She loves playing." data-note-es="Vale para él o para ella."></div>
         <div class="ex" data-s="lefu tuka!" data-en="Go home!" data-es="¡Vete a casa!"></div>
         <div class="ex" data-s="dafu ka!" data-en="Help me!" data-es="¡Ayúdame!"></div>
@@ -722,51 +725,83 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
         <div class="ex" data-s="lo nisu ka ball!" data-en="He's taking my ball!" data-es="¡Está cogiendo mi pelota!" data-note="With nisu, ka ball is my ball. To get someone something, use moku." data-note-es="Con nisu, ka ball es mi pelota. Para conseguirle algo a alguien, usa moku."></div>
         <div class="ex" data-s="ka lefu si." data-en="I'll go with you." data-es="Iré contigo."></div>
         <div class="ex" data-s="lidu!" data-en="Listen!" data-es="¡Escucha!"></div>
-        <div class="ex" data-s="ka vek lidu." data-en="I can't hear." data-es="No oigo." data-note="vek comes in Lesson 5." data-note-es="vek llega en la lección 5."></div>
+        <div class="ex" data-s="ka vek lidu." data-en="I can't hear." data-es="No oigo." data-note="vek comes in Yes and no." data-note-es="vek llega en Sí y no."></div>
         <div class="ex" data-s="deli ke meni!" data-en="Leave it here!" data-es="¡Déjalo aquí!" data-note="deli = leave, leave behind, put down." data-note-es="deli = dejar, dejar atrás, poner."></div>
         <div class="ex" data-s="sata!" data-en="Stop! / Enough!" data-es="¡Para! / ¡Basta!"></div>
         <div class="ex" data-s="ka sata." data-en="I'm done." data-es="Ya he terminado."></div>
         <div class="ex" data-s="sata fipo:do!" data-en="Stop playing!" data-es="¡Deja de jugar!" data-note="Two actions together, like ka suli lefu." data-note-es="Dos acciones juntas, como ka suli lefu."></div>
       </div>
-      <div class="quiz" data-quiz="l4"></div>
+      <div class="quiz" data-quiz="doing"></div>
     </section>
 
-    <!-- ——— Lesson 5 ——— -->
-    <section id="l5" class="lesson">
+    <!-- ——— Lesson: Yes and no ——— -->
+    <section id="yesno" class="lesson">
       <div class="lesson-head">
-        <p class="eyebrow" data-es="Lección 5 de 8">Lesson 5 of 8</p>
-        <h2 data-es="No">Not</h2>
-        <p class="goal" data-es="Una palabra le da la vuelta a todo.">One word turns anything around.</p>
+        <p class="eyebrow" data-lesson-num></p>
+        <h2 data-es="Sí y no">Yes and no</h2>
+        <p class="goal" data-es="Sí, no, quizás — y una palabra que le da la vuelta a todo.">Yes, no, maybe — and one word that turns anything around.</p>
       </div>
-      <div class="cards" data-words="vek"></div>
-      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;Delante de una acción, &lt;span class=&quot;nk&quot;&gt;vek&lt;/span&gt; significa no:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;ka vek naki&lt;/span&gt; = no entiendo.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Delante de una cosa significa ninguno:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;vek suno&lt;/span&gt; = nadie.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Sin “quién”, significa no hagas:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;vek doki!&lt;/span&gt; = ¡no lo digas!&lt;/p&gt;">
+      <div class="cards" data-words="da,vek"></div>
+      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;&lt;span class=&quot;nk&quot;&gt;da&lt;/span&gt; = sí. &lt;span class=&quot;nk&quot;&gt;vek&lt;/span&gt; = no.&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;da vek&lt;/span&gt; = quizás: sí-no, encogiendo los hombros.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Delante de una acción, &lt;span class=&quot;nk&quot;&gt;vek&lt;/span&gt; significa no:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;ka vek naki&lt;/span&gt; = no entiendo.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Delante de una cosa significa ninguno:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;vek suno&lt;/span&gt; = nadie.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Sin “quién”, significa no hagas:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;vek doki!&lt;/span&gt; = ¡no lo digas!&lt;/p&gt;">
+        <p><b><span class="nk">da</span> = yes. <span class="nk">vek</span> = no.</b> <span class="nk">da vek</span> = maybe: yes-no, with a shrug.</p>
         <p><b>Before an action, <span class="nk">vek</span> means not:</b> <span class="nk">ka vek naki</span> = I don't understand.</p>
         <p><b>Before a thing, it means none:</b> <span class="nk">vek suno</span> = nobody.</p>
         <p><b>With no “who”, it means don't:</b> <span class="nk">vek doki!</span> = Don't tell!</p>
       </div>
       <div class="examples">
+        <div class="ex" data-s="da!" data-en="Yes!" data-es="¡Sí!"></div>
+        <div class="ex" data-s="vek!" data-en="No!" data-es="¡No!"></div>
+        <div class="ex" data-s="da vek." data-en="Maybe." data-es="Quizás." data-note="Word by word: yes no. Say it with a shrug." data-note-es="Palabra por palabra: sí no. Dilo encogiendo los hombros."></div>
         <div class="ex" data-s="ka vek naki." data-en="I don't understand." data-es="No entiendo."></div>
         <div class="ex" data-s="ka vek suli foma." data-en="I don't want food." data-es="No quiero comida."></div>
         <div class="ex" data-s="ka vek mela ke." data-en="I don't like that." data-es="Eso no me gusta."></div>
         <div class="ex" data-s="vek suno." data-en="Nobody." data-es="Nadie."></div>
         <div class="ex" data-s="vek doki!" data-en="Don't tell!" data-es="¡No lo digas!"></div>
       </div>
-      <div class="quiz" data-quiz="l5"></div>
+      <div class="quiz" data-quiz="yesno"></div>
     </section>
 
-    <!-- ——— Lesson 6 ——— -->
-    <section id="l6" class="lesson">
+    <!-- ——— Lesson: Being polite ——— -->
+    <section id="polite" class="lesson">
       <div class="lesson-head">
-        <p class="eyebrow" data-es="Lección 6 de 8">Lesson 6 of 8</p>
+        <p class="eyebrow" data-lesson-num></p>
+        <h2 data-es="Ser educado">Being polite</h2>
+        <p class="goal" data-es="Una palabra para por favor, gracias y de nada — y también perdón, hola y adiós.">One word for please, thank you and you're welcome — plus sorry, hi and bye.</p>
+      </div>
+      <div class="cards" data-words="tesu"></div>
+      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;&lt;span class=&quot;nk&quot;&gt;tesu&lt;/span&gt; hace tres trabajos.&lt;/b&gt; El momento dice cuál.&lt;/p&gt;">
+        <p><b><span class="nk">tesu</span> does three jobs.</b> The moment tells which one.</p>
+      </div>
+      <div class="qa-wrap">
+        <table class="qa" data-es="&lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Cuando&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Di&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Significa&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Pides algo&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;nk&quot;&gt;moku ka vimo, tesu!&lt;/span&gt;&lt;/td&gt;&lt;td&gt;por favor&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Te dan algo&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;nk&quot;&gt;tesu!&lt;/span&gt;&lt;/td&gt;&lt;td&gt;gracias&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Te dan las gracias&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;nk&quot;&gt;tesu!&lt;/span&gt;&lt;/td&gt;&lt;td&gt;de nada&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;">
+          <thead><tr><th scope="col">When</th><th scope="col">Say</th><th scope="col">It means</th></tr></thead><tbody><tr><td>You ask for something</td><td><span class="nk">moku ka vimo, tesu!</span></td><td>please</td></tr><tr><td>You get something</td><td><span class="nk">tesu!</span></td><td>thank you</td></tr><tr><td>Someone thanks you</td><td><span class="nk">tesu!</span></td><td>you're welcome</td></tr></tbody>
+        </table>
+      </div>
+      <div class="examples">
+        <div class="ex" data-s="moku ka vimo, tesu!" data-en="Give me water, please!" data-es="¡Dame agua, por favor!"></div>
+        <div class="ex" data-s="dafu ka, tesu!" data-en="Help me, please!" data-es="¡Ayúdame, por favor!"></div>
+        <div class="ex" data-s="tesu!" data-en="Thank you!" data-es="¡Gracias!" data-note="Also: please, and you're welcome. The moment tells which." data-note-es="También: por favor, y de nada. El momento dice cuál."></div>
+        <div class="ex" data-s="ka vesa." data-en="Sorry." data-es="Lo siento." data-note="Word by word: I feel bad. vesa comes in Good and bad." data-note-es="Palabra por palabra: me siento mal. vesa llega en Bien y mal."></div>
+        <div class="ex" data-s="noki!" data-en="Hi!" data-es="¡Hola!" data-note="Also means: let&#x27;s switch to Noki now." data-note-es="También significa: ¡ahora hablamos en Noki!"></div>
+        <div class="ex" data-s="lati!" data-en="Bye! See you later!" data-es="¡Adiós! ¡Hasta luego!"></div>
+        <div class="ex" data-s="mufo pomi!" data-en="Good night!" data-es="¡Buenas noches!" data-note="Word by word: good sleep." data-note-es="Palabra por palabra: buen sueño."></div>
+      </div>
+      <div class="quiz" data-quiz="polite"></div>
+    </section>
+
+    <!-- ——— Lesson: When ——— -->
+    <section id="when" class="lesson">
+      <div class="lesson-head">
+        <p class="eyebrow" data-lesson-num></p>
         <h2 data-es="Cuándo">When</h2>
         <p class="goal" data-es="Antes, ahora, luego. Ese es todo el sistema de tiempo.">Before, now, later. That's the whole time system.</p>
       </div>
-      <div class="cards" data-words="panu,kifi,lati,e"></div>
-      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;Las palabras nunca cambian.&lt;/b&gt; Para decir cuándo, pon una palabra de tiempo justo delante de la acción.&lt;/p&gt;&lt;p&gt;&lt;span class=&quot;nk&quot;&gt;panu&lt;/span&gt; = ya ha pasado. &lt;span class=&quot;nk&quot;&gt;kifi&lt;/span&gt; = ahora mismo. &lt;span class=&quot;nk&quot;&gt;lati&lt;/span&gt; = va a pasar.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿Sin palabra de tiempo?&lt;/b&gt; Entonces se sabe por la situación.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Una palabra de tiempo solo vale para la acción siguiente.&lt;/b&gt; Usa &lt;span class=&quot;nk&quot;&gt;e&lt;/span&gt; (y) para añadir otra acción con su propia palabra de tiempo.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Truco:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;ka foma&lt;/span&gt; puede ser “mi comida” o “yo como”. Añade una palabra de tiempo para que sea una acción: &lt;span class=&quot;nk&quot;&gt;ka kifi foma:do&lt;/span&gt; = estoy comiendo ahora.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿No hay acción? La palabra de tiempo va en el mismo sitio.&lt;/b&gt; Así se dice hay, había y habrá: &lt;span class=&quot;nk&quot;&gt;vimo lati meni&lt;/span&gt; = aquí habrá agua. También te da era y será: &lt;span class=&quot;nk&quot;&gt;ka panu mufo:desc&lt;/span&gt; = yo estaba cansado.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tener:&lt;/b&gt; di “ya lo he cogido”, &lt;span class=&quot;nk&quot;&gt;panu nisu&lt;/span&gt;. Como en inglés: &lt;i&gt;I've got a dog&lt;/i&gt;. &lt;span class=&quot;nk&quot;&gt;ka panu nisu perro&lt;/span&gt; = tengo un perro.&lt;/p&gt;">
+      <div class="cards" data-words="panu,kifi,lati"></div>
+      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;Las palabras nunca cambian.&lt;/b&gt; Para decir cuándo, pon una palabra de tiempo justo delante de la acción.&lt;/p&gt;&lt;p&gt;&lt;span class=&quot;nk&quot;&gt;panu&lt;/span&gt; = ya ha pasado. &lt;span class=&quot;nk&quot;&gt;kifi&lt;/span&gt; = ahora mismo. &lt;span class=&quot;nk&quot;&gt;lati&lt;/span&gt; = va a pasar.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿Sin palabra de tiempo?&lt;/b&gt; Entonces se sabe por la situación.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Una palabra de tiempo solo vale para la acción siguiente.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Truco:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;ka foma&lt;/span&gt; puede ser “mi comida” o “yo como”. Añade una palabra de tiempo para que sea una acción: &lt;span class=&quot;nk&quot;&gt;ka kifi foma:do&lt;/span&gt; = estoy comiendo ahora.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿No hay acción? La palabra de tiempo va en el mismo sitio.&lt;/b&gt; Así se dice hay, había y habrá: &lt;span class=&quot;nk&quot;&gt;vimo lati meni&lt;/span&gt; = aquí habrá agua. También te da era y será: &lt;span class=&quot;nk&quot;&gt;ka panu mufo:desc&lt;/span&gt; = yo estaba cansado.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tener:&lt;/b&gt; di “ya lo he cogido”, &lt;span class=&quot;nk&quot;&gt;panu nisu&lt;/span&gt;. Como en inglés: &lt;i&gt;I've got a dog&lt;/i&gt;. &lt;span class=&quot;nk&quot;&gt;ka panu nisu perro&lt;/span&gt; = tengo un perro.&lt;/p&gt;">
         <p><b>Words never change.</b> To say when, put a time word right before the action.</p>
         <p><span class="nk">panu</span> = it already happened. <span class="nk">kifi</span> = right now. <span class="nk">lati</span> = it will happen.</p>
         <p><b>No time word?</b> Then you'll know from what's going on.</p>
-        <p><b>A time word only works on the next action.</b> Use <span class="nk">e</span> (and) to add another action with its own time word.</p>
+        <p><b>A time word only works on the next action.</b></p>
         <p><b>Tip:</b> <span class="nk">ka foma</span> can mean “my food” or “I eat”. Add a time word to make it an action: <span class="nk">ka kifi foma:do</span> = I'm eating now.</p>
         <p><b>No action? The time word still goes in the same place.</b> That's how you say there is, there was and there will be: <span class="nk">vimo lati meni</span> = there will be water here. It also gives you was and will be: <span class="nk">ka panu mufo:desc</span> = I was tired.</p>
         <p><b>Have:</b> say “got it earlier”, <span class="nk">panu nisu</span>. Just like <i>I've got a dog</i>: <span class="nk">ka panu nisu perro</span> = I have a dog.</p>
@@ -776,9 +811,6 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
         <div class="ex" data-s="ka suli si kifi foma:do." data-en="I want you to eat now." data-es="Quiero que comas ya." data-note="Without kifi, ka suli si foma could also be: I want your food." data-note-es="Sin kifi, ka suli si foma también podría ser: quiero tu comida."></div>
         <div class="ex" data-s="si ka kifi lefu tuka." data-en="We're going home now." data-es="Ahora vamos a casa."></div>
         <div class="ex" data-s="lo lati milu." data-en="He'll come later." data-es="Vendrá luego." data-note="or: She'll come later." data-note-es="Vale para él o para ella."></div>
-        <div class="ex" data-s="ka panu foma:do e lati lefu tuka." data-en="I ate, and I'll go home later." data-es="Comí, y luego iré a casa."></div>
-        <div class="ex" data-s="lefu fusu e lati foma:do!" data-en="Go to the toilet before you eat!" data-es="¡Ve al baño antes de comer!" data-note="No word for “before”: say things in the order they happen." data-note-es="No hay palabra para “antes”: dilo en el orden en que pasa."></div>
-        <div class="ex" data-s="si ka kifi foma:do e lati deli." data-en="We're eating now, and we'll leave later." data-es="Ahora comemos, y luego nos vamos."></div>
         <div class="ex" data-s="vimo lati meni." data-en="There will be water here." data-es="Aquí habrá agua."></div>
         <div class="ex" data-s="suno suno suno panu lopa." data-en="There were lots of people there." data-es="Allí había mucha gente."></div>
         <div class="ex" data-s="ka panu mufo:desc." data-en="I was tired." data-es="Estaba cansado."></div>
@@ -787,20 +819,70 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
         <div class="ex" data-s="si panu nisu vimo?" data-en="Do you have water?" data-es="¿Tienes agua?"></div>
         <div class="ex" data-s="ka panu vek nisu foma." data-en="I don't have any food." data-es="No tengo comida."></div>
       </div>
-      <div class="quiz" data-quiz="l6"></div>
+      <div class="quiz" data-quiz="when"></div>
     </section>
 
-    <!-- ——— Lesson 7 ——— -->
-    <section id="l7" class="lesson">
+    <!-- ——— Lesson: And, or ——— -->
+    <section id="andor" class="lesson">
       <div class="lesson-head">
-        <p class="eyebrow" data-es="Lección 7 de 8">Lesson 7 of 8</p>
-        <h2 data-es="Dónde, y preguntas">Where, and questions</h2>
-        <p class="goal" data-es="Aquí, allí, dentro, fuera, encima, debajo, las dos palabras de pregunta, “o”, y “si…”.">Here, there, in, out, on, under, the two question words, “or”, and “if”.</p>
+        <p class="eyebrow" data-lesson-num></p>
+        <h2 data-es="Y, o">And, or</h2>
+        <p class="goal" data-es="Dos palabras diminutas para unir cosas: e es y, u es o.">Two tiny words to join things: e is and, u is or.</p>
       </div>
-      <div class="cards" data-words="meni,lopa,nide,kofo,tefe,kunu,kui,fa,u"></div>
-      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;Los lugares van al final:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si ka lefu lopa&lt;/span&gt; = vamos allí.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Dentro, fuera, encima, debajo:&lt;/b&gt; van detrás de la cosa, como las palabras que describen. &lt;span class=&quot;nk&quot;&gt;bed kunu&lt;/span&gt; = debajo de la cama. Solas, son lugares: &lt;span class=&quot;nk&quot;&gt;lefu nide!&lt;/span&gt; = ¡entra! &lt;span class=&quot;nk&quot;&gt;tefe&lt;/span&gt; también es arriba, y &lt;span class=&quot;nk&quot;&gt;kunu&lt;/span&gt; abajo.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Preguntas de sí o no:&lt;/b&gt; solo dilo como pregunta. &lt;span class=&quot;nk&quot;&gt;si naki?&lt;/span&gt; = ¿entiendes?&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿La pregunta lleva &lt;span class=&quot;nk&quot;&gt;vek&lt;/span&gt;?&lt;/b&gt; Contesta con la acción también, no solo &lt;span class=&quot;nk&quot;&gt;da&lt;/span&gt; o &lt;span class=&quot;nk&quot;&gt;vek&lt;/span&gt;: &lt;span class=&quot;nk&quot;&gt;da, ka duni&lt;/span&gt; = sí, lo necesito · &lt;span class=&quot;nk&quot;&gt;vek, ka vek duni&lt;/span&gt; = no, no lo necesito. Así nadie tiene que adivinar.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Una pregunta sin palabra de tiempo también significa “¿vamos?” o “¿podemos?”:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si ka lefu?&lt;/span&gt; = ¿vamos? · &lt;span class=&quot;nk&quot;&gt;si ka kifi deli?&lt;/span&gt; = ¿nos vamos ya? Por eso Noki no necesita palabra para “poder”.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Todas las demás preguntas usan &lt;span class=&quot;nk&quot;&gt;kui&lt;/span&gt;.&lt;/b&gt; Pon &lt;span class=&quot;nk&quot;&gt;kui&lt;/span&gt; donde iría la respuesta. La respuesta va en el mismo sitio.&lt;/p&gt;">
+      <div class="cards" data-words="e,u"></div>
+      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;&lt;span class=&quot;nk&quot;&gt;e&lt;/span&gt; = y. &lt;span class=&quot;nk&quot;&gt;u&lt;/span&gt; = o.&lt;/b&gt; Igual que en español: &lt;i&gt;padre e hijo&lt;/i&gt;, &lt;i&gt;siete u ocho&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Une dos cosas:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;vimo e foma&lt;/span&gt; = agua y comida. &lt;span class=&quot;nk&quot;&gt;vimo u juice?&lt;/span&gt; = ¿agua o zumo?&lt;/p&gt;&lt;p&gt;&lt;b&gt;Une dos acciones:&lt;/b&gt; una palabra de tiempo solo vale para la acción siguiente, así que cada acción lleva la suya. &lt;span class=&quot;nk&quot;&gt;ka panu foma:do e lati lefu tuka&lt;/span&gt; = comí, y luego iré a casa.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Después de una palabra que acaba en u, dale a la &lt;span class=&quot;nk&quot;&gt;u&lt;/span&gt; su propio golpecito,&lt;/b&gt; o se pierde: &lt;span class=&quot;nk&quot;&gt;lefu · u · dusa?&lt;/span&gt;&lt;/p&gt;">
+        <p><b><span class="nk">e</span> = and. <span class="nk">u</span> = or.</b> Just like Spanish: <i>padre e hijo</i>, <i>siete u ocho</i>. Say <span class="nk">u</span> “oo”, never “you”.</p>
+        <p><b>Join two things:</b> <span class="nk">vimo e foma</span> = water and food. <span class="nk">vimo u juice?</span> = water or juice?</p>
+        <p><b>Join two actions:</b> a time word only works on the next action, so each action gets its own. <span class="nk">ka panu foma:do e lati lefu tuka</span> = I ate, and I'll go home later.</p>
+        <p><b>After a word that ends in u, give <span class="nk">u</span> its own little beat,</b> or it gets lost: <span class="nk">lefu · u · dusa?</span></p>
+      </div>
+      <div class="examples">
+        <div class="ex" data-s="vimo e foma." data-en="Water and food." data-es="Agua y comida."></div>
+        <div class="ex" data-s="ka panu foma:do e lati lefu tuka." data-en="I ate, and I'll go home later." data-es="Comí, y luego iré a casa."></div>
+        <div class="ex" data-s="si ka kifi foma:do e lati deli." data-en="We're eating now, and we'll leave later." data-es="Ahora comemos, y luego nos vamos."></div>
+        <div class="ex" data-s="lefu fusu e lati foma:do!" data-en="Go to the toilet before you eat!" data-es="¡Ve al baño antes de comer!" data-note="No word for “before”: say things in the order they happen." data-note-es="No hay palabra para “antes”: dilo en el orden en que pasa."></div>
+        <div class="ex" data-s="vimo u juice?" data-en="Water or juice?" data-es="¿Agua o zumo?" data-note="u = or, like e = and. Say it “oo”." data-note-es="u = o, igual que e = y. Como en español."></div>
+        <div class="ex" data-s="si suli foma:do u fipo:do?" data-en="Do you want to eat or play?" data-es="¿Quieres comer o jugar?"></div>
+        <div class="ex" data-s="ka u si?" data-en="Me or you?" data-es="¿Yo o tú?"></div>
+        <div class="ex" data-s="si ka lefu? si ka dusa?" data-en="Shall we go, or stay?" data-es="¿Nos vamos o nos quedamos?" data-note="After a word ending in u, u can get lost. Two quick questions work too." data-note-es="Después de una palabra que acaba en u, la u se puede perder. Dos preguntas rápidas también valen."></div>
+      </div>
+      <div class="quiz" data-quiz="andor"></div>
+    </section>
+
+    <!-- ——— Lesson: Where ——— -->
+    <section id="where" class="lesson">
+      <div class="lesson-head">
+        <p class="eyebrow" data-lesson-num></p>
+        <h2 data-es="Dónde">Where</h2>
+        <p class="goal" data-es="Aquí, allí, dentro, fuera, encima y debajo.">Here, there, in, out, on and under.</p>
+      </div>
+      <div class="cards" data-words="meni,lopa,nide,kofo,tefe,kunu"></div>
+      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;Los lugares van al final:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si ka lefu lopa&lt;/span&gt; = vamos allí.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Dentro, fuera, encima, debajo:&lt;/b&gt; van detrás de la cosa, como las palabras que describen. &lt;span class=&quot;nk&quot;&gt;bed kunu&lt;/span&gt; = debajo de la cama. Solas, son lugares: &lt;span class=&quot;nk&quot;&gt;lefu nide!&lt;/span&gt; = ¡entra! &lt;span class=&quot;nk&quot;&gt;tefe&lt;/span&gt; también es arriba, y &lt;span class=&quot;nk&quot;&gt;kunu&lt;/span&gt; abajo.&lt;/p&gt;">
         <p><b>Places go at the end:</b> <span class="nk">si ka lefu lopa</span> = we're going there.</p>
         <p><b>In, out, on, under:</b> they go after the thing, like describing words. <span class="nk">bed kunu</span> = under the bed. On their own, they're places: <span class="nk">lefu nide!</span> = go inside! <span class="nk">tefe</span> also means up, and <span class="nk">kunu</span> down.</p>
+      </div>
+      <div class="examples">
+        <div class="ex" data-s="milu meni!" data-en="Come here!" data-es="¡Ven aquí!"></div>
+        <div class="ex" data-s="dusa meni!" data-en="Stay here!" data-es="¡Quédate aquí!"></div>
+        <div class="ex" data-s="bed kunu." data-en="Under the bed." data-es="Debajo de la cama." data-note="Word by word: bed under. The place word goes after the thing." data-note-es="Palabra por palabra: cama debajo. La palabra de lugar va detrás de la cosa."></div>
+        <div class="ex" data-s="ke table tefe." data-en="It's on the table." data-es="Está encima de la mesa."></div>
+        <div class="ex" data-s="lefu nide!" data-en="Go inside!" data-es="¡Entra!"></div>
+        <div class="ex" data-s="si ka fipo:do kofo?" data-en="Shall we play outside?" data-es="¿Jugamos fuera?"></div>
+        <div class="ex" data-s="luma tefe!" data-en="Look up!" data-es="¡Mira arriba!" data-note="tefe is on, and also up. kunu is under, and also down." data-note-es="tefe es encima, y también arriba. kunu es debajo, y también abajo."></div>
+        <div class="ex" data-s="ka panu deli school." data-en="I came from school." data-es="Vengo del cole." data-note="No word for “from”. Word by word: I left school." data-note-es="No hay palabra para “de”. Palabra por palabra: dejé el cole."></div>
+      </div>
+      <div class="quiz" data-quiz="where"></div>
+    </section>
+
+    <!-- ——— Lesson: Questions ——— -->
+    <section id="questions" class="lesson">
+      <div class="lesson-head">
+        <p class="eyebrow" data-lesson-num></p>
+        <h2 data-es="Preguntas">Questions</h2>
+        <p class="goal" data-es="Preguntas de sí o no, las dos palabras de pregunta, y cómo contestar.">Yes-or-no questions, the two question words, and how to answer.</p>
+      </div>
+      <div class="cards" data-words="kui,fa"></div>
+      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;Preguntas de sí o no:&lt;/b&gt; solo dilo como pregunta. &lt;span class=&quot;nk&quot;&gt;si naki?&lt;/span&gt; = ¿entiendes?&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿La pregunta lleva &lt;span class=&quot;nk&quot;&gt;vek&lt;/span&gt;?&lt;/b&gt; Contesta con la acción también, no solo &lt;span class=&quot;nk&quot;&gt;da&lt;/span&gt; o &lt;span class=&quot;nk&quot;&gt;vek&lt;/span&gt;: &lt;span class=&quot;nk&quot;&gt;da, ka duni&lt;/span&gt; = sí, lo necesito · &lt;span class=&quot;nk&quot;&gt;vek, ka vek duni&lt;/span&gt; = no, no lo necesito. Así nadie tiene que adivinar.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Una pregunta sin palabra de tiempo también significa “¿vamos?” o “¿podemos?”:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si ka lefu?&lt;/span&gt; = ¿vamos? · &lt;span class=&quot;nk&quot;&gt;si ka kifi deli?&lt;/span&gt; = ¿nos vamos ya? Por eso Noki no necesita palabra para “poder”.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Todas las demás preguntas usan &lt;span class=&quot;nk&quot;&gt;kui&lt;/span&gt;.&lt;/b&gt; Pon &lt;span class=&quot;nk&quot;&gt;kui&lt;/span&gt; donde iría la respuesta. La respuesta va en el mismo sitio.&lt;/p&gt;">
         <p><b>Yes-or-no questions:</b> just say it like a question. <span class="nk">si naki?</span> = do you understand?</p>
         <p><b>Is there a <span class="nk">vek</span> in the question?</b> Answer with the action too, not just <span class="nk">da</span> or <span class="nk">vek</span>: <span class="nk">da, ka duni</span> = yes, I do · <span class="nk">vek, ka vek duni</span> = no, I don't. Then nobody has to guess.</p>
         <p><b>A question with no time word also means “shall we” or “can we”:</b> <span class="nk">si ka lefu?</span> = shall we go? · <span class="nk">si ka kifi deli?</span> = can we leave now? That's why Noki needs no word for “can”.</p>
@@ -819,22 +901,10 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       </div>
       <p class="fact" data-es="&lt;b&gt;&lt;span class=&quot;nk&quot;&gt;kui?&lt;/span&gt; sola&lt;/b&gt; significa “¿Qué?” o “¿Eh?”"><b>Just <span class="nk">kui?</span> on its own</b> means “What?” or “Huh?”</p>
       <div class="examples">
-        <div class="ex" data-s="milu meni!" data-en="Come here!" data-es="¡Ven aquí!"></div>
-        <div class="ex" data-s="dusa meni!" data-en="Stay here!" data-es="¡Quédate aquí!"></div>
-        <div class="ex" data-s="bed kunu." data-en="Under the bed." data-es="Debajo de la cama." data-note="Word by word: bed under. The place word goes after the thing." data-note-es="Palabra por palabra: cama debajo. La palabra de lugar va detrás de la cosa."></div>
-        <div class="ex" data-s="ke table tefe." data-en="It's on the table." data-es="Está encima de la mesa."></div>
-        <div class="ex" data-s="lefu nide!" data-en="Go inside!" data-es="¡Entra!"></div>
-        <div class="ex" data-s="si ka fipo:do kofo?" data-en="Shall we play outside?" data-es="¿Jugamos fuera?"></div>
-        <div class="ex" data-s="luma tefe!" data-en="Look up!" data-es="¡Mira arriba!" data-note="tefe is on, and also up. kunu is under, and also down." data-note-es="tefe es encima, y también arriba. kunu es debajo, y también abajo."></div>
-        <div class="ex" data-s="ka panu deli school." data-en="I came from school." data-es="Vengo del cole." data-note="No word for “from”. Word by word: I left school." data-note-es="No hay palabra para “de”. Palabra por palabra: dejé el cole."></div>
         <div class="ex" data-s="fusu kui?" data-en="Where's the toilet?" data-es="¿Dónde está el baño?"></div>
         <div class="ex" data-s="lo kui?" data-en="Where is he?" data-es="¿Dónde está?" data-note="or: Where is she?" data-note-es="Vale para él o para ella."></div>
         <div class="ex" data-s="ke kui?" data-en="What's that?" data-es="¿Qué es eso?"></div>
         <div class="ex" data-s="ka tavo kui?" data-en="How do I do it?" data-es="¿Cómo lo hago?" data-note="No word for “how”. Word by word: I do what?" data-note-es="No hay palabra para “cómo”. Palabra por palabra: ¿yo hago qué?"></div>
-        <div class="ex" data-s="vimo u juice?" data-en="Water or juice?" data-es="¿Agua o zumo?" data-note="u = or, like e = and. Say it “oo”." data-note-es="u = o, igual que e = y. Como en español."></div>
-        <div class="ex" data-s="si suli foma:do u fipo:do?" data-en="Do you want to eat or play?" data-es="¿Quieres comer o jugar?"></div>
-        <div class="ex" data-s="ka u si?" data-en="Me or you?" data-es="¿Yo o tú?"></div>
-        <div class="ex" data-s="si ka lefu? si ka dusa?" data-en="Shall we go, or stay?" data-es="¿Nos vamos o nos quedamos?" data-note="After a word ending in u, u can get lost. Two quick questions work too." data-note-es="Después de una palabra que acaba en u, la u se puede perder. Dos preguntas rápidas también valen."></div>
         <div class="ex" data-s="si vek duni fusu?" data-en="Don't you need the toilet?" data-es="¿No necesitas ir al baño?"></div>
         <div class="ex" data-s="vek, ka vek duni." data-en="No, I don't." data-es="No, no lo necesito." data-note="Just da or vek could mean either. Say the action too." data-note-es="Solo da o vek podría ser cualquiera de las dos. Di también la acción."></div>
       </div>
@@ -846,14 +916,23 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
         <div class="ex" data-s="ka vek foma:do fa ka mufo:desc." data-en="I'm not eating because I'm tired." data-es="No como porque estoy cansado."></div>
         <div class="ex" data-s="fa ka mufo:desc." data-en="Because I'm tired." data-es="Porque estoy cansado."></div>
       </div>
-      <h3 data-es="Si…, entonces…">If…, then…</h3>
+      <div class="quiz" data-quiz="questions"></div>
+    </section>
+
+    <!-- ——— Lesson: If… then ——— -->
+    <section id="if" class="lesson">
+      <div class="lesson-head">
+        <p class="eyebrow" data-lesson-num></p>
+        <h2 data-es="Si… entonces">If… then</h2>
+        <p class="goal" data-es="Di el “si” como una pregunta, y luego lo que pasa.">Say the “if” part like a question, then what happens.</p>
+      </div>
       <p data-es="Noki no tiene palabra para “si”. &lt;b&gt;Di primero la condición como una pregunta, y luego lo que pasa.&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;lati&lt;/span&gt; (luego) hace de “entonces”. Ya hablamos así: “¿Has hecho los deberes? Pues a jugar.”">Noki has no word for “if”. <b>Say the “if” part first, like a question, then what happens.</b> <span class="nk">lati</span> (later) works as “then”. We already talk like this: “Finished your homework? Then you can play.”</p>
       <div class="examples">
         <div class="ex" data-s="si foma:do? lati fipo:do!" data-en="If you eat, then you can play!" data-es="¡Si comes, luego juegas!"></div>
         <div class="ex" data-s="vesa? ka dafu." data-en="If there's a problem, I'll help." data-es="Si hay un problema, te ayudo."></div>
         <div class="ex" data-s="si vek foma:do? vek fipo:do." data-en="If you don't eat, no playing." data-es="Si no comes, no hay juego."></div>
         <div class="ex" data-s="school sata? si ka fipo:do." data-en="After school, we'll play." data-es="Después del cole, jugamos." data-note="Word by word: School done? You and me play." data-note-es="Palabra por palabra: ¿cole terminado? Tú y yo jugamos."></div>
-        <div class="ex" data-s="ka tisi? ka lefu tuka." data-en="If I get cold, I'll go home." data-es="Si tengo frío, me voy a casa." data-note="tisi (cold) comes in Lesson 8." data-note-es="tisi (frío) llega en la lección 8."></div>
+        <div class="ex" data-s="ka tisi? ka lefu tuka." data-en="If I get cold, I'll go home." data-es="Si tengo frío, me voy a casa." data-note="tisi (cold) comes in How you feel." data-note-es="tisi (frío) llega en Cómo te sientes."></div>
       </div>
       <p class="fact" data-es="&lt;b&gt;El “si” siempre va primero.&lt;/b&gt; Si suena a pregunta de verdad, lo que dices después lo aclara."><b>The “if” part always comes first.</b> If it sounds like a real question, what you say next makes it clear.</p>
       <p data-es="&lt;b&gt;Con palabras de tiempo:&lt;/b&gt; cada mitad lleva la suya. En la segunda mitad, &lt;span class=&quot;nk&quot;&gt;lati&lt;/span&gt; significa “entonces” y también “lo haré”."><b>With time words:</b> each half gets its own. In the second half, <span class="nk">lati</span> means “then” and “will” at the same time.</p>
@@ -866,23 +945,22 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       <div class="examples">
         <div class="ex" data-s="ka panu vek fipo:do si fa ka panu vek naki." data-en="I didn't play with you because I didn't know." data-es="No jugué contigo porque no lo sabía." data-note="Instead of: If I had known, I would have played with you." data-note-es="En vez de: Si lo hubiera sabido, habría jugado contigo."></div>
       </div>
-      <div class="quiz" data-quiz="l7"></div>
+      <div class="quiz" data-quiz="if"></div>
     </section>
 
-    <!-- ——— Lesson 8 ——— -->
-    <section id="l8" class="lesson">
+    <!-- ——— Lesson: Good and bad ——— -->
+    <section id="goodbad" class="lesson">
       <div class="lesson-head">
-        <p class="eyebrow" data-es="Lección 8 de 8">Lesson 8 of 8</p>
-        <h2 data-es="Bien, mal y más">Good, bad, and more</h2>
-        <p class="goal" data-es="Describe cosas y cómo te sientes, y dilo dos veces para hacerlo más grande.">Describe things and how you feel, and say it twice to make it bigger.</p>
+        <p class="eyebrow" data-lesson-num></p>
+        <h2 data-es="Bien y mal">Good and bad</h2>
+        <p class="goal" data-es="Describe cosas: bien, mal, grande, pequeño, verdad — y dilo dos veces para decir “muy”.">Describe things: good, bad, big, small, true — and say it twice for “very”.</p>
       </div>
-      <div class="cards" data-words="pomi,vesa,siko,tolu"></div>
-      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;No hay palabra para “es”:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;ke suno pomi&lt;/span&gt; = esa persona es buena. &lt;span class=&quot;nk&quot;&gt;ka mufo:desc&lt;/span&gt; = estoy cansado.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Dilo dos veces para que sea más.&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;pomi pomi&lt;/span&gt; = ¡muy bien! &lt;span class=&quot;nk&quot;&gt;ka mela mela si&lt;/span&gt; = te quiero muchísimo.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Para las cosas, cuenta repitiendo:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;suno&lt;/span&gt; = una persona, &lt;span class=&quot;nk&quot;&gt;suno suno&lt;/span&gt; = dos personas, &lt;span class=&quot;nk&quot;&gt;suno suno suno&lt;/span&gt; = mucha gente. &lt;b&gt;¿Cuántos?&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;tolu?&lt;/span&gt; — &lt;span class=&quot;nk&quot;&gt;suno tolu?&lt;/span&gt; = ¿cuántas personas?&lt;/p&gt;&lt;p&gt;&lt;b&gt;Y con las personas:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si si&lt;/span&gt; = vosotros, &lt;span class=&quot;nk&quot;&gt;lo lo&lt;/span&gt; = ellos.&lt;/p&gt;&lt;p&gt;&lt;b&gt;También vale para palabras de tiempo y acciones:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;panu panu&lt;/span&gt; = hace mucho, &lt;span class=&quot;nk&quot;&gt;lati lati&lt;/span&gt; = mucho más tarde u otro día, &lt;span class=&quot;nk&quot;&gt;kifi kifi&lt;/span&gt; = ¡ahora mismo!, &lt;span class=&quot;nk&quot;&gt;fipo fipo!&lt;/span&gt; = ¡jugar otra vez!&lt;/p&gt;">
+      <div class="cards" data-words="pomi,vesa,siko,koti,somu,mipi"></div>
+      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;No hay palabra para “es”:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;ke suno pomi&lt;/span&gt; = esa persona es buena. &lt;span class=&quot;nk&quot;&gt;ka mufo:desc&lt;/span&gt; = estoy cansado.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Las palabras que describen van detrás de la cosa:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;ke tuka mipi&lt;/span&gt; = esa casa es pequeña.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Dilo dos veces para que sea más.&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;pomi pomi&lt;/span&gt; = ¡muy bien! &lt;span class=&quot;nk&quot;&gt;somu somu&lt;/span&gt; = ¡enorme! &lt;span class=&quot;nk&quot;&gt;ka mela mela si&lt;/span&gt; = te quiero muchísimo.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿Un poco?&lt;/b&gt; También es &lt;span class=&quot;nk&quot;&gt;mipi&lt;/span&gt;: &lt;span class=&quot;nk&quot;&gt;vimo mipi&lt;/span&gt; = un poco de agua. &lt;b&gt;¿Una mentira?&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;ke vek koti&lt;/span&gt; = eso no es verdad.&lt;/p&gt;">
         <p><b>No word for “is”:</b> <span class="nk">ke suno pomi</span> = that person is good. <span class="nk">ka mufo:desc</span> = I'm tired.</p>
-        <p><b>Say it twice to make it more.</b> <span class="nk">pomi pomi</span> = very good! <span class="nk">ka mela mela si</span> = I love you so much.</p>
-        <p><b>For things, count by saying it again:</b> <span class="nk">suno</span> = one person, <span class="nk">suno suno</span> = two people, <span class="nk">suno suno suno</span> = lots of people. <b>How many?</b> <span class="nk">tolu?</span> — <span class="nk">suno tolu?</span> = how many people?</p>
-        <p><b>And on people:</b> <span class="nk">si si</span> = you all, <span class="nk">lo lo</span> = they.</p>
-        <p><b>It works on time words and actions too:</b> <span class="nk">panu panu</span> = long ago, <span class="nk">lati lati</span> = much later or another day, <span class="nk">kifi kifi</span> = right now!, <span class="nk">fipo fipo!</span> = play again!</p>
+        <p><b>Describing words go after the thing:</b> <span class="nk">ke tuka mipi</span> = that house is small.</p>
+        <p><b>Say it twice to make it more.</b> <span class="nk">pomi pomi</span> = very good! <span class="nk">somu somu</span> = huge! <span class="nk">ka mela mela si</span> = I love you so much.</p>
+        <p><b>A little?</b> That's <span class="nk">mipi</span> too: <span class="nk">vimo mipi</span> = a little water. <b>A lie?</b> <span class="nk">ke vek koti</span> = that's not true.</p>
       </div>
       <div class="examples">
         <div class="ex" data-s="ke suno pomi." data-en="That person is okay." data-es="Esa persona está bien." data-note="or: good, or safe." data-note-es="o: buena, o de fiar."></div>
@@ -890,37 +968,67 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
         <div class="ex" data-s="pomi pomi!" data-en="Great!" data-es="¡Genial!"></div>
         <div class="ex" data-s="si panu tavo cake. ke pomi pomi!" data-en="The cake you made is great!" data-es="¡La tarta que hiciste está buenísima!" data-note="Two short sentences: ke points back to the cake." data-note-es="Dos frases cortas: ke vuelve a la tarta."></div>
         <div class="ex" data-s="vesa!" data-en="Danger!" data-es="¡Peligro!" data-note="or: Problem!" data-note-es="o: ¡Problema!"></div>
-        <div class="ex" data-s="ka vesa." data-en="Sorry." data-es="Lo siento." data-note="Word by word: I feel bad." data-note-es="Palabra por palabra: me siento mal."></div>
-        <div class="ex" data-s="suno suno suno luma si ka." data-en="Lots of people are looking at us." data-es="Mucha gente nos está mirando."></div>
         <div class="ex" data-s="siko!" data-en="It's a secret!" data-es="¡Es un secreto!"></div>
-        <div class="ex" data-s="suno tolu?" data-en="How many people?" data-es="¿Cuántas personas?" data-note="Answer by saying it again, or borrow a number." data-note-es="Contesta repitiendo, o usa un número prestado."></div>
-        <div class="ex" data-s="tolu suno!" data-en="Count the people!" data-es="¡Cuenta a la gente!"></div>
-      </div>
-      <h3 data-es="¿Grande o pequeño?">Big or small?</h3>
-      <div class="cards" data-words="somu,mipi"></div>
-      <p class="fact" data-es="Van detrás de la cosa, como &lt;span class=&quot;nk&quot;&gt;pomi&lt;/span&gt;. &lt;b&gt;¿Un poco?&lt;/b&gt; También es &lt;span class=&quot;nk&quot;&gt;mipi&lt;/span&gt;: &lt;span class=&quot;nk&quot;&gt;vimo mipi&lt;/span&gt; = un poco de agua.">They go after the thing, like <span class="nk">pomi</span>. <b>A little?</b> That's <span class="nk">mipi</span> too: <span class="nk">vimo mipi</span> = a little water.</p>
-      <div class="examples">
         <div class="ex" data-s="ke suno somu." data-en="That person is big." data-es="Esa persona es grande."></div>
         <div class="ex" data-s="ke tuka mipi." data-en="That house is small." data-es="Esa casa es pequeña."></div>
         <div class="ex" data-s="vimo mipi, tesu." data-en="A little water, please." data-es="Un poco de agua, por favor."></div>
         <div class="ex" data-s="somu somu!" data-en="Huge!" data-es="¡Enorme!"></div>
         <div class="ex" data-s="mipi mipi" data-en="tiny" data-es="diminuto"></div>
+        <div class="ex" data-s="ke koti?" data-en="Is that true?" data-es="¿Es verdad?"></div>
       </div>
-      <h3 data-es="¿Cómo estás?">How do you feel?</h3>
-      <div class="cards" data-words="pufa,tisi,neku,pemo,dipu,sedu,koti"></div>
-      <p class="fact" data-es="&lt;b&gt;¿Contento?&lt;/b&gt; Basta con &lt;span class=&quot;nk&quot;&gt;ka pomi&lt;/span&gt;. &lt;b&gt;¿Una mentira?&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;ke vek koti&lt;/span&gt; = eso no es verdad."><b>Happy?</b> Just say <span class="nk">ka pomi</span>. <b>A lie?</b> <span class="nk">ke vek koti</span> = that's not true.</p>
+      <div class="quiz" data-quiz="goodbad"></div>
+    </section>
+
+    <!-- ——— Lesson: How you feel ——— -->
+    <section id="feel" class="lesson">
+      <div class="lesson-head">
+        <p class="eyebrow" data-lesson-num></p>
+        <h2 data-es="Cómo te sientes">How you feel</h2>
+        <p class="goal" data-es="Calor, frío, dolor, triste, enfadado, miedo — y cómo preguntarlo.">Hot, cold, hurt, sad, angry, scared — and how to ask.</p>
+      </div>
+      <div class="cards" data-words="pufa,tisi,neku,pemo,dipu,sedu"></div>
+      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;Funcionan como las palabras que describen:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;ka tisi&lt;/span&gt; = tengo frío. &lt;span class=&quot;nk&quot;&gt;ke foma pufa&lt;/span&gt; = la comida quema.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿Qué tal?&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si pomi?&lt;/span&gt; &lt;b&gt;¿Contento?&lt;/b&gt; Basta con &lt;span class=&quot;nk&quot;&gt;ka pomi&lt;/span&gt;. &lt;b&gt;¿Muy triste?&lt;/b&gt; Dilo dos veces: &lt;span class=&quot;nk&quot;&gt;ka pemo pemo&lt;/span&gt;.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿Dónde te duele?&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;neku kui?&lt;/span&gt; Usa la palabra normal para la parte del cuerpo, con el dueño primero: &lt;span class=&quot;nk&quot;&gt;ka tummy neku&lt;/span&gt; = me duele la barriga.&lt;/p&gt;">
+        <p><b>They work like describing words:</b> <span class="nk">ka tisi</span> = I'm cold. <span class="nk">ke foma pufa</span> = the food is hot.</p>
+        <p><b>How are you?</b> <span class="nk">si pomi?</span> <b>Happy?</b> Just say <span class="nk">ka pomi</span>. <b>Very sad?</b> Say it twice: <span class="nk">ka pemo pemo</span>.</p>
+        <p><b>Where does it hurt?</b> <span class="nk">neku kui?</span> Borrow the body part, owner first: <span class="nk">ka tummy neku</span> = my tummy hurts.</p>
+      </div>
       <div class="examples">
         <div class="ex" data-s="si pomi?" data-en="How are you?" data-es="¿Qué tal?" data-note="Word by word: you good?" data-note-es="Palabra por palabra: ¿tú bien?"></div>
         <div class="ex" data-s="ka tisi." data-en="I'm cold." data-es="Tengo frío."></div>
         <div class="ex" data-s="ke foma pufa." data-en="The food is hot." data-es="La comida quema."></div>
         <div class="ex" data-s="neku kui?" data-en="Where does it hurt?" data-es="¿Dónde te duele?"></div>
+        <div class="ex" data-s="ka tummy neku." data-en="My tummy hurts." data-es="Me duele la barriga."></div>
         <div class="ex" data-s="lo pemo." data-en="He's sad." data-es="Está triste." data-note="or: She's sad." data-note-es="Vale para él o para ella."></div>
         <div class="ex" data-s="ka pemo." data-en="I'm sad." data-es="Estoy triste."></div>
         <div class="ex" data-s="ka dipu." data-en="I'm angry." data-es="Estoy enfadado."></div>
         <div class="ex" data-s="ka sedu." data-en="I'm scared." data-es="Tengo miedo."></div>
-        <div class="ex" data-s="ke koti?" data-en="Is that true?" data-es="¿Es verdad?"></div>
       </div>
-      <div class="quiz" data-quiz="l8"></div>
+      <div class="quiz" data-quiz="feel"></div>
+    </section>
+
+    <!-- ——— Lesson: How many ——— -->
+    <section id="howmany" class="lesson">
+      <div class="lesson-head">
+        <p class="eyebrow" data-lesson-num></p>
+        <h2 data-es="Cuántos">How many</h2>
+        <p class="goal" data-es="Cuenta repitiendo, y pregunta cuántos con tolu.">Count by saying it again, and ask how many with tolu.</p>
+      </div>
+      <div class="cards" data-words="tolu"></div>
+      <div class="rule" data-es="&lt;p&gt;&lt;b&gt;Cuenta repitiendo:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;suno&lt;/span&gt; = una persona, &lt;span class=&quot;nk&quot;&gt;suno suno&lt;/span&gt; = dos personas, &lt;span class=&quot;nk&quot;&gt;suno suno suno&lt;/span&gt; = mucha gente. Tres veces significa mucho, no exactamente tres.&lt;/p&gt;&lt;p&gt;&lt;b&gt;¿Cuántos?&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;tolu?&lt;/span&gt; — &lt;span class=&quot;nk&quot;&gt;suno tolu?&lt;/span&gt; = ¿cuántas personas? &lt;span class=&quot;nk&quot;&gt;vimo tolu?&lt;/span&gt; = ¿cuánta agua? Contesta repitiendo, o usa un número prestado.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Repetir vale para todo:&lt;/b&gt; &lt;span class=&quot;nk&quot;&gt;si si&lt;/span&gt; = vosotros, &lt;span class=&quot;nk&quot;&gt;lo lo&lt;/span&gt; = ellos, &lt;span class=&quot;nk&quot;&gt;panu panu&lt;/span&gt; = hace mucho, &lt;span class=&quot;nk&quot;&gt;lati lati&lt;/span&gt; = mucho más tarde u otro día, &lt;span class=&quot;nk&quot;&gt;kifi kifi&lt;/span&gt; = ¡ahora mismo!, &lt;span class=&quot;nk&quot;&gt;fipo:do fipo:do!&lt;/span&gt; = ¡jugar otra vez!&lt;/p&gt;">
+        <p><b>Count by saying it again:</b> <span class="nk">suno</span> = one person, <span class="nk">suno suno</span> = two people, <span class="nk">suno suno suno</span> = lots of people. Three times means lots, not exactly three.</p>
+        <p><b>How many?</b> <span class="nk">tolu?</span> — <span class="nk">suno tolu?</span> = how many people? <span class="nk">vimo tolu?</span> = how much water? Answer by saying it again, or borrow a number.</p>
+        <p><b>Saying it again works everywhere:</b> <span class="nk">si si</span> = you all, <span class="nk">lo lo</span> = they, <span class="nk">panu panu</span> = long ago, <span class="nk">lati lati</span> = much later or another day, <span class="nk">kifi kifi</span> = right now!, <span class="nk">fipo:do fipo:do!</span> = play again!</p>
+      </div>
+      <div class="examples">
+        <div class="ex" data-s="suno suno" data-en="two people" data-es="dos personas"></div>
+        <div class="ex" data-s="suno suno suno luma si ka." data-en="Lots of people are looking at us." data-es="Mucha gente nos está mirando."></div>
+        <div class="ex" data-s="suno tolu?" data-en="How many people?" data-es="¿Cuántas personas?" data-note="Answer by saying it again, or borrow a number." data-note-es="Contesta repitiendo, o usa un número prestado."></div>
+        <div class="ex" data-s="vimo tolu?" data-en="How much water?" data-es="¿Cuánta agua?"></div>
+        <div class="ex" data-s="tolu suno!" data-en="Count the people!" data-es="¡Cuenta a la gente!"></div>
+        <div class="ex" data-s="kifi kifi!" data-en="Right now!" data-es="¡Ahora mismo!"></div>
+        <div class="ex" data-s="fipo:do fipo:do!" data-en="Play again!" data-es="¡A jugar otra vez!"></div>
+      </div>
+      <div class="quiz" data-quiz="howmany"></div>
     </section>
 
     <!-- ——— Practice ——— -->
@@ -1203,6 +1311,7 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
     navLabel: { en: "Sections", es: "Secciones" },
     menu: { en: "Menu", es: "Menú" },
     next: { en: "Next", es: "Siguiente" },
+    lessonOf: (n, total) => (lang === "es" ? `Lección ${n} de ${total}` : `Lesson ${n} of ${total}`),
     langLabel: { en: "Language", es: "Idioma" },
     another: { en: "Another one", es: "Otra frase" },
     hearSentence: { en: "Hear this sentence", es: "Escuchar esta frase" },
@@ -1577,8 +1686,21 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
   });
 
   // ——— Progress (per-viewer convenience; the page works without it) ———
+  // Lessons used to be l1–l8. Ticks saved under those ids count for the lessons that replaced them.
+  const OLD_LESSONS = {
+    l1: ["sounds"], l2: ["who"], l3: ["things"], l4: ["doing"], l5: ["yesno"], l6: ["when"],
+    l7: ["where", "questions", "if"], l8: ["goodbad", "feel", "howmany"],
+  };
   const store = {
-    read() { try { return JSON.parse(localStorage.getItem("noki.progress") || "{}"); } catch { return {}; } },
+    read() {
+      try {
+        const saved = JSON.parse(localStorage.getItem("noki.progress") || "{}");
+        return Object.entries(saved).reduce((acc, [id, done]) => {
+          (OLD_LESSONS[id] ?? [id]).forEach((key) => { acc[key] = acc[key] || done; });
+          return acc;
+        }, {});
+      } catch { return {}; }
+    },
     write(v) { try { localStorage.setItem("noki.progress", JSON.stringify(v)); } catch { /* storage unavailable */ } },
   };
   const markNav = () => {
@@ -1637,6 +1759,16 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
     if (ev.key === "Escape" && !menu.hidden) { setMenu(false); menuBtn.focus(); }
   });
 
+  // Lesson numbers come from the menu order, so lessons can be moved without renumbering by hand.
+  const numberLessons = () => {
+    const lessons = menuLinks.filter((a) => a.dataset.lesson);
+    lessons.forEach((a, i) => {
+      a.insertAdjacentHTML("afterbegin", `<b>${i + 1}</b>`);
+      const eyebrow = document.querySelector(`#${a.dataset.lesson} .eyebrow[data-lesson-num]`);
+      if (eyebrow) eyebrow.textContent = UI.lessonOf(i + 1, lessons.length);
+    });
+  };
+
   // Every lesson ends with a button to whatever comes next in the menu.
   const renderNext = () => {
     document.querySelectorAll("section.lesson").forEach((sec) => {
@@ -1657,7 +1789,7 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
   // ——— Quizzes ———
   const nk = (s) => `<span class="nk">${s}</span>`;
   const QUIZ = {
-    l1: [
+    sounds: [
       { q: { en: `Which part of ${nk("lefu")} do you say strongest?`, es: `¿Qué parte de ${nk("lefu")} se dice más fuerte?` },
         o: ["LE-fu", "le-FU", { en: "Both the same", es: "Las dos igual" }], a: 0 },
       { q: { en: `How does the v in ${nk("vimo")} sound?`, es: `¿Cómo suena la v de ${nk("vimo")}?` },
@@ -1665,7 +1797,7 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       { q: { en: "Which is the only Noki word that ends with a hard sound?", es: "¿Cuál es la única palabra de Noki que acaba en sonido fuerte?" },
         o: [nk("ka"), nk("kui"), nk("vek")], a: 2 },
     ],
-    l2: [
+    who: [
       { q: { en: `What does ${nk("ka")} mean?`, es: `¿Qué significa ${nk("ka")}?` },
         o: [{ en: "you", es: "tú" }, { en: "I, me", es: "yo, mí" }, { en: "they", es: "ellos" }], a: 1 },
       { q: { en: "How do you say “we” — you and me?", es: "¿Cómo se dice “nosotros” — tú y yo?" }, o: [nk("ka"), nk("si ka"), nk("ka ka")], a: 1 },
@@ -1673,9 +1805,8 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
         o: [{ en: "only he", es: "solo él" }, { en: "he or she", es: "él o ella" }, { en: "only she", es: "solo ella" }], a: 1 },
       { q: { en: `${nk("si si")} means…`, es: `${nk("si si")} significa…` },
         o: [{ en: "you two, or all of you", es: "vosotros dos, o todos vosotros" }, { en: "very you", es: "muy tú" }, { en: "they", es: "ellos" }], a: 0 },
-      { q: { en: "How do you say “Thank you!”?", es: "¿Cómo se dice “¡Gracias!”?" }, o: [nk("da!"), nk("tesu!"), nk("noki!")], a: 1 },
     ],
-    l3: [
+    things: [
       { q: { en: `${nk("vimo")} means…`, es: `${nk("vimo")} significa…` },
         o: [{ en: "food or eat", es: "comida o comer" }, { en: "water or drink", es: "agua o beber" }, { en: "home", es: "casa" }], a: 1 },
       { q: { en: "How do you say “my home”?", es: "¿Cómo se dice “mi casa”?" }, o: [nk("tuka ka"), nk("ka tuka"), nk("ke tuka")], a: 1 },
@@ -1684,7 +1815,7 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       { b: "si foma", d: "ka" },
       { b: "ke fipo", d: "suno" },
     ],
-    l4: [
+    doing: [
       { q: { en: `${nk("ka suli vimo")} means…`, es: `${nk("ka suli vimo")} significa…` },
         o: [{ en: "You want water.", es: "Tú quieres agua." }, { en: "I give water.", es: "Yo doy agua." }, { en: "I want water.", es: "Yo quiero agua." }], a: 2 },
       { q: { en: "How do you say “Come home!”?", es: "¿Cómo se dice “¡Ven a casa!”?" }, o: [nk("ka milu tuka"), nk("milu tuka!"), nk("tuka milu!")], a: 1 },
@@ -1694,7 +1825,9 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       { b: "ka duni fusu.", d: "suli" },
       { b: "lo mela fipo.", d: "ka" },
     ],
-    l5: [
+    yesno: [
+      { q: { en: `${nk("da vek.")} means…`, es: `${nk("da vek.")} significa…` },
+        o: [{ en: "Maybe.", es: "Quizás." }, { en: "Yes and no.", es: "Sí y no." }, { en: "No, no!", es: "¡No, no!" }], a: 0 },
       { q: { en: `${nk("ka vek naki")} means…`, es: `${nk("ka vek naki")} significa…` },
         o: [{ en: "I know.", es: "Lo sé." }, { en: "I don't understand.", es: "No entiendo." }, { en: "Do you know?", es: "¿Lo sabes?" }], a: 1 },
       { q: { en: `Where does ${nk("vek")} go to say “not”?`, es: `¿Dónde va ${nk("vek")} para decir “no”?` },
@@ -1704,17 +1837,44 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       { b: "ka vek suli foma.", d: "si" },
       { b: "ka vek mela ke.", d: "lo" },
     ],
-    l6: [
+    polite: [
+      { q: { en: "How do you say “Thank you!”?", es: "¿Cómo se dice “¡Gracias!”?" }, o: [nk("da!"), nk("tesu!"), nk("noki!")], a: 1 },
+      { q: { en: `Someone says ${nk("tesu!")} to you. What do you say?`, es: `Alguien te dice ${nk("tesu!")}. ¿Qué contestas?` },
+        o: [nk("tesu!"), nk("vek!"), nk("lati!")], a: 0 },
+      { q: { en: `${nk("ka vesa.")} means…`, es: `${nk("ka vesa.")} significa…` },
+        o: [{ en: "Hello.", es: "Hola." }, { en: "Sorry.", es: "Lo siento." }, { en: "You're welcome.", es: "De nada." }], a: 1 },
+      { b: "moku ka vimo, tesu!", d: "nisu" },
+    ],
+    when: [
       { q: { en: `${nk("ka panu foma:do")} means…`, es: `${nk("ka panu foma:do")} significa…` },
         o: [{ en: "I will eat.", es: "Comeré." }, { en: "I'm eating now.", es: "Estoy comiendo ahora." }, { en: "I ate.", es: "Comí." }], a: 2 },
       { q: { en: "How do you say “We're going home now”?", es: "¿Cómo se dice “Ahora vamos a casa”?" },
         o: [nk("si ka lefu kifi tuka"), nk("si ka kifi lefu tuka"), nk("kifi si ka tuka lefu")], a: 1 },
-      { q: { en: `${nk("ka panu foma:do e lati lefu tuka")} means…`, es: `${nk("ka panu foma:do e lati lefu tuka")} significa…` },
-        o: [{ en: "I ate, and I'll go home later.", es: "Comí, y luego iré a casa." }, { en: "I ate and went home.", es: "Comí y me fui a casa." }, { en: "I'll eat and go home.", es: "Comeré e iré a casa." }], a: 0 },
       { b: "lo lati milu.", d: "kifi" },
       { b: "vimo lati meni.", d: "panu" },
+      { q: { en: "How do you say “I was tired”?", es: "¿Cómo se dice “Estaba cansado”?" },
+        o: [nk("ka panu mufo:desc."), nk("ka mufo:desc panu."), nk("panu ka mufo:desc.")], a: 0 },
     ],
-    l7: [
+    andor: [
+      { q: { en: `${nk("ka panu foma:do e lati lefu tuka")} means…`, es: `${nk("ka panu foma:do e lati lefu tuka")} significa…` },
+        o: [{ en: "I ate, and I'll go home later.", es: "Comí, y luego iré a casa." }, { en: "I ate and went home.", es: "Comí y me fui a casa." }, { en: "I'll eat and go home.", es: "Comeré e iré a casa." }], a: 0 },
+      { q: { en: `${nk("vimo u juice?")} means…`, es: `${nk("vimo u juice?")} significa…` },
+        o: [{ en: "Water and juice?", es: "¿Agua y zumo?" }, { en: "Water or juice?", es: "¿Agua o zumo?" }, { en: "Is the water juice?", es: "¿El agua es zumo?" }], a: 1 },
+      { q: { en: "How do you say “water and food”?", es: "¿Cómo se dice “agua y comida”?" },
+        o: [nk("vimo e foma"), nk("vimo u foma"), nk("e vimo foma")], a: 0 },
+      { b: "si suli foma:do u fipo:do?", d: "e" },
+    ],
+    where: [
+      { b: "dusa meni!", d: "milu" },
+      { q: { en: `${nk("bed kunu")} means…`, es: `${nk("bed kunu")} significa…` },
+        o: [{ en: "on the bed", es: "encima de la cama" }, { en: "under the bed", es: "debajo de la cama" }, { en: "in bed", es: "en la cama" }], a: 1 },
+      { q: { en: "How do you say “Go inside!”?", es: "¿Cómo se dice “¡Entra!”?" },
+        o: [nk("lefu nide!"), nk("nide lefu!"), nk("lefu kofo!")], a: 0 },
+      { q: { en: `${nk("tefe")} means on, and also…`, es: `${nk("tefe")} significa encima, y también…` },
+        o: [{ en: "up", es: "arriba" }, { en: "down", es: "abajo" }, { en: "outside", es: "fuera" }], a: 0 },
+      { b: "luma tefe!", d: "kunu" },
+    ],
+    questions: [
       { q: { en: `${nk("si suli kui?")} means…`, es: `${nk("si suli kui?")} significa…` },
         o: [{ en: "Where do you want to go?", es: "¿Adónde quieres ir?" }, { en: "What do you want?", es: "¿Qué quieres?" }, { en: "Do you want that?", es: "¿Quieres eso?" }], a: 1 },
       { q: { en: "How do you ask “Where's the toilet?”", es: "¿Cómo se pregunta “¿Dónde está el baño?”" },
@@ -1722,29 +1882,39 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       { q: { en: `${nk("kui milu?")} means…`, es: `${nk("kui milu?")} significa…` },
         o: [{ en: "Are you coming?", es: "¿Vienes?" }, { en: "Who is coming?", es: "¿Quién viene?" }, { en: "Where do you come from?", es: "¿De dónde vienes?" }], a: 1 },
       { q: { en: "How do you ask “Why?”", es: "¿Cómo se pregunta “¿Por qué?”" }, o: [nk("kui?"), nk("vek?"), nk("fa?")], a: 2 },
-      { b: "dusa meni!", d: "milu" },
       { b: "si vek foma:do fa?", d: "ka" },
+    ],
+    if: [
       { q: { en: `${nk("vesa? ka dafu.")} means…`, es: `${nk("vesa? ka dafu.")} significa…` },
         o: [{ en: "Is it bad? I don't know.", es: "¿Está mal? No lo sé." }, { en: "If there's a problem, I'll help.", es: "Si hay un problema, te ayudo." }, { en: "Help! There's a problem!", es: "¡Ayuda! ¡Hay un problema!" }], a: 1 },
       { b: "si foma:do? lati fipo:do!", d: "fa" },
       { q: { en: "How do you say “If you want, I'll go with you”?", es: "¿Cómo se dice “Si quieres, voy contigo”?" },
         o: [nk("si suli? ka lati lefu si."), nk("ka suli lefu si."), nk("si panu suli? ka panu lefu.")], a: 0 },
+      { q: { en: `${nk("school sata? si ka fipo:do.")} means…`, es: `${nk("school sata? si ka fipo:do.")} significa…` },
+        o: [{ en: "After school, we'll play.", es: "Después del cole, jugamos." }, { en: "School is over.", es: "El cole se ha acabado." }, { en: "Do we play at school?", es: "¿Jugamos en el cole?" }], a: 0 },
     ],
-    l8: [
-      { q: { en: `${nk("suno suno suno")} means…`, es: `${nk("suno suno suno")} significa…` },
-        o: [{ en: "exactly three people", es: "exactamente tres personas" }, { en: "lots of people", es: "mucha gente" }, { en: "a very good person", es: "una persona muy buena" }], a: 1 },
+    goodbad: [
       { q: { en: `${nk("pomi pomi!")} means…`, es: `${nk("pomi pomi!")} significa…` },
         o: [{ en: "Great!", es: "¡Genial!" }, { en: "Two good things", es: "Dos cosas buenas" }, { en: "Is it okay?", es: "¿Está bien?" }], a: 0 },
       { q: { en: "How do you say “That person is safe”?", es: "¿Cómo se dice “Esa persona es de fiar”?" },
         o: [nk("ke suno vesa."), nk("suno ke siko."), nk("ke suno pomi.")], a: 2 },
-      { q: { en: "How do you say “I'm cold”?", es: "¿Cómo se dice “Tengo frío”?" },
-        o: [nk("ka pufa."), nk("ka tisi."), nk("ka sedu.")], a: 1 },
-      { q: { en: `${nk("suno tolu?")} means…`, es: `${nk("suno tolu?")} significa…` },
-        o: [{ en: "Where are the people?", es: "¿Dónde está la gente?" }, { en: "How many people?", es: "¿Cuántas personas?" }, { en: "Who is that person?", es: "¿Quién es esa persona?" }], a: 1 },
       { q: { en: `${nk("vimo mipi")} means…`, es: `${nk("vimo mipi")} significa…` },
         o: [{ en: "lots of water", es: "mucha agua" }, { en: "a little water", es: "un poco de agua" }, { en: "cold water", es: "agua fría" }], a: 1 },
       { b: "ke foma vesa.", d: "pomi" },
+    ],
+    feel: [
+      { q: { en: "How do you say “I'm cold”?", es: "¿Cómo se dice “Tengo frío”?" },
+        o: [nk("ka pufa."), nk("ka tisi."), nk("ka sedu.")], a: 1 },
       { b: "ka sedu.", d: "pemo" },
+      { q: { en: `${nk("neku kui?")} means…`, es: `${nk("neku kui?")} significa…` },
+        o: [{ en: "Where does it hurt?", es: "¿Dónde te duele?" }, { en: "Who is hurt?", es: "¿Quién se ha hecho daño?" }, { en: "Is it hot?", es: "¿Quema?" }], a: 0 },
+    ],
+    howmany: [
+      { q: { en: `${nk("suno suno suno")} means…`, es: `${nk("suno suno suno")} significa…` },
+        o: [{ en: "exactly three people", es: "exactamente tres personas" }, { en: "lots of people", es: "mucha gente" }, { en: "a very good person", es: "una persona muy buena" }], a: 1 },
+      { q: { en: `${nk("suno tolu?")} means…`, es: `${nk("suno tolu?")} significa…` },
+        o: [{ en: "Where are the people?", es: "¿Dónde está la gente?" }, { en: "How many people?", es: "¿Cuántas personas?" }, { en: "Who is that person?", es: "¿Quién es esa persona?" }], a: 1 },
+      { b: "tolu suno!", d: "vek" },
     ],
   };
   const CHEERS = ["pomi pomi!", "pomi!", "da!"];
@@ -2083,7 +2253,7 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
 
   // ——— Practice: builder and flashcards over the lessons you pick ———
   // Lesson 1 only teaches sounds, so practice starts at lesson 2.
-  const LESSONS = ["l2", "l3", "l4", "l5", "l6", "l7", "l8"];
+  const LESSONS = menuLinks.map((a) => a.dataset.lesson).filter((id) => id && id !== "sounds");
   const wordsIn = (id) => [...document.querySelectorAll(`#${id} .cards[data-words]`)]
     .flatMap((c) => c.dataset.words.split(",").map((w) => w.trim()));
   // A sentence is buildable when every word is Noki, it has two different words at least,
@@ -2260,46 +2430,46 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
   // Speaking missions: real-life challenges. Phrases are sentences already in the guide,
   // so each one shows with the guide's own meaning. Ticks are kept on this device only.
   const MISSIONS = [
-    { id: "m1", l: "l2", s: ["noki!", "da!"],
+    { id: "m1", l: "polite", s: ["noki!", "da!"],
       t: { en: "Morning hello", es: "Hola de mañana" },
       d: { en: "Say hi in Noki at breakfast. The other one answers da!", es: "Saludaos en Noki en el desayuno. El otro contesta da!" } },
-    { id: "m2", l: "l2", s: ["da!", "vek!"],
+    { id: "m2", l: "yesno", s: ["da!", "vek!"],
       t: { en: "Yes-no game", es: "Juego del sí y el no" },
       d: { en: "At lunch, ask each other questions in a normal language. You can only answer in Noki.", es: "En la comida, haceos preguntas normales. Solo se puede contestar en Noki." } },
-    { id: "m3", l: "l3", s: ["ka tuka", "si foma", "ke fipo"],
+    { id: "m3", l: "things", s: ["ka tuka", "si foma", "ke fipo"],
       t: { en: "Whose is it?", es: "¿De quién es?" },
       d: { en: "Point at things at home and say whose they are.", es: "Señala cosas en casa y di de quién son." } },
-    { id: "m4", l: "l4", s: ["moku ka vimo!", "ka suli vimo."],
+    { id: "m4", l: "doing", s: ["moku ka vimo!", "ka suli vimo."],
       t: { en: "Secret water", es: "Agua secreta" },
       d: { en: "At a restaurant or at a friend's house, ask for water without anyone noticing.", es: "En un restaurante o en casa de alguien, pide agua sin que nadie se entere." } },
-    { id: "m5", l: "l4", s: ["dafu ka!", "ka duni dafu:what."],
+    { id: "m5", l: "doing", s: ["dafu ka!", "ka duni dafu:what."],
       t: { en: "Help!", es: "¡Ayuda!" },
       d: { en: "When you need a hand with something, ask in Noki.", es: "Cuando necesites que te echen una mano, pídelo en Noki." } },
-    { id: "m6", l: "l5", s: ["ka vek mela ke.", "ka vek suli foma."],
+    { id: "m6", l: "yesno", s: ["ka vek mela ke.", "ka vek suli foma."],
       t: { en: "Not for me", es: "Para mí no" },
       d: { en: "When food you don't like shows up, say it quietly in Noki.", es: "Cuando aparezca comida que no te gusta, dilo bajito en Noki." } },
-    { id: "m7", l: "l5", s: ["vek doki!"],
+    { id: "m7", l: "yesno", s: ["vek doki!"],
       t: { en: "Keep the secret", es: "Guarda el secreto" },
       d: { en: "Tell each other a tiny secret, then make a promise.", es: "Contaos un secreto pequeñito y prometed no decirlo." } },
-    { id: "m8", l: "l6", s: ["ka panu foma:do.", "si ka lati fipo:do?"],
+    { id: "m8", l: "when", s: ["ka panu foma:do.", "si ka lati fipo:do?"],
       t: { en: "Before and later", es: "Antes y luego" },
       d: { en: "After school, say one thing you already did and one thing you'll do later.", es: "Al salir del cole, di una cosa que ya hiciste y otra que harás luego." } },
-    { id: "m9", l: "l6", s: ["si ka kifi deli?", "ke vek fipo:desc. si ka lefu?"],
+    { id: "m9", l: "when", s: ["si ka kifi deli?", "ke vek fipo:desc. si ka lefu?"],
       t: { en: "Time to go", es: "Hora de irse" },
       d: { en: "Somewhere boring, ask to leave without anyone understanding.", es: "En un sitio aburrido, pide iros sin que nadie lo entienda." } },
-    { id: "m10", l: "l7", s: ["ka duni fusu.", "fusu kui?"],
+    { id: "m10", l: "questions", s: ["ka duni fusu.", "fusu kui?"],
       t: { en: "Where's the toilet?", es: "¿Dónde está el baño?" },
       d: { en: "In a shop or restaurant, ask where the toilet is, then find it together.", es: "En una tienda o restaurante, pregunta dónde está el baño y buscadlo juntos." } },
-    { id: "m11", l: "l7", s: ["fa?", "si vek foma:do fa?", "fa ka mufo:desc."],
+    { id: "m11", l: "questions", s: ["fa?", "si vek foma:do fa?", "fa ka mufo:desc."],
       t: { en: "Why?", es: "¿Por qué?" },
       d: { en: "Ask fa? about something, and the other one answers in Noki.", es: "Pregunta fa? sobre algo, y el otro contesta en Noki." } },
-    { id: "m12", l: "l8", s: ["pomi pomi!", "ke foma vesa.", "suno suno suno luma si ka."],
+    { id: "m12", l: "goodbad", s: ["pomi pomi!", "ke foma vesa.", "suno suno suno luma si ka."],
       t: { en: "Secret reviewers", es: "Críticos secretos" },
       d: { en: "At a café or party, rate the food and the place out loud, all in Noki.", es: "En una cafetería o una fiesta, puntuad la comida y el sitio en voz alta, todo en Noki." } },
-    { id: "m13", l: "l8", s: ["suno tolu?", "tolu suno!", "tesu!"],
+    { id: "m13", l: "howmany", s: ["suno tolu?", "tolu suno!", "tesu!"],
       t: { en: "Count and thank", es: "Cuenta y da las gracias" },
       d: { en: "In a queue at a shop or café, ask how many people are ahead, count them together, then say tesu! to whoever serves you.", es: "En la cola de una tienda o cafetería, pregunta cuántas personas hay delante, contadlas juntos y luego di tesu! a quien os atienda." } },
-    { id: "m14", l: "l8", s: ["si pomi?", "ka pemo.", "ka dipu.", "ka sedu."],
+    { id: "m14", l: "feel", s: ["si pomi?", "ka pemo.", "ka dipu.", "ka sedu."],
       t: { en: "How do you feel?", es: "¿Cómo estás?" },
       d: { en: "After school or at bedtime, ask each other si pomi? and answer with how you really feel. Then say why with fa.", es: "Al salir del cole o antes de dormir, preguntaos si pomi? y contestad cómo os sentís de verdad. Luego decid por qué con fa." } },
   ];
@@ -2432,6 +2602,7 @@ footer { padding-block: 3rem 2.5rem; color: var(--soft); font-size: .9rem; borde
       : PRESETS[0];
     const query = search.value;
     applyProse();
+    numberLessons();
     renderCards();
     renderExamples();
     renderLegend();
