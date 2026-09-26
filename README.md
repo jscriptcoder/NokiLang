@@ -2,7 +2,7 @@
 
 A tiny secret spoken language for a parent and their 9-year-old son, who both speak Spanish and English.
 
-**Current state: 15 letters, 57 words, spec version 2.25 (2026-09-26).**
+**Current state: 15 letters, 57 words, spec version 2.26 (2026-09-26).**
 
 ## Files
 
@@ -63,3 +63,4 @@ The full working rules, and the story behind the project, are in `CLAUDE.md`.
 - Four place words in version 2.23: `nide` (in), `kofo` (out), `tefe` (on / up), `kunu` (under / down). (Now before the thing: `kunu bed` = under the bed, since version 2.25.) No word for *from*: `ka panu deli school` = I came from school. 56 words.
 - `u` = or, the partner of `e` = and, as in Spanish: `vimo u juice?` (version 2.24). 57 words.
 - Describing words go before the thing to name it and after it to make a sentence: `somu dog` = a big dog, `dog somu` = the dog is big. Place words go before the thing too: `kunu bed` = under the bed. `mufo pomi!` (good night) stays as a wish (version 2.25).
+- Ready needs no word: `si sata?` = ready?, `ka sata.` = I'm ready, `dusa!` = wait, not yet (version 2.26).

@@ -186,6 +186,14 @@ Two answers need no word of their own:
 
 **ke sata.** — That's over. · **vek sata!** — Don't stop! / Keep going!
 
+**Ready** needs no word of its own. While you're getting ready, being done *is* being ready:
+
+**si sata?** — Ready? · **dusa!** — Wait! (not yet) · **ka sata.** — I'm ready.
+
+Other kinds of ready use the words that already say them: **ka kifi lefu.** — I'm going now (ready to leave). **ka pomi.** — I'm good (all set).
+
+In the middle of a game, **ka sata** can sound like "I give up"; context decides. If that causes a real mix-up, *ready* goes on the wishlist (Section 25).
+
 ---
 
 ## Everyday nouns / noun-actions
@@ -1391,6 +1399,14 @@ When continuing development:
 ---
 
 ## Changelog
+
+### Version 2.26 — 2026-09-26
+
+**Ready needs no word: `si sata?` — Ready? · `ka sata.` — I'm ready (Section 3, under `sata`). No new words.** The user asked how to say "I'm ready". Being done getting ready is being ready, so **sata** already says it; **dusa!** (wait!) says "not yet".
+
+- Other kinds of ready use existing words: **ka kifi lefu** (I'm going now) and **ka pomi** (I'm good, all set).
+- Known cost: in the middle of a game, **ka sata** can sound like "I give up". Context decides, as with **ka vesa** (sorry / I'm in trouble).
+- Rejected: a word for *ready*. The ambiguity hasn't caused a problem yet; if it does, *ready* goes on the wishlist (Section 25).
 
 ### Version 2.25 — 2026-09-26
 
