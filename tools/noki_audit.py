@@ -31,7 +31,7 @@ import sys
 CONSONANTS = "dfklmnpstv"
 VOWELS = "aeiou"
 
-# The 56 official words — noki-language-handoff.md Section 3 (spec version 2.23).
+# The 57 official words — noki-language-handoff.md Section 3 (spec version 2.24).
 # There is no word for we / you-all / they: pronouns are combined (Section 29).
 CURRENT = {
     "ka": "I, me", "si": "you", "lo": "he, she",
@@ -44,7 +44,7 @@ CURRENT = {
     "fusu": "toilet", "mufo": "sleep, tired", "fipo": "play, fun",
     "ke": "that, it", "lopa": "there", "meni": "here", "kui": "what/who/where/when?",
     "panu": "before", "kifi": "now", "lati": "later",
-    "siko": "secret", "pomi": "good, okay, safe", "vesa": "bad, danger", "e": "and",
+    "siko": "secret", "pomi": "good, okay, safe", "vesa": "bad, danger", "e": "and", "u": "or",
     "fa": "why, because",
     "lidu": "listen, hear", "pufa": "hot", "tisi": "cold", "neku": "hurt, pain",
     "pemo": "sad", "dipu": "angry", "sedu": "scared", "koti": "true",

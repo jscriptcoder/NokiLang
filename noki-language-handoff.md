@@ -1,6 +1,6 @@
 # Noki Language — Model Handoff Specification
 
-**Version 2.23 — 2026-09-26.** See the changelog at the end for what changed.
+**Version 2.24 — 2026-09-26.** See the changelog at the end for what changed.
 
 ## 1. Project Goal
 
@@ -81,7 +81,7 @@ Additional rules:
 
 ## Word shapes
 
-- **Grammar words have one syllable:** `ka si lo da vek ke e fa kui`.
+- **Grammar words have one syllable:** `ka si lo da vek ke e u fa kui`.
 - **Content words have two syllables**, shaped consonant–vowel–consonant–vowel (`lefu`, `foma`, `kifi`).
 - Words end in a vowel. The only exception is **vek**: its hard ending makes "no" impossible to miss.
 
@@ -119,7 +119,7 @@ Existing sound-alikes deliberately kept, because they are tiny grammar words or 
 
 # 3. Current Official Core Vocabulary
 
-There are currently **56 core words**.
+There are currently **57 core words**.
 
 ## Pronouns
 
@@ -284,6 +284,7 @@ These words also form Noki's tense-like system.
 | **pomi** | good / okay / safe |
 | **vesa** | bad / problem / danger |
 | **e** | and |
+| **u** | or |
 | **fa** | why / because |
 
 ---
@@ -409,11 +410,13 @@ The action decides; **da** or **vek** only starts the answer and can be left out
 
 ## Or
 
-Noki has no word for *or*. **Ask two quick questions**, one after the other; the answer is the one you pick:
+**u** means *or* (Section 15). The answer is the one you pick:
 
-**vimo? juice?** — Water or juice? → **vimo.**
+**vimo u juice?** — Water or juice? → **vimo.**
 
-**si ka fipo? si ka lefu tuka?** — Shall we play, or go home?
+**si suli foma u fipo?** — Do you want to eat or play?
+
+Two quick questions still work too, and are clearer after a word that ends in *u* (Section 15): **si ka lefu? si ka dusa?** — Shall we go, or stay?
 
 For what / who / where / when questions, see Section 18.
 
@@ -819,6 +822,24 @@ General structure:
 An action block can contain:
 
 **TIME + VEK + ACTION + OBJECT/PLACE**
+
+---
+
+## `u` — Or
+
+**u** means **or**, and works like **e**. Said like Spanish *u* ("oo"), never like English *you*.
+
+**vimo u juice?** — Water or juice?
+
+**ka u si?** — Me or you?
+
+**si suli foma u fipo?** — Do you want to eat or play?
+
+**ka lati foma u lati fipo.** — I'll eat or play later. (Each action keeps its own time word, Section 14.)
+
+**e** and **u** are a pair, as in Spanish (*padre e hijo*, *siete u ocho*): **e** = and, **u** = or.
+
+After a word that ends in *u* (**lefu**, **milu**, **nisu**, **moku**, **tolu**…), **u** can blend into it: **lefu u milu** sounds like "lefu milu". Say **u** as its own little beat, or ask two quick questions instead (Section 5).
 
 ---
 
@@ -1357,6 +1378,14 @@ When continuing development:
 ---
 
 ## Changelog
+
+### Version 2.24 — 2026-09-26
+
+**`u` = or (Sections 5 and 15). 56 → 57 words.** The user's decision, reversing version 2.22, where *or* was left to two quick questions. The questions work for choices, but not for statements (**ka lati foma u lati fipo** — I'll eat or play), and a small word is easier to reach for.
+
+- Why **u**: it pairs with **e** exactly as in Spanish (*e* = and before *i*, *u* = or before *o*), so there is nothing new to remember. One syllable, the shape for grammar words.
+- Known costs: Spanish speakers nearby may recognise **u** as *or*, the same trade-off already made with **e**. **e** and **u** are one sound apart and sit in the same place in a sentence. After a word ending in *u* (about a third of the vocabulary: **lefu**, **milu**, **nisu**, **moku**, **dafu**…), **u** can blend in — say it as its own beat, or use two quick questions.
+- Rejected: keeping only the two-questions trick (version 2.22); **o** (Spanish and Catalan *or*, one sound from **lo**, and it blends after the many words ending in *o*).
 
 ### Version 2.23 — 2026-09-26
 
