@@ -1,6 +1,6 @@
 # Noki Language — Model Handoff Specification
 
-**Version 2.24 — 2026-09-26.** See the changelog at the end for what changed.
+**Version 2.25 — 2026-09-26.** See the changelog at the end for what changed.
 
 ## 1. Project Goal
 
@@ -131,7 +131,7 @@ There are currently **57 core words**.
 
 Noki deliberately uses one gender-neutral third-person singular pronoun: **lo**.
 
-**lo** also covers animals and pets: **dog somu milu. lo pomi.** — A big dog is coming. It's nice. It is not used for things; for a thing, say **ke** (that / it).
+**lo** also covers animals and pets: **somu dog milu. lo pomi.** — A big dog is coming. It's nice. It is not used for things; for a thing, say **ke** (that / it).
 
 There is no word for *we*, *you all* or *they*. Pronouns are put next to each other
 instead: **si ka** (you and me), **si si** (you two / you all), **lo lo** (they).
@@ -234,15 +234,13 @@ Do not split meanings into separate words unless real usage shows that the ambig
 | **tefe** | on / on top / above / up |
 | **kunu** | under / below / down |
 
-**They go after the thing**, like describing words (**tuka mipi**, small house):
+**They go before the thing**, like describing words (**mipi tuka**, a small house) and like English and Spanish:
 
-**bed kunu** — under the bed (word by word: bed under)
+**kunu bed** — under the bed
 
-**ke table tefe.** — It's on the table.
+**ke tefe table.** — It's on the table.
 
-**shoe kui? — bed kunu.** — Where's the shoe? Under the bed.
-
-Read as owner + thing (Section 12), **bed kunu** is "the bed's underside", which means the same.
+**shoe kui? — kunu bed.** — Where's the shoe? Under the bed.
 
 **On their own they are places**, like **meni** and **lopa**:
 
@@ -250,7 +248,7 @@ Read as owner + thing (Section 12), **bed kunu** is "the bed's underside", which
 
 **tefe** and **kunu** also mean *up* and *down*: **luma tefe!** — Look up! · **lefu kunu.** — Go down.
 
-Time words work as in Section 27: **lo panu tuka nide.** — He/she was inside the house.
+Time words work as in Section 27: **lo panu nide tuka.** — He/she was inside the house.
 
 Memory hooks: **nide** — *nido*, a nest: you're in it. **kofo** — a cough pushes air out. **tefe** — *techo*, the top: high e sounds. **kunu** — low, round u sounds, like *under*. Opposites share no sounds, like **somu** / **mipi**.
 
@@ -260,7 +258,7 @@ Memory hooks: **nide** — *nido*, a nest: you're in it. **kofo** — a cough pu
 
 **abuela panu moku ka ke.** — It's from grandma. (Grandma gave it to me.)
 
-**nisu ke box nide.** — Take it out of the box. (Take the thing in the box.)
+**nisu ke nide box.** — Take it out of the box. (Take the thing in the box.)
 
 ---
 
@@ -296,13 +294,13 @@ These words also form Noki's tense-like system.
 | **somu** | big |
 | **mipi** | small / a little |
 
-They work like **pomi**: they follow the thing they describe (Section 26), with no word for "is".
+They work like **pomi** (Section 10): before the thing they name it, after the thing they make a sentence, with no word for "is".
 
-**ke suno somu.** — That person is big. · **ke tuka mipi.** — That house is small.
+**somu dog** — a big dog. · **ke suno somu.** — That person is big. · **ke tuka mipi.** — That house is small.
 
-**vimo mipi** — a little water. · **foma mipi, tesu.** — A little food, please.
+**mipi vimo** — a little water. · **mipi foma, tesu.** — A little food, please.
 
-Said twice, as usual: **somu somu** — huge; **mipi mipi** — tiny.
+Said twice, as usual: **somu somu** — huge; **mipi mipi** — tiny. **somu somu dog** — a huge dog; **somu dog dog** — two big dogs.
 
 The sound helps: round vowels for big, thin *i* sounds for small (like *mini*, *pequeñito*).
 
@@ -607,6 +605,21 @@ I'm tired.
 Where is he/she?
 
 For past and future without an action ("I was tired", "there will be water here"), see Section 27.
+
+## Before or after the thing
+
+Where a describing word goes is the whole difference between naming a thing and saying something about it:
+
+| Noki | Meaning |
+|---|---|
+| **pomi suno** | a good person (a thing) |
+| **ke suno pomi.** | That person is good. (a sentence) |
+| **somu dog** | a big dog |
+| **dog somu.** | The dog is big. |
+
+It is the same in English and Spanish when there is an "is": *the dog is big*, *el perro es grande*. An owner still comes first: **ka mipi tuka** — my small house.
+
+Place words (**nide**, **kofo**, **tefe**, **kunu**) also go before the thing: **kunu bed** — under the bed (Section 3).
 
 ---
 
@@ -1179,10 +1192,10 @@ Great!
 **sata!**
 Stop! / Enough!
 
-**ka lamu panu nisu foma somu.**
+**ka lamu panu nisu somu foma.**
 My friend has a big lunch.
 
-**vimo mipi, tesu.**
+**mipi vimo, tesu.**
 A little water, please.
 
 ---
@@ -1211,11 +1224,11 @@ Noki has no separate greeting words; it reuses existing ones.
 |---|---|
 | **noki!** | Hi! — also means "let's switch to Noki now" |
 | **lati!** | Bye! / See you later! |
-| **mufo pomi!** | Good night! (literally: good sleep) |
+| **mufo pomi!** | Good night! (literally: sleep, be good!) |
 
 **noki** is the language's name, not a vocabulary word, and is only said on its own. It is one sound from **doki** and **naki**, which is acceptable because it is only said alone, at the start of a conversation.
 
-Describing words follow the thing they describe (**mufo pomi**, **ke suno pomi**), so it is never *pomi mufo*.
+**mufo pomi!** is a wish, "sleep, be good!", so **pomi** comes after, as in a sentence (Section 10), like **si pomi?** (you good?). **pomi mufo** is a thing, "a good sleep".
 
 ---
 
@@ -1379,6 +1392,17 @@ When continuing development:
 
 ## Changelog
 
+### Version 2.25 — 2026-09-26
+
+**Describing words and place words go before the thing (Sections 3 and 10). No new words.** The user's decision: **somu dog** (a big dog), **mipi vimo** (a little water), **kunu bed** (under the bed), **ke tefe table** (it's on the table).
+
+- **Before the thing names it, after the thing makes a sentence:** **somu dog** = a big dog, **dog somu** = the dog is big. With no word for "is", the old order meant both, so the change also removes an ambiguity. The "after" half is how English and Spanish already work with "is", so only the "before" half is new.
+- It matches the pattern Noki already has: the word that adds information comes first (time before action, owner before thing, **vek** before a thing). An owner still comes first: **ka mipi tuka** — my small house.
+- **Place words move too.** In version 2.23 they went after the thing mainly *because* describing words did, so that reason is gone. The owner + thing reading (**bed kunu** = "the bed's underside") was dropped.
+- **mufo pomi!** (good night) stays as it is, read as a wish, "sleep, be good!", like **si pomi?**. Rejected: flipping it to **pomi mufo!** so the rule has no exception — the pair already knows it, and it fits the rule anyway.
+- Rejected: keeping describing words after the thing (Spanish order; one position for two jobs); moving describing words but keeping place words after (**bed kunu**, which would be the only thing-describing word still after the thing).
+- Known cost: word by word, Noki is now closer to English order, against priority 6. Accepted because priority 1 (easy to learn) wins, and the old order was Spanish order anyway — the words, not the order, hide the meaning.
+
 ### Version 2.24 — 2026-09-26
 
 **`u` = or (Sections 5 and 15). 56 → 57 words.** The user's decision, reversing version 2.22, where *or* was left to two quick questions. The questions work for choices, but not for statements (**ka lati foma u lati fipo** — I'll eat or play), and a small word is easier to reach for.
@@ -1399,7 +1423,7 @@ When continuing development:
 | **kunu** | under / below / down (low, round u sounds) | **mutu** (shares t with **tefe**; only works with **pefi**) |
 
 - **Two syllables, not one.** The user asked about two- or three-letter words. Almost every consonant–vowel pair is a Spanish or English word (*de, la, me, mi, ni, no, se, te, tu, va, ve, to, so*), and the whisper rule leaves only **mu** and **pu** (*poo*) free next to **ka ke si lo da fa na**. The **kui** shape (*pau*, *moi*) is possible but full of real words and would be a new word shape. And like **meni**, **lopa** and **tuka**, these words come at the end of a sentence or alone as an answer, where a stressed two-syllable word survives whispering far better.
-- **After the thing** (**bed kunu**), like describing words. Rejected: before the thing (*kunu bed*, like English and Spanish) — a new order to learn, and it sounds more like the languages nearby.
+- **After the thing** (**bed kunu**), like describing words. Rejected: before the thing (*kunu bed*, like English and Spanish) — a new order to learn, and it sounds more like the languages nearby. (Reversed in version 2.25.)
 - **tefe** and **kunu** also cover *up* and *down* (as in Japanese). Rejected: separate words for up and down.
 - **No word for *from*:** **deli** (left school = came from school), the giver with **moku** (from grandma), and **nide** (out of the box). Rejected: a *from* word before it is borrowed in real use (Section 25).
 - Opposites share no sounds (Section 21, rule 5). Soft risks: **nide** starts like **nisu** (an action, not a place); **kofo** and **koti** are two sounds apart after a thing (Section 2, "Watch in real use"); **tefe** is two sounds from **tesu** and from the parked **dema**.
