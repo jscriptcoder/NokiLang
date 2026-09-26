@@ -1,6 +1,6 @@
 # Noki Language — Model Handoff Specification
 
-**Version 2.22 — 2026-09-25.** See the changelog at the end for what changed.
+**Version 2.23 — 2026-09-26.** See the changelog at the end for what changed.
 
 ## 1. Project Goal
 
@@ -101,6 +101,8 @@ Example: whispered, **doki** and the old word **teki** became "toki"/"teki" — 
 
 **Watch in real use:** **duni** (need) and **dusa** (wait/stay) share their first syllable, sit in the same sentence slot, and are only two sounds apart whispered. They pass the rule, and no confusion has actually happened yet, so nothing is being changed — but this is the first pair to check after the family has used Noki for a while.
 
+Also watch **kofo** (outside) and **koti** (true): two sounds apart, and both can follow a thing (**ke kofo** — it's outside; **ke koti** — it's true).
+
 **Word starts.** New words should not start with a pronoun sound (`ka- si- lo- ke-`, or the retired pronouns `nu- ma-`) or with `no-`. (`lopa` and `siko` already do and are kept.)
 
 ## Sound-alikes
@@ -117,7 +119,7 @@ Existing sound-alikes deliberately kept, because they are tiny grammar words or 
 
 # 3. Current Official Core Vocabulary
 
-There are currently **52 core words**.
+There are currently **56 core words**.
 
 ## Pronouns
 
@@ -222,6 +224,43 @@ Do not split meanings into separate words unless real usage shows that the ambig
 | **lopa** | there / that place |
 | **meni** | here |
 | **kui** | question word: what / who / where / when |
+
+## In, out, on, under
+
+| Noki | Meaning |
+|---|---|
+| **nide** | in / inside |
+| **kofo** | out / outside |
+| **tefe** | on / on top / above / up |
+| **kunu** | under / below / down |
+
+**They go after the thing**, like describing words (**tuka mipi**, small house):
+
+**bed kunu** — under the bed (word by word: bed under)
+
+**ke table tefe.** — It's on the table.
+
+**shoe kui? — bed kunu.** — Where's the shoe? Under the bed.
+
+Read as owner + thing (Section 12), **bed kunu** is "the bed's underside", which means the same.
+
+**On their own they are places**, like **meni** and **lopa**:
+
+**lefu nide!** — Go inside! · **si ka fipo kofo?** — Shall we play outside?
+
+**tefe** and **kunu** also mean *up* and *down*: **luma tefe!** — Look up! · **lefu kunu.** — Go down.
+
+Time words work as in Section 27: **lo panu tuka nide.** — He/she was inside the house.
+
+Memory hooks: **nide** — *nido*, a nest: you're in it. **kofo** — a cough pushes air out. **tefe** — *techo*, the top: high e sounds. **kunu** — low, round u sounds, like *under*. Opposites share no sounds, like **somu** / **mipi**.
+
+**There is no word for *from*.** Existing words say it:
+
+**ka panu deli school.** — I came from school. (I left school.)
+
+**abuela panu moku ka ke.** — It's from grandma. (Grandma gave it to me.)
+
+**nisu ke box nide.** — Take it out of the box. (Take the thing in the box.)
 
 ---
 
@@ -1318,6 +1357,25 @@ When continuing development:
 ---
 
 ## Changelog
+
+### Version 2.23 — 2026-09-26
+
+**Four place words, 52 → 56: `nide` (in), `kofo` (out), `tefe` (on / up), `kunu` (under / down). No word for *from* (Section 3).** Found in the grammar-gap review: asked **shoe kui?**, the only answers were **meni** and **lopa**, and borrowing *under* or *debajo* gives the whole sentence away. The user chose the recommended words.
+
+| Word | Meaning | Alternative that lost |
+|---|---|---|
+| **nide** | in / inside (hook: *nido*, nest) | **pite** (no memory hook) |
+| **kofo** | out / outside (hook: a cough pushes air out) | **vuko** (whispered it becomes "fuko", too close to a swear word) |
+| **tefe** | on / on top / above / up (hook: *techo*, top) | **pefi** (no memory hook) |
+| **kunu** | under / below / down (low, round u sounds) | **mutu** (shares t with **tefe**; only works with **pefi**) |
+
+- **Two syllables, not one.** The user asked about two- or three-letter words. Almost every consonant–vowel pair is a Spanish or English word (*de, la, me, mi, ni, no, se, te, tu, va, ve, to, so*), and the whisper rule leaves only **mu** and **pu** (*poo*) free next to **ka ke si lo da fa na**. The **kui** shape (*pau*, *moi*) is possible but full of real words and would be a new word shape. And like **meni**, **lopa** and **tuka**, these words come at the end of a sentence or alone as an answer, where a stressed two-syllable word survives whispering far better.
+- **After the thing** (**bed kunu**), like describing words. Rejected: before the thing (*kunu bed*, like English and Spanish) — a new order to learn, and it sounds more like the languages nearby.
+- **tefe** and **kunu** also cover *up* and *down* (as in Japanese). Rejected: separate words for up and down.
+- **No word for *from*:** **deli** (left school = came from school), the giver with **moku** (from grandma), and **nide** (out of the box). Rejected: a *from* word before it is borrowed in real use (Section 25).
+- Opposites share no sounds (Section 21, rule 5). Soft risks: **nide** starts like **nisu** (an action, not a place); **kofo** and **koti** are two sounds apart after a thing (Section 2, "Watch in real use"); **tefe** is two sounds from **tesu** and from the parked **dema**.
+- Clash-free two-syllable words are getting scarce: most of what `noki_audit.py cands` still offers ends in -e.
+- New sound-alikes in the audit blocklist: **dudo**, **loto**, **moso** (*mozo*), **koso** (*coso*), **pide**, **sefe** (*safe*), **pete** (*Pete*), **nite** (*night*), **luke** (*Luke*), **nude**, **tipi**, **fupa** (English slang), **fuko** and **fuka** (close to a swear word).
 
 ### Version 2.22 — 2026-09-25
 

@@ -2,7 +2,7 @@
 
 A tiny secret spoken language for a parent and their 9-year-old son, who both speak Spanish and English.
 
-**Current state: 15 letters, 52 words, spec version 2.22 (2026-09-25).**
+**Current state: 15 letters, 56 words, spec version 2.23 (2026-09-26).**
 
 ## Files
 
@@ -59,3 +59,4 @@ The full working rules, and the story behind the project, are in `CLAUDE.md`.
 - A person between two actions is who should do the second: `ka suli si lefu` = I want you to go, `ka suli lefu si` = I want to go with you (version 2.20).
 - A "not" question is answered with the action, not `da` or `vek` alone: `si vek duni fusu?` → `vek, ka vek duni` (version 2.21).
 - Or, how, "the cake that you made", and before/after an event are written down with the words that already say them (version 2.22).
+- Four place words in version 2.23: `nide` (in), `kofo` (out), `tefe` (on / up), `kunu` (under / down). They go after the thing: `bed kunu` = under the bed. No word for *from*: `ka panu deli school` = I came from school. 56 words.

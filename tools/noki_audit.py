@@ -31,7 +31,7 @@ import sys
 CONSONANTS = "dfklmnpstv"
 VOWELS = "aeiou"
 
-# The 52 official words — noki-language-handoff.md Section 3 (spec version 2.17).
+# The 56 official words — noki-language-handoff.md Section 3 (spec version 2.23).
 # There is no word for we / you-all / they: pronouns are combined (Section 29).
 CURRENT = {
     "ka": "I, me", "si": "you", "lo": "he, she",
@@ -50,6 +50,7 @@ CURRENT = {
     "pemo": "sad", "dipu": "angry", "sedu": "scared", "koti": "true",
     "tolu": "number, count", "tesu": "please, thank you, you're welcome",
     "sata": "stop, enough, done", "somu": "big", "mipi": "small, a little", "lamu": "friend",
+    "nide": "in, inside", "kofo": "out, outside", "tefe": "on, above, up", "kunu": "under, below, down",
 }
 # Meanings still waiting for a word (Section 19).
 DEFERRED = ["dema", "dino", "na"]
@@ -83,6 +84,7 @@ kolu pina tipu nida sopu sosu samu kono kona komu pilo sapu vami saku safi felo
 senu fetu kodu kolo pudu putu vudu sadu fuma paku lolo sika
 laso soto vana vado vala volo kuko sosa vano kulu vamu sodo
 kepo puso tene pose
+dudo loto moso koso pide sefe pete nite luke nude tipi fupa fuko fuka
 ven mai pai nop pi mu pu
 """.split())
 
@@ -155,7 +157,8 @@ if __name__ == "__main__":
         print("  by the two speakers and kept (version 2.9).")
         print("  noki / naki, noki / doki - 'noki' is the greeting, only ever said alone")
         print("  at the start of a conversation. Do not replace naki or doki over this.")
-        print("Watch in real use: duni / dusa (same first syllable, same slot).")
+        print("Watch in real use: duni / dusa (same first syllable, same slot);")
+        print("  kofo / koti (both can follow a thing: ke kofo, ke koti).")
         print("Pairs involving deferred words are not official clashes.")
     elif mode == "cands":
         extra = arg(2).split(",") if arg(2) else []
